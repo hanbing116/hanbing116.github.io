@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hanbing116.github.io/</loc>
-    <lastmod>2025-12-28T22:16:03+08:00</lastmod>
+    <lastmod>2025-12-28T20:54:38+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -25,16 +25,10 @@
                 href="https://hanbing116.github.io/"
                 />
   </url><url>
-    <loc>https://hanbing116.github.io/p/myplot/</loc>
-    <lastmod>2025-12-28T22:16:03+08:00</lastmod>
-  </url><url>
-    <loc>https://hanbing116.github.io/post/</loc>
-    <lastmod>2025-12-28T22:16:03+08:00</lastmod>
-  </url><url>
     <loc>https://hanbing116.github.io/p/blog/</loc>
     <lastmod>2025-12-28T20:54:38+08:00</lastmod>
   </url><url>
-    <loc>https://hanbing116.github.io/p/blog2/</loc>
+    <loc>https://hanbing116.github.io/post/</loc>
     <lastmod>2025-12-28T20:54:38+08:00</lastmod>
   </url><url>
     <loc>https://hanbing116.github.io/categories/</loc>
@@ -92,13 +86,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://hanbing116.github.io/ja/categories/test/"
+                hreflang="zh-tw"
+                href="https://hanbing116.github.io/zh-tw/categories/test/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
-                href="https://hanbing116.github.io/zh-tw/categories/test/"
+                hreflang="ja"
+                href="https://hanbing116.github.io/ja/categories/test/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -189,6 +183,8 @@
   </url><url>
     <loc>https://hanbing116.github.io/p/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hanbing116.github.io/p/</loc>
   </url><url>
     <loc>https://hanbing116.github.io/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</loc>
   </url><url>
