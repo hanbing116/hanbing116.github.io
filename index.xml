@@ -95,21 +95,20 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;被子植物分类&#34;&gt;被子植物分类
-&lt;/h1&gt;&lt;p&gt;后半学期重要的被子植物分类&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;后半学期重要的被子植物分类，文件太大了（好像也每记什么东西啊）……所以在线预览是压缩过的文件，可能不太清楚，下载PDF版更清晰&lt;/p&gt;
 &lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px;&#34;&gt;📄在线预览：&lt;/p&gt;
-  &lt;iframe 
-    src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@pdfv1.0/default.pdf&#34;
+  &lt;embed 
+    src=&#34;https://hanbing116.github.io/pdfs/植物分类.pdf&#34;
+    type=&#34;application/pdf&#34;
     width=&#34;100%&#34;
     height=&#34;800px&#34;
-    frameborder=&#34;0&#34;
-    allow=&#34;fullscreen&#34;
-  &gt;&lt;/iframe&gt;
+  /&gt;
   &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
     &lt;a 
-      href=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@pdfv1.0/default.pdf&#34;
+      href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/pdfv1.0/default.pdf&#34;
       target=&#34;_blank&#34;
-      download=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@pdfv1.0/default.pdf&#34;
+      download=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/pdfv1.0/default.pdf&#34;
       style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
     &gt;
       📥 下载 PDF 文件
