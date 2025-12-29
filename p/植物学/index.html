@@ -397,13 +397,23 @@
 <h1 id="被子植物分类">被子植物分类
 </h1><p>后半学期重要的被子植物分类，文件太大了（好像也每记什么东西啊）……所以在线预览是压缩过的文件，可能不太清楚，下载PDF版更清晰</p>
 <div style="margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px;">
-  <p style="font-weight: 600; margin-bottom: 10px;">📄在线预览：</p>
-  <embed 
-    src="/pdfs/植物分类.pdf"
-    type="application/pdf"
-    width="100%"
-    height="800px"
-  />
+  <p style="font-weight: 600; margin-bottom: 10px;">PDF预览：</p>
+  <!-- 外层容器：用媒体查询区分设备 -->
+  <div id="pdf-container" style="width: 100%; margin: 0 auto;">
+    <object
+      data="/pdfs/植物分类.pdf#view=FitH&zoom=100"
+      type="application/pdf"
+      style="width: 100%; height: 1000px; border: none;"
+    >
+      <iframe
+        src="/pdfs/植物分类.pdf#view=FitH&zoom=100"
+        style="width: 100%; height: 1000px; border: none;"
+        frameborder="0"
+      >
+        无法预览，请<a href="/pdfs/植物分类.pdf" target="_blank">点击下载</a>
+      </iframe>
+    </object>
+  </div>
   <div style="margin-top: 15px; text-align: center;">
     <a 
       href="https://github.com/hanbing116/hanbing116.github.io/releases/download/pdfv1.0/default.pdf"
@@ -414,6 +424,14 @@
       📥 下载 PDF 文件
     </a>
   </div>
+<style>
+  @media (max-width: 768px) {
+    #pdf-container object,
+    #pdf-container iframe {
+      height: 600px !important; /* 手机端固定适配高度 */
+    }
+  }
+</style>
 </div>
 
 </section>

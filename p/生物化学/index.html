@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚\n📄在线预览：\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚\nPDF预览：\n">
 <title>生物化学</title>
 
 <link rel='canonical' href='https://hanbing116.github.io/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/'>
 
 <link rel="stylesheet" href="/scss/style.min.97b78690f623b0da7788f6185ee3298744c35b1f8710d3ba93c17c1ec1a198d7.css"><meta property='og:title' content="生物化学">
-<meta property='og:description' content="主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚\n📄在线预览：\n">
+<meta property='og:description' content="主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚\nPDF预览：\n">
 <meta property='og:url' content='https://hanbing116.github.io/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/'>
 <meta property='og:site_name' content='龙林'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='整理' /><meta property='article:published_time' content='2025-12-29T13:21:57&#43;08:00'/><meta property='article:modified_time' content='2025-12-29T13:21:57&#43;08:00'/><meta property='og:image' content='https://hanbing116.github.io/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/Image_1762771996220.jpg' />
 <meta name="twitter:title" content="生物化学">
-<meta name="twitter:description" content="主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚\n📄在线预览：\n"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚\nPDF预览：\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://hanbing116.github.io/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/Image_1762771996220.jpg' />
     </head>
     <body class="
@@ -307,14 +307,23 @@
     
     <p>主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚</p>
 <div style="margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px;">
-  <p style="font-weight: 600; margin-bottom: 10px;">📄在线预览：</p>
-  <iframe 
-    src="/pdfs/生化.pdf"
-    width="100%"
-    height="800px"
-    frameborder="0"
-    allow="fullscreen"
-  ></iframe>
+  <p style="font-weight: 600; margin-bottom: 10px;">PDF预览：</p>
+  <!-- 外层容器：用媒体查询区分设备 -->
+  <div id="pdf-container" style="width: 100%; margin: 0 auto;">
+    <object
+      data="/pdfs/生化.pdf#view=FitH&zoom=100"
+      type="application/pdf"
+      style="width: 100%; height: 1000px; border: none;"
+    >
+      <iframe
+        src="/pdfs/生化.pdf#view=FitH&zoom=100"
+        style="width: 100%; height: 1000px; border: none;"
+        frameborder="0"
+      >
+        无法预览，请<a href="/pdfs/生化.pdf" target="_blank">点击下载</a>
+      </iframe>
+    </object>
+  </div>
   <div style="margin-top: 15px; text-align: center;">
     <a 
       href="/pdfs/生化.pdf"
@@ -325,7 +334,14 @@
       📥 下载 PDF 文件
     </a>
   </div>
-</div>
+<style>
+  @media (max-width: 768px) {
+    #pdf-container object,
+    #pdf-container iframe {
+      height: 600px !important; /* 手机端固定适配高度 */
+    }
+  }
+</style>
 
 </section>
 
