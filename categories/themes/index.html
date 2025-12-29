@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的网站">
 <title>Category: Themes - 龙林</title>
 
 <link rel='canonical' href='https://hanbing116.github.io/categories/themes/'>
 
-<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="Category: Themes - 龙林">
+<link rel="stylesheet" href="/scss/style.min.97b78690f623b0da7788f6185ee3298744c35b1f8710d3ba93c17c1ec1a198d7.css"><meta property='og:title' content="Category: Themes - 龙林">
 <meta property='og:description' content="欢迎来到我的网站">
 <meta property='og:url' content='https://hanbing116.github.io/categories/themes/'>
 <meta property='og:site_name' content='龙林'>
@@ -214,33 +214,6 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-
-
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                                
-                                    <option value="https://hanbing116.github.io/en/" >English</option>
-                                
-                                    <option value="https://hanbing116.github.io/" selected>简体中文</option>
-                                
-                                    <option value="https://hanbing116.github.io/ja/" >日本語</option>
-                                
-                                    <option value="https://hanbing116.github.io/zh-tw/" >正體中文</option>
-                                
-                            </select>
-                        </li>
-                    
-                
 
                 
                     <li id="dark-mode-toggle">
@@ -454,6 +427,87 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<html>
+<body>
+  <style>
+      body {
+        background: url(https://hanbing116.github.io/background/12.png) no-repeat center top;
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 0;
+        min-height: 100vh;
+      }
+    </style>
+    <script>
+      
 
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+const cssPath = "https://hanbing116.github.io/waifu/waifu.css"
+const waifuTipsJasonPath = "https://hanbing116.github.io/waifu/waifu-tips.json"
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(cssPath, 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: waifuTipsJasonPath,
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+    </script>
+    <script src=https://hanbing116.github.io/background/sakura.js></script>
+</body>
+
+</html>
     </body>
 </html>
