@@ -40,7 +40,123 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+
+        <div id="global-music-player" style="position: fixed; bottom: 80px; left: 10px; z-index: 9999; background: var(--card-bg); padding: 3px 6px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <p style="color: var(--text-color); font-size: 12px; margin: 0 0 2px 0; text-align: center;" id="music-title">正在播放：see you soon</p>
+            <div style="display: flex; gap: 6px; align-items: center; justify-content: center; margin-bottom: 2px;">
+                <button onclick="prevMusic()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">←上曲</button>
+                
+                <button onclick="togglePlay()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;" id="play-btn">▶️ 播放</button>
+                <button onclick="nextMusic()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">下曲→</button>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
+                <span style="color: var(--text-color); font-size: 10px;">音量🔊</span>
+                <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.3" 
+                       style="width: 120px; height: 6px; cursor: pointer; accent-color: var(--link-color);">
+            </div>
+            <audio id="bg-music" preload="metadata" style="display: none;">
+        </div>
+
+        
+        <script>
+            const musicList = [
+                { src: "/audio/1.mp3", title: "See you soon" },
+                { src: "/audio/flower.mp3", title: "Flower dance" },
+            ];
+
+            const audio = document.getElementById('bg-music');
+            const titleEl = document.getElementById('music-title');
+            const playBtn = document.getElementById('play-btn');
+            const volumeControl = document.getElementById('volume-control');
+            let currentTrack = 0;
+            audio.volume = 0.3;
+
+            
+            function restoreState() {
+                const savedTrack = localStorage.getItem('currentMusicTrack');
+                if (savedTrack) currentTrack = parseInt(savedTrack);
+                
+                const savedTime = localStorage.getItem('musicPlayTime');
+                if (savedTime) audio.currentTime = parseFloat(savedTime);
+                
+                const isPlaying = localStorage.getItem('musicIsPlaying') === 'true';
+                const savedVolume = localStorage.getItem('musicVolume');
+                if (savedVolume) {
+                    audio.volume = parseFloat(savedVolume);
+                    volumeControl.value = audio.volume;
+                }
+                
+                audio.src = musicList[currentTrack].src;
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                
+                if (isPlaying) {
+                    audio.play().then(() => {
+                        playBtn.innerHTML = '⏸️ 暂停';
+                    }).catch(err => console.log('自动播放被阻止：', err));
+                }
+            }
+
+            
+            function saveState() {
+                localStorage.setItem('currentMusicTrack', currentTrack);
+                localStorage.setItem('musicPlayTime', audio.currentTime);
+                localStorage.setItem('musicIsPlaying', !audio.paused);
+                localStorage.setItem('musicVolume', audio.volume);
+            }
+
+            
+            function togglePlay() {
+                if (audio.paused) {
+                    audio.play();
+                    playBtn.innerHTML = '⏸️ 暂停';
+                } else {
+                    audio.pause();
+                    playBtn.innerHTML = '▶️ 播放';
+                }
+                saveState();
+            }
+
+            
+            function prevMusic() {
+                currentTrack = (currentTrack - 1 + musicList.length) % musicList.length;
+                audio.src = musicList[currentTrack].src;
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                audio.play();
+                playBtn.innerHTML = '⏸️ 暂停';
+                saveState();
+            }
+
+            
+            function nextMusic() {
+                currentTrack = (currentTrack + 1) % musicList.length;
+                audio.src = musicList[currentTrack].src;
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                audio.play();
+                playBtn.innerHTML = '⏸️ 暂停';
+                saveState();
+            }
+
+            
+            volumeControl.addEventListener('input', function() {
+                audio.volume = this.value;
+                saveState();
+            });
+
+            
+            audio.addEventListener('ended', function() {
+                nextMusic();
+            });
+
+            
+            audio.addEventListener('timeupdate', saveState);
+            audio.addEventListener('play', saveState);
+            audio.addEventListener('pause', saveState);
+
+            
+            window.onload = restoreState;
+        </script>
+
+        <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -560,6 +676,8 @@ function loadExternalResource(url, type) {
 })();
     </script>
     <script src=https://hanbing116.github.io/background/sakura.js></script>
+    
+    
 </body>
 
 </html>
