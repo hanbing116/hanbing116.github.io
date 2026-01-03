@@ -565,73 +565,19 @@
 
     <div class="article-details">
     
-    <header class="article-category">
-        
-            <a href="/categories/themes/" >
-                Themes
-            </a>
-        
-            <a href="/categories/syntax/" >
-                Syntax
-            </a>
-        
-    </header>
     <footer class="article-time">
-    
-    <div id="viewCount">
-        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
-        <time class="article-time--reading">
-            <span id="viewCountNum">0</span>次
-        </time>
-    </div>
-    
-    <div class="article-lastmod">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
+        
+        <div id="viewCount">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+            <time class="article-time--reading">
+                
+                <span id="busuanzi_value_page_pv">loading... </span>次
+            </time>
+        </div>
+    </footer>
 
 
-
-                <time>
-                    Dec 28, 2025 23:18 &#43;0800
-                </time>
-            </div></footer>
-
-<script>
-
-const pageUniqueKey = "blog_view_" + window.location.pathname.replace(/\//g, "_");
-
-const hasReportedKey = pageUniqueKey + "_reported";
-const countKey = pageUniqueKey + "_count";
-
-
-let totalCount = localStorage.getItem(countKey);
-totalCount = totalCount ? parseInt(totalCount) : 0;
-document.getElementById("viewCountNum").innerText = totalCount;
-
-
-const isFirstVisit = !localStorage.getItem(hasReportedKey);
-
-if (isFirstVisit) {
-    
-    localStorage.setItem(hasReportedKey, "1");
-    
-    totalCount += 1;
-    
-    localStorage.setItem(countKey, totalCount);
-    
-    document.getElementById("viewCountNum").innerText = totalCount;
-
-    
-    
-    
-    
-    
-}
-</script>
-    
+   
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
@@ -1063,7 +1009,8 @@ if (isFirstVisit) {
 <html>
 <body>
   
-<script defer src="https://cn.vercount.one/js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script>
     function showHideView() {
         
