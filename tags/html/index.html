@@ -12,7 +12,99 @@
 <meta property='og:site_name' content='龙林'>
 <meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-01-02T23:43:01&#43;08:00 '/>
 <meta name="twitter:title" content="Tag: Html - 龙林">
-<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="https://hanbing116.github.io/tags/html/index.xml">
+<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="https://hanbing116.github.io/tags/html/index.xml"><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>网站加载页</title>
+    <style>
+        .loading {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #f5f5fa;
+            display: none;
+             
+            transition: opacity 1.2s ease-out; 
+        }
+
+         
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+        }
+
+        @keyframes blink-caret {
+          50% {
+            border-color: transparent;
+          }
+        }
+
+        .animation {
+          font:
+            bold 200% Consolas,
+            Monaco,
+            monospace;
+          border-right: 0.1em solid black;
+          width: 13.2ch;
+          margin: 2em 2em;
+          white-space: nowrap;
+          overflow: hidden;
+          -webkit-animation:
+            typing 1.2s steps(13, end),    
+            blink-caret 0.5s step-end infinite alternate;
+        }
+
+         
+        .loading-fadeout {
+            opacity: 0;  
+            pointer-events: none;  
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="loading">
+        <div class="animation">hello again!</div>
+    </div>
+
+    <script>	
+        function initLoading() {
+            const loading = document.querySelector(".loading");
+            const currentDomain = window.location.hostname;
+            const referrer = document.referrer;
+
+            
+            const isNewVisit = !referrer || !referrer.includes(currentDomain);
+
+            if (isNewVisit) {
+                loading.style.display = "flex"; 
+                
+                
+                setTimeout(() => {
+                    loading.classList.add("loading-fadeout");
+                }, 1200); 
+
+                
+                setTimeout(() => {
+                    loading.style.display = "none";
+                }, 2500);
+            } else {
+                loading.style.display = "none"; 
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initLoading);
+    </script>
+</body>
+</html>
     </head>
     <body class="">
     <script>
@@ -521,6 +613,8 @@
     </section>
     
     <section class="powerby">
+        
+            Copyright：hanbing <br/>
         使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -547,6 +641,26 @@
 </script>
 <html>
 <body>
+  
+<script defer src="https://cn.vercount.one/js"></script>
+<script>
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article =  document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+    
+    showHideView();
+</script>
+
   <style>
       body {
         background: url(https://hanbing116.github.io/background/12.png) no-repeat center top;
