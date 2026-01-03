@@ -536,7 +536,7 @@
 &lt;li&gt;&lt;mark&gt;单性结实&lt;/mark&gt;：子房不受精形成果实（&lt;strong&gt;营养单性结实&lt;/strong&gt;/&lt;strong&gt;天然单性结实&lt;/strong&gt;——不经传粉或刺激便可形成无籽果实 eg.香蕉、葡萄）（&lt;strong&gt;刺激单性结实&lt;/strong&gt;——刺激柱头）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;被子植物分类&#34;&gt;被子植物分类
-&lt;/h1&gt;&lt;p&gt;后半学期重要的被子植物分类，文件太大了（好像也每记什么东西啊）……所以在线预览是压缩过的文件，可能不太清楚，下载PDF版更清晰&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;后半学期重要的被子植物分类，文件太大了（好像也没记什么东西啊）……所以在线预览是压缩过的文件，可能不太清楚，下载PDF版更清晰&lt;/p&gt;
 &lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px;&#34;&gt;PDF预览：&lt;/p&gt;
   &lt;!-- 外层容器：用媒体查询区分设备 --&gt;
@@ -574,6 +574,126 @@
   }
 &lt;/style&gt;
 &lt;/div&gt;
+&lt;h1 id=&#34;前半学期笔记&#34;&gt;前半学期笔记
+&lt;/h1&gt;&lt;p&gt;此部分主要是前半学期生活史、藻类、地衣、苔藓……一直到裸子植物的简单笔记&lt;/p&gt;
+&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：用媒体查询区分设备 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/前半学期笔记.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none;&#34;
+    &gt;
+      &lt;iframe
+        src=&#34;https://hanbing116.github.io/pdfs/前半学期笔记.pdf#view=FitH&amp;zoom=100&#34;
+        style=&#34;width: 100%; height: 1000px; border: none;&#34;
+        frameborder=&#34;0&#34;
+      &gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/前半学期笔记.pdf&#34; target=&#34;_blank&#34;&gt;点击下载&lt;/a&gt;
+      &lt;/iframe&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/前半学期笔记.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;前半学期笔记.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;style&gt;
+  @media (max-width: 768px) {
+    #pdf-container object,
+    #pdf-container iframe {
+      height: 600px !important; /* 手机端固定适配高度 */
+    }
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;期中复习范围&#34;&gt;期中复习范围
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：用媒体查询区分设备 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/植物学期中复习.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none;&#34;
+    &gt;
+      &lt;iframe
+        src=&#34;https://hanbing116.github.io/pdfs/植物学期中复习.pdf#view=FitH&amp;zoom=100&#34;
+        style=&#34;width: 100%; height: 1000px; border: none;&#34;
+        frameborder=&#34;0&#34;
+      &gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/植物学期中复习.pdf&#34; target=&#34;_blank&#34;&gt;点击下载&lt;/a&gt;
+      &lt;/iframe&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/植物学期中复习.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;植物学期中复习.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;style&gt;
+  @media (max-width: 768px) {
+    #pdf-container object,
+    #pdf-container iframe {
+      height: 600px !important; /* 手机端固定适配高度 */
+    }
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;期末复习范围&#34;&gt;期末复习范围
+&lt;/h1&gt;&lt;h2 id=&#34;名词解释&#34;&gt;名词解释
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;纹孔：植物细胞次生壁形成时，初生纹孔场不被次生物质覆盖，形成的凹陷区域，是相邻细胞间进行物质交换的重要通道。&lt;/li&gt;
+&lt;li&gt;后含物：植物细胞生长、分化和成熟过程中，新陈代谢活动产生的代谢中间产物、废物、贮藏物质等的统称。&lt;/li&gt;
+&lt;li&gt;内起源：植物侧生器官发生的一种方式，指器官的发生起源于植物组织内部的深层细胞，而非表层的表皮或表皮下层细胞。&lt;/li&gt;
+&lt;li&gt;内始式：植物茎的初生木质部的发育方式，指初生木质部分化成熟顺序从内部到外部，即最内侧的原生木质部最先分化成熟，外侧的后生木质部后分化成熟。&lt;/li&gt;
+&lt;li&gt;外始式：植物维管组织初生结构的一种分化成熟顺序，分化成熟顺序从外部到内部，最外侧的细胞最先分化成熟，内侧的细胞后分化成熟。&lt;/li&gt;
+&lt;li&gt;早材：双子叶植物茎在每年生长季节初期形成的次生木质部，导管直径大，壁薄，木纤维少，材质疏松。&lt;/li&gt;
+&lt;li&gt;晚材：双子叶植物茎在每年生长季节晚期形成的次生木质部，导管直径小，壁厚，木纤维多，材质紧密。&lt;/li&gt;
+&lt;li&gt;边材：靠近形成层近几年形成的木材。这部分次生木质部，颜色浅，导管和管胞仍具输导作用，木薄壁细胞和木纤维细胞是生活的。&lt;/li&gt;
+&lt;li&gt;心材：靠近茎中心部分的木材。这部分次生木质部，颜色深，导管常被侵填体堵塞失去输导功能，其他细胞成为死细胞。&lt;/li&gt;
+&lt;li&gt;维管束：植物体内由初生木质部和初生韧皮部共同组成的束状结构，部分维管束还含有形成层，是植物体内物质运输和机械支持的核心组织系统。广泛存在于蕨类植物和种子植物的根、茎、叶等器官中。&lt;/li&gt;
+&lt;li&gt;双受精：被子植物特有的一种受精方式，指花粉管中的两个精子分别与胚囊中的卵细胞和中央细胞（极核）融合的过程。&lt;/li&gt;
+&lt;li&gt;无融合生殖与单性结实 ：1、无融合生殖——植物不经过雌雄配子结合（受精作用），直接由胚珠中的体细胞或未受精的生殖细胞发育成胚，进而形成有活力种子的生殖方式。2、单性结实：植物的子房不经过受精作用，直接发育成果实的现象。可分为营养单性结实和刺激单性结实。&lt;/li&gt;
+&lt;li&gt;真花学说与假花学说 ： 1、真花学说——认为被子植物的花是由已灭绝的裸子植物中&lt;strong&gt;本内苏铁目&lt;/strong&gt;的两性孢子叶球演化而来，即花的每一部分都起源于变态的孢子叶2、假花学说——被子植物的花起源于裸子植物中&lt;strong&gt;麻黄类&lt;/strong&gt;的单性孢子叶球，认为被子植物的原始花是&lt;strong&gt;单性花&lt;/strong&gt;，且花是由多个单性的孢子叶球聚合形成的花序，而非真正的两性花。&lt;/li&gt;
+&lt;li&gt;综合物种的概念  ：&lt;strong&gt;物种是由具有共同进化历史、相似形态与生理特征、能够相互交配并产生可育后代，且占据特定生态位的自然种群所组成的类群，这些类群在生殖上与其他此类群相互隔离&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;个体发育与系统发育  ：1、个体发育——某一个体从生命起始，经过细胞分裂、分化、器官形成，直至生长成熟、繁殖后代并最终衰老死亡的全过程，涵盖了个体生命周期内的所有生长、发育和繁殖阶段。2、系统发育——&lt;strong&gt;一个生物类群&lt;/strong&gt;从其共同祖先类群出发，通过遗传变异、自然选择、物种形成、灭绝等演化过程，逐渐产生形态、生理、遗传差异并形成新类群的演化历史。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;代表植物和科&#34;&gt;代表植物和科
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;单体雄蕊与聚药雄蕊 ： 单体雄蕊——锦葵科&lt;strong&gt;木芙蓉、秋葵&lt;/strong&gt;；聚药雄蕊——菊科&lt;strong&gt;向日葵、蒲公英&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多体雄蕊与合蕊柱  ：多体雄蕊——大戟科、藤黄科&lt;strong&gt;蓖麻、金丝桃&lt;/strong&gt;；合蕊柱——兰科&lt;strong&gt;石斛、兜兰&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;舌状花冠与唇形花冠  ：舌状花冠——菊科&lt;strong&gt;向日葵&lt;/strong&gt;；唇形花冠——唇形科&lt;strong&gt;藿香、丹参、薄荷&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中轴胎座与侧膜胎座  ：中轴胎座——石蒜科、百合科、芸香科、茄科；侧膜胎座——葫芦科、兰科、十字花科&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;总状花序与穗状花序  ：总状花序——十字花科、豆科（紫藤）；穗状花序——禾本科&lt;strong&gt;小麦、大麦&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;聚合果与聚花果  ：聚合果——木兰科、毛茛科、五味子科&lt;strong&gt;eg. 草莓、蔷薇、牡丹、悬钩子&lt;/strong&gt;；聚花果——桑科、凤梨科&lt;strong&gt;eg. 桑葚、菠萝、无花果&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;把期末复习的名词解释部分弄了，问答题太多且和前面整理的结构部分很多重合，就没有一一完成了。此处可以参考98上一个学长的网站上的期末总结，也很详细了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://parzival886.github.io/2025/02/24/Botany/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://parzival886.github.io/2025/02/24/Botany/&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
