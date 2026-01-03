@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>完结 on 龙林</title>
+        <link>https://hanbing116.github.io/categories/%E5%AE%8C%E7%BB%93/</link>
+        <description>Recent content in 完结 on 龙林</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>龙林</copyright>
+        <lastBuildDate>Mon, 29 Dec 2025 13:21:57 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E5%AE%8C%E7%BB%93/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>生物化学</title>
+        <link>https://hanbing116.github.io/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/</link>
+        <pubDate>Mon, 29 Dec 2025 13:21:57 +0800</pubDate>
+        
+        <guid>https://hanbing116.github.io/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/</guid>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/Image_1762771996220.jpg" alt="Featured image of post 生物化学" /&gt;&lt;p&gt;主要参考上课PPT记的笔记，不过平板原生态导出的PDF画质不是很好，只有凑合着看了，之后换成其他笔记软件导出会高清一些✋😭🤚&lt;/p&gt;
+&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：用媒体查询区分设备 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/生化.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none;&#34;
+    &gt;
+      &lt;iframe
+        src=&#34;https://hanbing116.github.io/pdfs/生化.pdf#view=FitH&amp;zoom=100&#34;
+        style=&#34;width: 100%; height: 1000px; border: none;&#34;
+        frameborder=&#34;0&#34;
+      &gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/生化.pdf&#34; target=&#34;_blank&#34;&gt;点击下载&lt;/a&gt;
+      &lt;/iframe&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/生化.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;生化.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;style&gt;
+  @media (max-width: 768px) {
+    #pdf-container object,
+    #pdf-container iframe {
+      height: 600px !important; /* 手机端固定适配高度 */
+    }
+  }
+&lt;/style&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
