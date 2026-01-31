@@ -78,14 +78,16 @@
 }
 
 #live2d {
-	cursor: grab;
-	height: 300px;
-	position: relative;
-	width: 300px;
+    cursor: grab;
+    height: 250px; /* 你设置的固定高度 */
+    position: relative;
+    width: 250px;  /* 宽高保持一致 */
+    transform: scale(1) !important; /* 强制固定缩放比例为1 */
+    transform-origin: center center !important; /* 固定缩放原点 */
+    pointer-events: none; /* 可选：阻止鼠标事件触发（但会同时禁用拖拽） */
 }
-
 #live2d:active {
-	cursor: grabbing;
+    cursor: grabbing;
 }
 
 #waifu-tool {
@@ -108,7 +110,7 @@
 	cursor: pointer;
 	display: block;
 	fill: #7b8c9d;
-	height: 25px;
+	height: 18px;
 	transition: fill .3s;
 }
 
