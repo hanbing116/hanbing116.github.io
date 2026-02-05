@@ -10,7 +10,7 @@
 <meta property='og:description' content="数据下载及处理 页面介绍 GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台\nLink：Home - GEO - NCBI\n如下是进入搜索的一个关于甲状腺癌的文件\nGEO Accession viewer\nPlatforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。 Samples：（GSMxxxx）样本列表，可以查看每一个样本信息 Relations：关联信息，可找到该项目的其他数据 Download family： SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。 Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。 Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。 Platform里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。\n">
 <meta property='og:url' content='https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/'>
 <meta property='og:site_name' content='龙林'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='生信' /><meta property='article:published_time' content='2026-02-01T18:49:46&#43;08:00'/><meta property='article:modified_time' content='2026-02-05T13:56:23&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='生信' /><meta property='article:published_time' content='2026-02-01T18:49:46&#43;08:00'/><meta property='article:modified_time' content='2026-02-05T22:16:40&#43;08:00'/>
 <meta name="twitter:title" content="GEO转录本分析">
 <meta name="twitter:description" content="数据下载及处理 页面介绍 GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台\nLink：Home - GEO - NCBI\n如下是进入搜索的一个关于甲状腺癌的文件\nGEO Accession viewer\nPlatforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。 Samples：（GSMxxxx）样本列表，可以查看每一个样本信息 Relations：关联信息，可找到该项目的其他数据 Download family： SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。 Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。 Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。 Platform里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。\n"><!DOCTYPE html>
 <html lang="zh-CN">
@@ -487,8 +487,10 @@
         <li><a href="#limma芯片数据差异分析">limma芯片数据差异分析</a>
           <ol>
             <li><a href="#火山图">火山图</a></li>
+            <li><a href="#热图">热图</a></li>
           </ol>
         </li>
+        <li><a href="#高通量数据分析">高通量数据分析</a></li>
       </ol>
     </li>
   </ol>
@@ -525,7 +527,7 @@
 
 
                 <time>
-                    Feb 05, 2026 13:56 &#43;0800
+                    Feb 05, 2026 22:16 &#43;0800
                 </time>
             </div></footer>
 
@@ -1027,6 +1029,8 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </span><span class="lnt">58
 </span><span class="lnt">59
 </span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/GSE309139&#39;</span><span class="p">)</span>
@@ -1089,6 +1093,8 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </span></span><span class="line"><span class="cl"><span class="nf">range</span><span class="p">(</span><span class="n">exp1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">exp1</span><span class="o">&lt;-</span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">exp1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nf">save</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">exp1</span><span class="p">,</span><span class="n">rt</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;GSE309139.rda&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 注意，这里得到exp1之后记得看看需要标准化，归一化那一系列操作，之后再进行热图绘制。</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="geo数据差异分析">GEO数据差异分析
@@ -1114,7 +1120,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/limma差异分析&#39;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/limma差异分析&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
@@ -1203,6 +1209,10 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </span><span class="lnt">63
 </span><span class="lnt">64
 </span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">group_list</span><span class="o">&lt;-</span><span class="nf">factor</span><span class="p">(</span><span class="n">rt</span><span class="o">$</span><span class="n">group</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Normal&#34;</span><span class="p">,</span><span class="s">&#34;Tumor&#34;</span><span class="p">))</span>
@@ -1270,9 +1280,240 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </span></span><span class="line"><span class="cl">                  <span class="n">nudge_y</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                  <span class="n">direction</span> <span class="o">=</span> <span class="s">&#34;y&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="c1"># 查看火山图</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 保存为pdf</span>
+</span></span><span class="line"><span class="cl"><span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s">&#34;volcano.pdf&#34;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dev.off</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><img src="Rplot.png" width="600">
+<h3 id="热图">热图
+</h3><p>接上述火山图</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span><span class="o">&lt;-</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#34;DEG2.txt&#34;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;\t&#34;</span><span class="p">,</span><span class="n">check.names</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">stringsAsFactor</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">DEG</span><span class="o">$</span><span class="n">change</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">diff</span><span class="o">&lt;-</span><span class="nf">rownames</span><span class="p">(</span><span class="n">DEG</span><span class="p">)</span><span class="n">[DEG</span><span class="o">$</span><span class="n">change</span> <span class="o">!=</span> <span class="s">&#34;NOT&#34;</span><span class="n">]</span> <span class="c1"># 选出仅有显著上调或下调的基因</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp_diff</span><span class="o">&lt;-</span><span class="n">exp[diff</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">range</span><span class="p">(</span><span class="n">exp_diff</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 补：从DEG中选出目标基因来做热图</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG_target</span> <span class="o">&lt;-</span> <span class="n">DEG</span><span class="nf">[grepl</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;CASP1|ZDHHC|NLRP3|IL1B|IL18|GSD&#34;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">DEG</span><span class="o">$</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore.case</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> <span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">target</span><span class="o">&lt;-</span><span class="n">exp</span><span class="nf">[rownames</span><span class="p">(</span><span class="n">DEG_target</span><span class="p">),</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 作图</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 绘制差异基因表达热图</span>
+</span></span><span class="line"><span class="cl"><span class="n">map</span><span class="o">&lt;-</span><span class="nf">pheatmap</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">exp_diff</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">annotation_col</span> <span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="c1"># 列注释（样本分组信息）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">color</span> <span class="o">=</span> <span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;blue&#34;</span><span class="p">,</span> <span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="s">&#34;red&#34;</span><span class="p">))(</span><span class="m">100</span><span class="p">),</span> <span class="c1"># 颜色渐变（100个梯度）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">cluster_cols</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="c1"># 不对样本（列）进行聚类</span>
+</span></span><span class="line"><span class="cl">  <span class="n">cluster_rows</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span>  <span class="c1"># 对基因（行）进行聚类</span>
+</span></span><span class="line"><span class="cl">  <span class="n">show_colnames</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="c1"># 不显示样本名（避免拥挤）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">show_rownames</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="c1"># 显示基因名</span>
+</span></span><span class="line"><span class="cl">  <span class="n">border_color</span> <span class="o">=</span> <span class="kc">NA</span><span class="p">,</span> <span class="c1"># 去掉单元格边框</span>
+</span></span><span class="line"><span class="cl">  <span class="n">scale</span> <span class="o">=</span> <span class="s">&#39;row&#39;</span><span class="p">,</span> <span class="c1"># 按行标准化（让每个基因的表达在不同样本间可比较）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">treeheight_row</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="c1"># 行聚类树的高度（可选）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fontsize_row</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="c1"># 行名字体大小（可选）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fontsize_col</span> <span class="o">=</span> <span class="m">8</span> <span class="c1"># 列名字体大小（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;heatmap.pdf&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="m">6</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">map</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dev.off</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 特定展示（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">diff</span><span class="o">=</span><span class="n">DEG[DEG</span><span class="o">$</span><span class="n">change</span> <span class="o">!=</span> <span class="s">&#34;NOT&#34;</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">up</span><span class="o">&lt;-</span><span class="n">diff</span> <span class="o">%&gt;%</span> <span class="nf">top_n</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="n">logFC</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dw</span><span class="o">&lt;-</span><span class="n">diff</span> <span class="o">%&gt;%</span> <span class="nf">top_n</span><span class="p">(</span><span class="m">-25</span><span class="p">,</span><span class="n">logFC</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">all</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">up</span><span class="p">),</span><span class="nf">rownames</span><span class="p">(</span><span class="n">dw</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp_diff2</span><span class="o">&lt;-</span><span class="n">exp[all</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">map2</span><span class="o">&lt;-</span><span class="nf">pheatmap</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">exp_diff2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">annotation_col</span> <span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="c1"># 列注释（样本分组信息）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">color</span> <span class="o">=</span> <span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;blue&#34;</span><span class="p">,</span> <span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="s">&#34;red&#34;</span><span class="p">))(</span><span class="m">100</span><span class="p">),</span> <span class="c1"># 颜色渐变（100个梯度）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">cluster_cols</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="c1"># 不对样本（列）进行聚类</span>
+</span></span><span class="line"><span class="cl">  <span class="n">cluster_rows</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span>  <span class="c1"># 对基因（行）进行聚类</span>
+</span></span><span class="line"><span class="cl">  <span class="n">show_colnames</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="c1"># 不显示样本名（避免拥挤）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">show_rownames</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="c1"># 显示基因名</span>
+</span></span><span class="line"><span class="cl">  <span class="n">border_color</span> <span class="o">=</span> <span class="kc">NA</span><span class="p">,</span> <span class="c1"># 去掉单元格边框</span>
+</span></span><span class="line"><span class="cl">  <span class="n">scale</span> <span class="o">=</span> <span class="s">&#39;row&#39;</span><span class="p">,</span> <span class="c1"># 按行标准化（让每个基因的表达在不同样本间可比较）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">treeheight_row</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="c1"># 行聚类树的高度（可选）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fontsize_row</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="c1"># 行名字体大小（可选）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fontsize_col</span> <span class="o">=</span> <span class="m">8</span> <span class="c1"># 列名字体大小（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;heatmap2.pdf&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="m">6</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">map2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dev.off</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><img src="heatmap2.jpg" width="600">
+<h2 id="高通量数据分析">高通量数据分析
+</h2><p>先前GEO高通量数据处理时运行得到degs那一步，仅在得到res1差异结果后增加一步，将其进行txt文件导出，作为DEG结果，如下是得到degs的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/GSE309139&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="n">data.table</span><span class="o">::</span><span class="nf">fread</span><span class="p">(</span><span class="s">&#34;GSE309139_raw_counts.txt&#34;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 用data.table::fread()高效读取RNA-seq原始计数文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># header=T 确保文件第一行（样本ID）作为列名</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span> <span class="c1"># 查看是否有缺失值</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="nf">[is.na</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span> <span class="c1"># 查看是否有缺失值</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="nf">column_to_rownames</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">var</span><span class="o">=</span><span class="s">&#39;Gene&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 把基因名那一列挪到最前面成为行名</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1、设置分组信息</span>
+</span></span><span class="line"><span class="cl"><span class="n">sample_id</span><span class="o">&lt;-</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sample_id</span>
+</span></span><span class="line"><span class="cl"><span class="n">group</span><span class="o">&lt;-</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;L&#39;</span><span class="p">,</span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="s">&#39;LL&#39;</span><span class="p">,</span><span class="s">&#39;HL&#39;</span><span class="p">),</span><span class="n">each</span><span class="o">=</span><span class="m">6</span><span class="p">)</span> <span class="c1"># 具体分组看具体数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">group</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">&lt;-</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">row.names</span><span class="o">=</span><span class="n">sample_id</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2、DESeq2分析</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># BiocManager::install(&#34;DESeq2&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">DESeq2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">$</span><span class="n">group</span><span class="o">&lt;-</span><span class="nf">factor</span><span class="p">(</span><span class="n">rt</span><span class="o">$</span><span class="n">group</span><span class="p">)</span> <span class="c1"># 变成因子的格式</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">$</span><span class="n">group</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 构建DESeq2对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">dds</span><span class="o">&lt;-</span><span class="nf">DESeqDataSetFromMatrix</span><span class="p">(</span><span class="n">countData</span><span class="o">=</span><span class="n">exp</span><span class="p">,</span><span class="n">colData</span><span class="o">=</span><span class="n">rt</span><span class="p">,</span><span class="n">design</span><span class="o">=~</span><span class="n">group</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># design=~group根据group分组来比较差异</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dds把原始计数数据、样本分组信息、实验设计逻辑打包在一起，后续所有分析（标准化、差异检验）都基于这个对象</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 低表达基因过滤（自定义，可选）</span>
+</span></span><span class="line"><span class="cl"><span class="n">filter</span><span class="o">&lt;-</span><span class="nf">rowSums</span><span class="p">(</span><span class="nf">counts</span><span class="p">(</span><span class="n">dds</span><span class="p">))</span><span class="o">&gt;</span><span class="m">1</span> <span class="c1"># 筛选每行加起来大于1的基因</span>
+</span></span><span class="line"><span class="cl"><span class="n">dds</span><span class="o">&lt;-</span><span class="n">dds[filter</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 差异表达分析</span>
+</span></span><span class="line"><span class="cl"><span class="n">dds</span><span class="o">&lt;-</span><span class="nf">DESeq</span><span class="p">(</span><span class="n">dds</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 格式为c(&#34;因子名&#34;，“实验组”，“对照组”)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span><span class="o">&lt;-</span><span class="nf">results</span><span class="p">(</span><span class="n">dds</span><span class="p">,</span><span class="n">contrast</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;group&#34;</span><span class="p">,</span><span class="s">&#34;H&#34;</span><span class="p">,</span><span class="s">&#34;L&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 提取差异表达结果</span>
+</span></span><span class="line"><span class="cl"><span class="n">res1</span><span class="o">&lt;-</span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># log2FoldChange差异倍数的对数值：H 组表达量 / L 组表达量 的 log₂ 结果</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># lfcSE是log2FC 的标准误，代表差异倍数的统计波动程度（值越小，log2FC 越可靠）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pvalue越小越拒绝原假设H0，越显著性差异</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># padj是校准后的P值，控制多检验的假阳性</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 结果筛选padj&lt;0.05 &amp; abs(log2FoldChange)&gt;=1，选出差异表达</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="n">res1</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;DEG1.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">col.names</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">quote</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">degs</span><span class="o">&lt;-</span><span class="nf">filter</span><span class="p">(</span><span class="n">res1</span><span class="p">,</span><span class="n">padj</span><span class="o">&lt;</span><span class="m">0.05</span> <span class="o">&amp;</span> <span class="nf">abs</span><span class="p">(</span><span class="n">log2FoldChange</span><span class="p">)</span><span class="o">&gt;=</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">view</span><span class="p">(</span><span class="n">degs</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是最后选出的degs表格样式：</p>
+<img src="image-20260205190953328.png" width="600">
+<ul>
+<li>根据筛选出来的表格样式，使用导出的DEG1.txt进行火山图和热图绘制，与之前limma部分一致，注意纵轴名的相应更改即可。</li>
+</ul>
+<p>如下是limma后进行的火山图与热图分析结果：</p>
+<img src="volcanoGSE309139.jpg" width="600">
+<img src="heatmap2_GSE309139.jpg" width="600">
 
 </section>
 
@@ -1296,7 +1537,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 
 
         <span>
-            最后更新于 Feb 05, 2026 13:56 &#43;0800
+            最后更新于 Feb 05, 2026 22:16 &#43;0800
         </span>
     </section></footer>
 
