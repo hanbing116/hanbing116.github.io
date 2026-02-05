@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数据下载及处理 页面介绍 GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台\nLink：Home - GEO - NCBI\n如下是进入搜索的一个关于甲状腺癌的文件\nGEO Accession viewer\nPlatforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。 Samples：（GSMxxxx）样本列表，可以查看每一个样本信息 Relations：关联信息，可找到该项目的其他数据 Download family： SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。 Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。 Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。 Platform里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。\n">
+<title>GEO转录本分析</title>
+
+<link rel='canonical' href='https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/'>
+
+<link rel="stylesheet" href="/scss/style.min.c0d605b7953fc0036a87c3d146cec3966b491ddd221d9da6ce05903357fa1037.css"><meta property='og:title' content="GEO转录本分析">
+<meta property='og:description' content="数据下载及处理 页面介绍 GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台\nLink：Home - GEO - NCBI\n如下是进入搜索的一个关于甲状腺癌的文件\nGEO Accession viewer\nPlatforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。 Samples：（GSMxxxx）样本列表，可以查看每一个样本信息 Relations：关联信息，可找到该项目的其他数据 Download family： SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。 Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。 Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。 Platform里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。\n">
+<meta property='og:url' content='https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/'>
+<meta property='og:site_name' content='龙林'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='生信' /><meta property='article:published_time' content='2026-02-01T18:49:46&#43;08:00'/><meta property='article:modified_time' content='2026-02-05T13:56:23&#43;08:00'/>
+<meta name="twitter:title" content="GEO转录本分析">
+<meta name="twitter:description" content="数据下载及处理 页面介绍 GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台\nLink：Home - GEO - NCBI\n如下是进入搜索的一个关于甲状腺癌的文件\nGEO Accession viewer\nPlatforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。 Samples：（GSMxxxx）样本列表，可以查看每一个样本信息 Relations：关联信息，可找到该项目的其他数据 Download family： SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。 Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。 Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。 Platform里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。\n"><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>网站加载页</title>
+    <style>
+        .loading {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #f5f5fa;
+            display: none;
+             
+            transition: opacity 1.2s ease-out; 
+        }
+
+         
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+        }
+
+        @keyframes blink-caret {
+          50% {
+            border-color: transparent;
+          }
+        }
+
+        .animation {
+          font:
+            bold 200% Consolas,
+            Monaco,
+            monospace;
+          border-right: 0.1em solid black;
+          width: 13.2ch;
+          margin: 2em 2em;
+          white-space: nowrap;
+          overflow: hidden;
+          -webkit-animation:
+            typing 1.2s steps(13, end),    
+            blink-caret 0.5s step-end infinite alternate;
+        }
+
+         
+        .loading-fadeout {
+            opacity: 0;  
+            pointer-events: none;  
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="loading">
+        <div class="animation">hello again!</div>
+    </div>
+
+    <script>	
+        function initLoading() {
+            const loading = document.querySelector(".loading");
+            const currentDomain = window.location.hostname;
+            const referrer = document.referrer;
+
+            
+            const isNewVisit = !referrer || !referrer.includes(currentDomain);
+
+            if (isNewVisit) {
+                loading.style.display = "flex"; 
+                
+                
+                setTimeout(() => {
+                    loading.classList.add("loading-fadeout");
+                }, 1200); 
+
+                
+                setTimeout(() => {
+                    loading.style.display = "none";
+                }, 2500);
+            } else {
+                loading.style.display = "none"; 
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initLoading);
+    </script>
+</body>
+</html>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+
+        <div id="global-music-player" style="position: fixed; bottom: 80px; left: 10px; z-index: 9999; background: var(--card-bg); padding: 3px 6px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <p style="color: var(--text-color); font-size: 12px; margin: 0 0 2px 0; text-align: center;" id="music-title">正在播放：see you soon</p>
+            <div style="display: flex; gap: 6px; align-items: center; justify-content: center; margin-bottom: 2px;">
+                <button onclick="prevMusic()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">←上曲</button>
+                
+                <button onclick="togglePlay()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;" id="play-btn">▶️ 播放</button>
+                <button onclick="nextMusic()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">下曲→</button>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
+                <span style="color: var(--text-color); font-size: 10px;">音量🔊</span>
+                <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.3" 
+                       style="width: 120px; height: 6px; cursor: pointer; accent-color: var(--link-color);">
+            </div>
+            <audio id="bg-music" preload="metadata" style="display: none;">
+        </div>
+
+        
+        <script>
+            const musicList = [
+                { src: "/audio/1.mp3", title: "See you soon" },
+                { src: "/audio/flower.mp3", title: "Flower dance" },
+            ];
+
+            const audio = document.getElementById('bg-music');
+            const titleEl = document.getElementById('music-title');
+            const playBtn = document.getElementById('play-btn');
+            const volumeControl = document.getElementById('volume-control');
+            let currentTrack = 0;
+            audio.volume = 0.3;
+
+            
+            function restoreState() {
+                const savedTrack = localStorage.getItem('currentMusicTrack');
+                if (savedTrack) currentTrack = parseInt(savedTrack);
+                
+                const savedTime = localStorage.getItem('musicPlayTime');
+                if (savedTime) audio.currentTime = parseFloat(savedTime);
+                
+                const isPlaying = localStorage.getItem('musicIsPlaying') === 'true';
+                const savedVolume = localStorage.getItem('musicVolume');
+                if (savedVolume) {
+                    audio.volume = parseFloat(savedVolume);
+                    volumeControl.value = audio.volume;
+                }
+                
+                audio.src = musicList[currentTrack].src;
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                
+                if (isPlaying) {
+                    audio.play().then(() => {
+                        playBtn.innerHTML = '⏸️ 暂停';
+                    }).catch(err => console.log('自动播放被阻止：', err));
+                }
+            }
+
+            
+            function saveState() {
+                localStorage.setItem('currentMusicTrack', currentTrack);
+                localStorage.setItem('musicPlayTime', audio.currentTime);
+                localStorage.setItem('musicIsPlaying', !audio.paused);
+                localStorage.setItem('musicVolume', audio.volume);
+            }
+
+            
+            function togglePlay() {
+                if (audio.paused) {
+                    audio.play();
+                    playBtn.innerHTML = '⏸️ 暂停';
+                } else {
+                    audio.pause();
+                    playBtn.innerHTML = '▶️ 播放';
+                }
+                saveState();
+            }
+
+            
+            function prevMusic() {
+                currentTrack = (currentTrack - 1 + musicList.length) % musicList.length;
+                audio.src = musicList[currentTrack].src;
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                audio.play();
+                playBtn.innerHTML = '⏸️ 暂停';
+                saveState();
+            }
+
+            
+            function nextMusic() {
+                currentTrack = (currentTrack + 1) % musicList.length;
+                audio.src = musicList[currentTrack].src;
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                audio.play();
+                playBtn.innerHTML = '⏸️ 暂停';
+                saveState();
+            }
+
+            
+            volumeControl.addEventListener('input', function() {
+                audio.volume = this.value;
+                saveState();
+            });
+
+            
+            audio.addEventListener('ended', function() {
+                nextMusic();
+            });
+
+            
+            audio.addEventListener('timeupdate', saveState);
+            audio.addEventListener('play', saveState);
+            audio.addEventListener('pause', saveState);
+
+            
+            window.onload = restoreState;
+        </script>
+
+        <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_364ff52ddadda246.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">龙林</a></h1>
+            <h2 class="site-description">欢迎来到我的网站</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/hanbing116/hanbing116.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#数据下载及处理">数据下载及处理</a>
+      <ol>
+        <li><a href="#页面介绍">页面介绍</a></li>
+        <li><a href="#geo数据处理">GEO数据处理</a></li>
+        <li><a href="#geo非symbol基因名的处理">GEO非symbol基因名的处理</a></li>
+        <li><a href="#geo的affymetrix原始数据整理">GEO的Affymetrix原始数据整理</a></li>
+        <li><a href="#geo高通量数据">GEO高通量数据</a></li>
+      </ol>
+    </li>
+    <li><a href="#geo数据差异分析">GEO数据差异分析</a>
+      <ol>
+        <li><a href="#limma芯片数据差异分析">limma芯片数据差异分析</a>
+          <ol>
+            <li><a href="#火山图">火山图</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <footer class="article-time">
+        
+        <div id="viewCount">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+            <time class="article-time--reading">
+                
+                <span id="busuanzi_value_page_pv">loading... </span>次
+            </time>
+        </div><div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    Feb 05, 2026 13:56 &#43;0800
+                </time>
+            </div></footer>
+
+
+   
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/">GEO转录本分析</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-02-01T18:49:46&#43;08:00'>2026-02-01</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="数据下载及处理">数据下载及处理
+</h1><h2 id="页面介绍">页面介绍
+</h2><p>GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台</p>
+<p>Link：<a class="link" href="https://www.ncbi.nlm.nih.gov/geo/"  target="_blank" rel="noopener"
+    >Home - GEO - NCBI</a></p>
+<p>如下是进入搜索的一个关于甲状腺癌的文件</p>
+<p><a class="link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299988"  target="_blank" rel="noopener"
+    >GEO Accession viewer</a></p>
+<img src="image-20260201190547518.png" width="600">
+<ul>
+<li>Platforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。</li>
+<li>Samples：（GSMxxxx）样本列表，可以查看每一个样本信息</li>
+<li>Relations：关联信息，可找到该项目的其他数据</li>
+<li>Download family：
+<ul>
+<li>SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。</li>
+<li>Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。</li>
+</ul>
+</li>
+<li>Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。</li>
+</ul>
+<p><strong>Platform</strong>里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。</p>
+<p>需要Download full table…</p>
+<img src="image-20260201212109027.png" width="600">
+<h2 id="geo数据处理">GEO数据处理
+</h2><p>下载Download family处的Series Matrix File(s)文件和Platform里的full table文件。</p>
+<ul>
+<li>安装BiocManager包，再用BiocManager安装其他包</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">BiocManager</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&#34;GEOquery&#34;</span><span class="p">)</span> <span class="c1"># 下载GEOquery包</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis&#39;</span><span class="p">)</span> <span class="c1"># 设置工作路径；注意只能是“/”</span>
+</span></span><span class="line"><span class="cl"><span class="n">gset</span><span class="o">&lt;-</span><span class="nf">getGEO</span><span class="p">(</span><span class="s">&#34;GSE299988&#34;</span><span class="p">,</span><span class="n">destdir</span><span class="o">=</span><span class="s">&#34;.&#34;</span><span class="p">,</span><span class="n">AnnotGPL</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">getGPL</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># getGEO(GEO,GSEMatrix = TRUE,AnnotGPL = FALSE,destdir = &#34;.&#34;,getGPL = TRUE)，这是getGEO()函数的使用格式。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># GSEMatrix指是否下载整理好的 Series Matrix 表达矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AnnotGPL指是否同时下载平台注释表（GPL）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># destdir指数据保存到本地的路径（默认为&#34;.&#34;）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># getGPL指是否自动下载对应的 GPL 平台文件。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">gset</span><span class="p">)</span> <span class="c1"># 读取的为list类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">gset[[1]]</span> <span class="c1"># 查看信息，GSE只有一个平台就是1，可能有列表中其他平台，要查看就是更改成gset[[2]]等等</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="nf">exprs</span><span class="p">(</span><span class="n">gset[[1]]</span><span class="p">)</span><span class="c1"># 提取基因表达矩阵数据，由于没有载入注释文件，矩阵的行名还是探针名</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1、标准化</span>
+</span></span><span class="line"><span class="cl"><span class="nf">boxplot</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span> <span class="c1"># 绘制表达量分布箱线图，快速检查数据的整体质量和标准化效果。在同一条直线上则是已经标准化了</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># boxplot(x, outline, las) x为表达矩阵，outline为是否显示异常值点，las为控制x轴标签方向：1 = 水平，2 = 垂直</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="nf">normalizeBetweenArrays</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="c1"># 手动标准化，再去查看箱图</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2、归一化</span>
+</span></span><span class="line"><span class="cl"><span class="nf">range</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="c1"># 查看range范围，数值过大需要归一化，log2处理</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="nf">log2</span><span class="p">(</span><span class="n">exp</span><span class="m">+1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3、基因注释，GPL导入</span>
+</span></span><span class="line"><span class="cl"><span class="n">gpl</span><span class="o">&lt;-</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#34;GPL21185-21174.txt&#34;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;\t&#34;</span><span class="p">,</span><span class="n">comment.char</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">,</span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">quote</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># header=T列名保留</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># fill=T文件中某些行的列数不一致时，自动用空值填充缺失的列</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sep=&#34;\t&#34;指定列之间的分隔符是制表符（Tab）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># comment.char=&#34;#&#34;忽略文件中以 # 开头的注释行</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># stringsAsFactors=F把字符型数据（如探针 ID、基因名）保留为字符串，而不是自动转换成因子</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># quote=&#39;&#39;告诉 R 文件中没有引号包裹的字符串，避免把基因名或 ID 中的特殊字符误判为引号</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">gpl</span><span class="p">)</span> <span class="c1"># 查看列名</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">&lt;-</span><span class="n">gpl[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;ID&#34;</span><span class="p">,</span><span class="s">&#34;GENE_SYMBOL&#34;</span><span class="p">)</span><span class="n">]</span> <span class="c1"># 选取查看的两列</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;probe_id&#34;</span><span class="p">,</span><span class="s">&#34;symbol&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">$</span><span class="n">symbol</span><span class="o">&lt;-</span><span class="nf">trimws</span><span class="p">(</span><span class="nf">str_split</span><span class="p">(</span><span class="n">ids</span><span class="o">$</span><span class="n">symbol</span><span class="p">,</span><span class="s">&#34;//&#34;</span><span class="p">,</span><span class="n">simplify</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="m">3</span><span class="n">]</span><span class="p">)</span><span class="c1"># 如果是第3个是基因，就选择第3列</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># stringr包是tidyverse生态里专门处理字符串的工具包</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># str_split()是按指定分隔符拆分字符串</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># simplify=T默认返回列表，设为TRUE后会直接返回矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># trimws()去除提取出的第 3 个基因名两端的空白字符，确保基因名格式干净</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">&lt;-</span><span class="n">ids[ids</span><span class="o">$</span><span class="n">symbol</span><span class="o">!=</span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="n">]</span> <span class="c1"># 删除了空白探针</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">&lt;-</span><span class="n">ids[ids</span><span class="o">$</span><span class="n">symbol</span><span class="o">!=</span><span class="s">&#39;---&#39;</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">&lt;-</span><span class="n">ids[ids</span><span class="o">$</span><span class="n">symbol</span><span class="o">!=</span><span class="s">&#39;--- &#39;</span><span class="p">,</span><span class="n">]</span> <span class="c1"># 具体情况具体格式删除</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">&lt;-</span><span class="n">ids[ids</span><span class="o">$</span><span class="n">probe_id</span> <span class="o">%in%</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">exp</span><span class="p">),</span><span class="n">]</span> <span class="c1"># 保留ids中与exp匹配的行</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp2</span><span class="o">&lt;-</span><span class="n">exp[ids</span><span class="o">$</span><span class="n">probe_id</span><span class="p">,</span><span class="n">]</span> <span class="c1"># 选取exp中与ids相互匹配的行</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">exp2</span><span class="p">)</span><span class="o">==</span><span class="n">ids</span><span class="o">$</span><span class="n">probe_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp3</span><span class="o">&lt;-</span><span class="nf">cbind</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span><span class="n">exp2</span><span class="p">)</span> <span class="c1"># 合并两者为数据框</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4、基因去重（一个基因会有多个探针）</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp3</span><span class="o">&lt;-</span><span class="nf">aggregate</span><span class="p">(</span> <span class="n">. </span><span class="o">~</span><span class="n">symbol</span><span class="p">,</span><span class="n">exp3</span><span class="p">,</span><span class="n">max</span><span class="p">)</span> <span class="c1"># 合并同一基因的多探针表达量</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># . ~ symbol去重的核心逻辑，“.”代表除了symbol列之外的所有列，~symbol代表按照symbol列进行分组</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># max指取每个基因对应探针的最大表达量作为代表值，也可以选择mean平均</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rownames</span><span class="p">(</span><span class="n">exp3</span><span class="p">)</span><span class="o">&lt;-</span><span class="n">exp3</span><span class="o">$</span><span class="n">symbol</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp3</span><span class="o">&lt;-</span><span class="n">exp3[</span><span class="p">,</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">)</span><span class="n">]</span> <span class="c1"># 再删去合并的前两列</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5、获取临床数据</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">Biobase</span><span class="p">)</span> <span class="c1"># pData是Biobase里面的函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt1</span><span class="o">&lt;-</span><span class="nf">pData</span><span class="p">(</span><span class="n">gset[[1]]</span><span class="p">)</span> <span class="c1"># 先前exprs函数是获取的gset中基因表达矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pData函数用来从 ExpressionSet 对象中提取 phenotype data（表型数据），也就是每个样本的临床信息，比如分组、性别、年龄、疾病分期等。</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.csv</span><span class="p">(</span><span class="n">rt1</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;GSE299988_cli.csv&#39;</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#（1）疾病分组</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">rt1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">group_list</span><span class="o">&lt;-</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">rt1</span><span class="o">$</span><span class="n">`tissue types:ch1`</span><span class="o">==</span><span class="s">&#39;Normal&#39;</span><span class="p">,</span><span class="s">&#39;Normal&#39;</span><span class="p">,</span><span class="s">&#39;Tumor&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 将Normal与Tumor细胞分开</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 更多组别的分组：group_list&lt;-ifelse(str_detect(rt1$`title`,&#39;normal_adjace&#39;),&#39;Normal&#39;,ifelse(str_detect(rt1$`title`,&#39;positiveLN_RAIrefractive&#39;),&#39;P_tumor&#39;,&#39;N_tumor&#39;))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># str_detect可以模糊字符选择</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt1</span><span class="o">$</span><span class="n">group</span><span class="o">&lt;-</span><span class="n">group_list</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt2</span><span class="o">&lt;-</span><span class="n">rt1</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="s">&#34;group&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># %&gt;%管道操作符，把左边的rt1作为右边函数的输入</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dplyr::select()用于从数据框中选择特定的列</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># （2）分组排列</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt3</span><span class="o">&lt;-</span><span class="n">rt2</span> <span class="o">%&gt;%</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">rt2</span><span class="p">)</span> <span class="c1"># 升序排列，Normal在前，Tumor在后</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># rt3&lt;-rt2 %&gt;% arrange(desc(group)) Tumor在前，Normal在后</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 6、数据保存</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># exp3与rt3的列行一一对应</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp3</span><span class="o">&lt;-</span><span class="n">exp3[</span><span class="p">,</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt3</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt3</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp3</span><span class="p">))</span> <span class="c1"># 返回为T确认一一对应</span>
+</span></span><span class="line"><span class="cl"><span class="nf">save</span><span class="p">(</span><span class="n">rt3</span><span class="p">,</span><span class="n">exp3</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#34;GSE299988.rda&#34;</span><span class="p">)</span> <span class="c1"># 保存数据</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 之后可以直接load(&#34;GSE299988.rda&#34;)进行使用</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="geo非symbol基因名的处理">GEO非symbol基因名的处理
+</h2><p>常见标识类型：
+Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的基因编号；RefSeq Accession是NCBI RefSeq 数据库的转录本编号，如 <code>NM_000546</code>；ENSEMBL ID对应Ensembl 数据库的基因 / 转录本编号，如 <code>ENSG00000141510</code>；GenBank Accession（GB ACC）对应GenBank 数据库的核酸序列编号，如 <code>U94788</code>。</p>
+<img src="image-20260203143207467.png" width="600">
+<p>如GSE200539的GPL文件中不包含symbol文件</p>
+<p><a class="link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE200539"  target="_blank" rel="noopener"
+    >GEO Accession viewer</a></p>
+<ul>
+<li>Platforms进入的网页下可能有的没有Download full table…，则需要下载table下方的Download family中的SOFT formatted family file(s)，下载为soft.gz文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/GSE200539&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 中间部分与上述GEO数据处理部分一致</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 基因注释，soft导入（没有Download full table…的情况下）</span>
+</span></span><span class="line"><span class="cl"><span class="n">GPL</span><span class="o">&lt;-</span><span class="nf">getGEO</span><span class="p">(</span><span class="n">filenames</span><span class="o">=</span><span class="s">&#34;GPL23159_family.soft.gz&#34;</span><span class="p">,</span><span class="n">destdir</span><span class="o">=</span><span class="s">&#34;.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gpl</span><span class="o">&lt;-</span><span class="n">GPL</span><span class="o">@</span><span class="n">dataTable</span><span class="o">@</span><span class="n">table</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 由于这个注释文件没有Gene symbol，有NM_序列，因此提取这一列</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">&lt;-</span><span class="n">gpl[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;ID&#34;</span><span class="p">,</span><span class="s">&#34;SPOT_ID.1&#34;</span><span class="p">)</span><span class="n">]</span> <span class="c1"># 选取查看的两列</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;probe_id&#34;</span><span class="p">,</span><span class="s">&#34;symbol&#34;</span><span class="p">)</span> <span class="c1"># 重命名</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">$</span><span class="n">symbol</span><span class="o">&lt;-</span><span class="nf">trimws</span><span class="p">(</span><span class="nf">str_split</span><span class="p">(</span><span class="n">ids</span><span class="o">$</span><span class="n">symbol</span><span class="p">,</span><span class="s">&#34;//&#34;</span><span class="p">,</span><span class="n">simplify</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span><span class="p">)</span> <span class="c1"># 选取//分割的第一列NM_序列</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载两个包：BiocManager::install(c(&#34;org.Hs.eg.db&#34;, &#34;AnnotationDbi&#34;))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># org.Hs.eg.db包是人类基因注释数据库包，Hs 代表 Homo sapiens（人），eg 代表 Entrez Gene。包含了人类基因的各种标识符（如 Entrez Gene ID、Gene Symbol、Ensembl ID 等）之间的映射关系</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AnnotationDbi包是所有注释数据库包的核心接口包</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">org.Hs.eg.db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">AnnotationDbi</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">symbol_ids</span><span class="o">&lt;-</span><span class="nf">mapIds</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">org.Hs.eg.db</span><span class="p">,</span><span class="n">keys</span><span class="o">=</span><span class="n">ids</span><span class="o">$</span><span class="n">symbol</span><span class="p">,</span><span class="n">keytype</span><span class="o">=</span><span class="s">&#34;REFSEQ&#34;</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="s">&#34;SYMBOL&#34;</span><span class="p">,</span><span class="n">multivals</span><span class="o">=</span><span class="s">&#34;first&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># org.Hs.eg.db指定要使用的注释数据库，这里是人类基因注释库</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># keytype告诉输入的类型</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># column指定想要转换后的目标 ID 类型</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># multivals=&#34;first&#34; 处理 “一个输入 ID 对应多个输出 ID” 的情况。当一个 REFSEQ ID 对应多个基因符号时，只取第一个结果，避免返回列表，保证输出是一个向量</span>
+</span></span><span class="line"><span class="cl"><span class="n">symbol_ids</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">$</span><span class="n">symbol</span><span class="o">&lt;-</span><span class="n">symbol_ids</span> <span class="c1"># NM_序列转换为基因名</span>
+</span></span><span class="line"><span class="cl"><span class="n">ids</span><span class="o">&lt;-</span><span class="nf">na.omit</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span> <span class="c1"># 删除NA</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 注意：exp行名默认是字符，如果ids$symbol是纯数字，应当转变为字符格式ids$probe_id&lt;-as.character(ids$probe_id)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">exp2</span><span class="o">&lt;-</span><span class="n">exp[ids</span><span class="o">$</span><span class="n">probe_id</span><span class="p">,</span><span class="n">]</span> <span class="c1"># 选取exp中与ids相互匹配的行</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">exp2</span><span class="p">)</span><span class="o">==</span><span class="n">ids</span><span class="o">$</span><span class="n">probe_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp3</span><span class="o">&lt;-</span><span class="nf">cbind</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span><span class="n">exp2</span><span class="p">)</span> <span class="c1"># 合并两者为数据框</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 之后与之前GEO数据处理部分一致</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="geo的affymetrix原始数据整理">GEO的Affymetrix原始数据整理
+</h2><p>上述的GEO处理基于Download family中的Series Matrix File(s)下载后处理，这是已经预处理过的表达矩阵数据。通常是经过背景校正、归一化和探针注释后的表格。无法验证或调整预处理过程（如归一化方法）。</p>
+<p>因此有时选取Supplementary file(s)里面的RAW原始文件，是原始的 CEL 文件压缩包，包含芯片扫描得到的原始荧光信号数据。</p>
+<p>如上述的GSE200539的Supplementary file里面的GSE200539_RAW.tar</p>
+<img src="image-20260203193135429.png" width="600">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/GSE200539/Affymetrix原始数据处理&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载：BiocManager::install(&#34;oligo&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Bioconductor 生态里专门用来处理 Affymetrix 芯片原始数据的 R 包</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">oligo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1、数据导入</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileName</span><span class="o">&lt;-</span><span class="nf">list.files</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s">&#39;./GSE200539_RAW&#39;</span><span class="p">)</span> <span class="c1"># 注意提前解压</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileName</span>
+</span></span><span class="line"><span class="cl"><span class="n">sample_id</span><span class="o">&lt;-</span><span class="nf">str_sub</span><span class="p">(</span><span class="n">FileName</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">)</span> <span class="c1"># 重命名，此处选取前10个字符，即命名为如GSM6037488的样式</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">&lt;-</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">FileName</span><span class="o">=</span><span class="n">FileName</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="n">sample_id</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;CTL&#39;</span><span class="p">,</span><span class="s">&#39;IDMF&#39;</span><span class="p">,</span><span class="s">&#39;DRF&#39;</span><span class="p">,</span><span class="s">&#39;MMF&#39;</span><span class="p">),</span><span class="n">each</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 分组数据参考网站上的Sample的分组，共4组，每组3个样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">cel_files</span><span class="o">&lt;-</span><span class="nf">list.celfiles</span><span class="p">(</span><span class="s">&#39;./GSE200539_RAW&#39;</span><span class="p">,</span><span class="n">full.names</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">listGzipped</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># list.celfiles()是oligo包的核心函数，用于搜索指定目录下的所有 .CEL文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#39;./GSE200539_RAW&#39;当前目录下的GSE200539_RAW文件夹</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># full.names=T返回完整的文件路径（包含文件夹名）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># listGzipped=T支持识别并列出被gzip压缩的 .CEL.gz文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">cel_files</span>
+</span></span><span class="line"><span class="cl"><span class="n">cel_data</span><span class="o">&lt;-</span><span class="nf">read.celfiles</span><span class="p">(</span><span class="n">cel_files</span><span class="p">)</span> <span class="c1"># 通过cel_files获取的所有文件路径导入并读取</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2、质控处理</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载：BiocManager::install(&#39;arrayQualityMetrics&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># arrayQualityMetrics包是Bioconductor中专门用于芯片数据质量控制的工具包，能自动生成详细的质控报告，包含多种图表来评估数据质量。</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">arrayQualityMetrics</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 版本问题手动下载吧……然后根据指示下一堆依赖包</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">expr</span><span class="o">&lt;-</span><span class="nf">exprs</span><span class="p">(</span><span class="n">cel_data</span><span class="p">)</span> <span class="c1">#读取数据为原始表达量的矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="o">&lt;-</span><span class="n">sample_id</span> <span class="c1"># 列名重命名</span>
+</span></span><span class="line"><span class="cl"><span class="n">eset</span><span class="o">&lt;-</span><span class="nf">ExpressionSet</span><span class="p">(</span><span class="n">assayData</span><span class="o">=</span><span class="n">expr</span><span class="p">,</span><span class="n">phenoData</span><span class="o">=</span><span class="nf">AnnotatedDataFrame</span><span class="p">(</span><span class="n">rt</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ExpressionSet()是Biobase包的核心函数，用来整合表达数据、样本信息和注释信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AnnotatedDataFrame()把rt数据框转换成 ExpressionSet 要求的注释数据框格式</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 此处是转换为ExpressionSet用于质控分析</span>
+</span></span><span class="line"><span class="cl"><span class="nf">arrayQualityMetrics</span><span class="p">(</span><span class="n">eset</span><span class="p">,</span><span class="n">outdir</span><span class="o">=</span><span class="s">&#39;GSE200539_QulityMetrics&#39;</span><span class="p">,</span><span class="n">force</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">do.logtransform</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">intgroup</span><span class="o">=</span><span class="s">&#39;group&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># force=T如果输出文件夹已经存在，强制覆盖它，避免报错</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># do.logtransform=T对表达数据进行对数转换，这是芯片数据分析的常规预处理步骤</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># intgroup=&#39;group&#39;指定用于分组的表型信息列（比如 rt 数据框里的 group 列）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#rma标准化,对原始 CEL 文件数据进行背景校正、归一化和汇总</span>
+</span></span><span class="line"><span class="cl"><span class="n">eset_rma</span><span class="o">&lt;-</span><span class="n">oligo</span><span class="o">::</span><span class="nf">rma</span><span class="p">(</span><span class="n">cel_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">eset_rma</span><span class="p">)</span> <span class="c1"># &#34;ExpressionSet&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="nf">exprs</span><span class="p">(</span><span class="n">eset_rma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span><span class="o">&lt;-</span><span class="nf">str_sub</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">),</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">)</span> <span class="c1"># 保留列名前面10个字符</span>
+</span></span><span class="line"><span class="cl"><span class="nf">boxplot</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">notch</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span> <span class="c1"># 箱图看结果</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里的exp与之前章节得到的直接读取的exp相同</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 之后部分是基因注释，与先前相同</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="geo高通量数据">GEO高通量数据
+</h2><p>先前选取的都是GEO中的Expression profiling by array（芯片表达谱），通过荧光强度判断表达量。</p>
+<p>而GEO中Expression profiling by high throughput sequencing（高通量测序表达谱，通常指 RNA-seq）将样本 RNA 反转录建库后，直接进行大规模测序，通过比对基因组计数 reads 数。</p>
+<p>芯片表达谱是对RNA与探针结合的荧光进行测定，反映相对值。而高通量测序是对RNA基因片段数量进行测定，反映绝对值。</p>
+<p>高通量数据除了可以富集分析外，还可做可变剪接、融合基因、新转录本发现。</p>
+<p>选取GSE309139高通量数据为例，下载Series Matrix File(s)与GSE309139_raw_counts.txt.gz，原始的counts数据需解压</p>
+<p><a class="link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi"  target="_blank" rel="noopener"
+    >GEO Accession viewer</a></p>
+<img src="image-20260204184434548.png" width="600">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/GSE309139&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="n">data.table</span><span class="o">::</span><span class="nf">fread</span><span class="p">(</span><span class="s">&#34;GSE309139_raw_counts.txt&#34;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 用data.table::fread()高效读取RNA-seq原始计数文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># header=T 确保文件第一行（样本ID）作为列名</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span> <span class="c1"># 查看是否有缺失值</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="nf">[is.na</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span> <span class="c1"># 查看是否有缺失值</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="nf">column_to_rownames</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">var</span><span class="o">=</span><span class="s">&#39;Gene&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 把基因名那一列挪到最前面成为行名</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1、设置分组信息</span>
+</span></span><span class="line"><span class="cl"><span class="n">sample_id</span><span class="o">&lt;-</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sample_id</span>
+</span></span><span class="line"><span class="cl"><span class="n">group</span><span class="o">&lt;-</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;L&#39;</span><span class="p">,</span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="s">&#39;LL&#39;</span><span class="p">,</span><span class="s">&#39;HL&#39;</span><span class="p">),</span><span class="n">each</span><span class="o">=</span><span class="m">6</span><span class="p">)</span> <span class="c1"># 具体分组看具体数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">group</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">&lt;-</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">row.names</span><span class="o">=</span><span class="n">sample_id</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2、DESeq2分析</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># BiocManager::install(&#34;DESeq2&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">DESeq2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">$</span><span class="n">group</span><span class="o">&lt;-</span><span class="nf">factor</span><span class="p">(</span><span class="n">rt</span><span class="o">$</span><span class="n">group</span><span class="p">)</span> <span class="c1"># 变成因子的格式</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">$</span><span class="n">group</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 构建DESeq2对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">dds</span><span class="o">&lt;-</span><span class="nf">DESeqDataSetFromMatrix</span><span class="p">(</span><span class="n">countData</span><span class="o">=</span><span class="n">exp</span><span class="p">,</span><span class="n">colData</span><span class="o">=</span><span class="n">rt</span><span class="p">,</span><span class="n">design</span><span class="o">=~</span><span class="n">group</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># design=~group根据group分组来比较差异</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dds把原始计数数据、样本分组信息、实验设计逻辑打包在一起，后续所有分析（标准化、差异检验）都基于这个对象</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 低表达基因过滤（自定义，可选）</span>
+</span></span><span class="line"><span class="cl"><span class="n">filter</span><span class="o">&lt;-</span><span class="nf">rowSums</span><span class="p">(</span><span class="nf">counts</span><span class="p">(</span><span class="n">dds</span><span class="p">))</span><span class="o">&gt;</span><span class="m">1</span> <span class="c1"># 筛选每行加起来大于1的基因</span>
+</span></span><span class="line"><span class="cl"><span class="n">dds</span><span class="o">&lt;-</span><span class="n">dds[filter</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 差异表达分析</span>
+</span></span><span class="line"><span class="cl"><span class="n">dds</span><span class="o">&lt;-</span><span class="nf">DESeq</span><span class="p">(</span><span class="n">dds</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 格式为c(&#34;因子名&#34;，“实验组”，“对照组”)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span><span class="o">&lt;-</span><span class="nf">results</span><span class="p">(</span><span class="n">dds</span><span class="p">,</span><span class="n">contrast</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;group&#34;</span><span class="p">,</span><span class="s">&#34;H&#34;</span><span class="p">,</span><span class="s">&#34;L&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 提取差异表达结果</span>
+</span></span><span class="line"><span class="cl"><span class="n">res1</span><span class="o">&lt;-</span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># log2FoldChange差异倍数的对数值：H 组表达量 / L 组表达量 的 log₂ 结果</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># lfcSE是log2FC 的标准误，代表差异倍数的统计波动程度（值越小，log2FC 越可靠）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pvalue越小越拒绝原假设H0，越显著性差异</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># padj是校准后的P值，控制多检验的假阳性</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 结果筛选padj&lt;0.05 &amp; abs(log2FoldChange)&gt;=1，选出差异表达</span>
+</span></span><span class="line"><span class="cl"><span class="n">degs</span><span class="o">&lt;-</span><span class="nf">filter</span><span class="p">(</span><span class="n">res1</span><span class="p">,</span><span class="n">padj</span><span class="o">&lt;</span><span class="m">0.05</span> <span class="o">&amp;</span> <span class="nf">abs</span><span class="p">(</span><span class="n">log2FoldChange</span><span class="p">)</span><span class="o">&gt;=</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">view</span><span class="p">(</span><span class="n">degs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 绘制离散图</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plotDispEsts</span><span class="p">(</span><span class="n">dds</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 离散图横轴是基因经过标准化后的平均表达量，纵轴离散度，衡量基因表达量的变异程度</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># P值直方图，看P值显著基因多少</span>
+</span></span><span class="line"><span class="cl"><span class="nf">hist</span><span class="p">(</span><span class="n">res</span><span class="o">$</span><span class="n">padj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3、count数据vst转化，这里得到exp1的数据就不是整数了，可以理解为之前章节的exp，之后就是一样的标准化操作等等</span>
+</span></span><span class="line"><span class="cl"><span class="n">vst</span><span class="o">&lt;-</span><span class="nf">vst</span><span class="p">(</span><span class="n">dds</span><span class="p">,</span><span class="n">blind</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># vst()将RNA-seq的原始计数数据转换为适合可视化和下游分析的数值</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># blind=F变换时考虑实验设计信息，不会忽略分组差异，这样能更真实地保留生物学差异</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp1</span><span class="o">&lt;-</span><span class="nf">assay</span><span class="p">(</span><span class="n">vst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">range</span><span class="p">(</span><span class="n">exp1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp1</span><span class="o">&lt;-</span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">exp1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">save</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">exp1</span><span class="p">,</span><span class="n">rt</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;GSE309139.rda&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="geo数据差异分析">GEO数据差异分析
+</h1><p>差异分析：芯片数据——array limma ；高通量——count DESeq2</p>
+<h2 id="limma芯片数据差异分析">limma芯片数据差异分析
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/limma差异分析&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggpubr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 数据读取，直接使用之前第一部分处理好的数据</span>
+</span></span><span class="line"><span class="cl"><span class="nf">load</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/GSE299988/GSE299988.rda&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="o">&lt;-</span><span class="n">rt3</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="n">exp3</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="c1"># 数据全是字符型：$ GSM9051410: chr  &#34;8.561352698&#34; &#34;5.812654031&#34; &#34;2.853925376&#34; &#34;13.89898258&#34; ...</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span><span class="o">&lt;-</span><span class="n">exp</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="nf">everything</span><span class="p">(),</span><span class="n">as.numeric</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 把数据框 exp 里所有列的数据类型都转换成数值型</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="c1"># 把数据转换成了数字型：$ GSM9051410: num  8.56 5.81 2.85 13.9 8.65 ...</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 确认行名列名一致</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="火山图">火山图
+</h3><p>接上述limma差异分析</p>
+<p>如下是下述代码的DEG结果数据框图：</p>
+<img src="image-20260204223019416.png" width="600">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">group_list</span><span class="o">&lt;-</span><span class="nf">factor</span><span class="p">(</span><span class="n">rt</span><span class="o">$</span><span class="n">group</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Normal&#34;</span><span class="p">,</span><span class="s">&#34;Tumor&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 把临床数据的分组弄成因子形式</span>
+</span></span><span class="line"><span class="cl"><span class="n">design</span><span class="o">&lt;-</span><span class="nf">model.matrix</span><span class="p">(</span><span class="o">~</span><span class="n">group_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># model.matrix()：把因子型的分组信息转化为统计模型可识别的数值矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 基于上面的 group_list，生成的设计矩阵会以 Normal 作为截距（基线），用一列数值来表示 Tumor 组与基线的差异</span>
+</span></span><span class="line"><span class="cl"><span class="n">design</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 线性模型拟合</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span><span class="o">&lt;-</span><span class="nf">lmFit</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">design</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 贝叶斯检验</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span><span class="o">&lt;-</span><span class="nf">eBayes</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">deg</span><span class="o">&lt;-</span><span class="nf">topTable</span><span class="p">(</span><span class="n">fit2</span><span class="p">,</span><span class="n">coef</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">number</span><span class="o">=</span><span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 是差异表达基因结果数据框，包含了所有基因的差异分析结果</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span><span class="o">=</span><span class="nf">na.omit</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span> <span class="c1"># 去除可能的NA值</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;DEG1.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;\t&#34;</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">col.names</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">quote</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># quote=F：不在字符串两端添加引号，避免后续读取时出现多余的引号干扰</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 通常logFC设置为1，adj.P.Val&lt;0.05，下述代码进行显著水平与正负相关性的区分</span>
+</span></span><span class="line"><span class="cl"><span class="n">logFC_cutoff</span><span class="o">&lt;-</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">type1</span><span class="o">=</span><span class="p">(</span><span class="n">DEG</span><span class="o">$</span><span class="n">adj.P.Val</span><span class="o">&lt;</span><span class="m">0.05</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">DEG</span><span class="o">$</span><span class="n">logFC</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">logFC_cutoff</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">type2</span><span class="o">=</span><span class="p">(</span><span class="n">DEG</span><span class="o">$</span><span class="n">adj.P.Val</span><span class="o">&lt;</span><span class="m">0.05</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">DEG</span><span class="o">$</span><span class="n">logFC</span> <span class="o">&gt;</span> <span class="n">logFC_cutoff</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span><span class="o">$</span><span class="n">change</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">type1</span><span class="p">,</span><span class="s">&#34;DOWN&#34;</span><span class="p">,</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">type2</span><span class="p">,</span><span class="s">&#34;UP&#34;</span><span class="p">,</span><span class="s">&#34;NOT&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;DEG2.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;\t&#34;</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">col.names</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">quote</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">DEG</span><span class="o">$</span><span class="n">change</span><span class="p">)</span> <span class="c1"># 统计上述3中情况：&#34;DOWN&#34;,&#34;UP&#34;,&#34;NOT&#34;的个数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">cowplot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggrepel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span><span class="o">&lt;-</span><span class="nf">mutate</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">Gene_symbol</span><span class="o">=</span><span class="nf">row.names</span><span class="p">(</span><span class="n">DEG</span><span class="p">))</span> <span class="c1"># 把Gene_symbol弄到最后一列</span>
+</span></span><span class="line"><span class="cl"><span class="n">UPDEG</span><span class="o">&lt;-</span><span class="nf">subset</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">change</span><span class="o">==</span><span class="s">&#34;UP&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">UPDEG_5</span><span class="o">&lt;-</span><span class="nf">top_n</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">UPDEG</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="m">-5</span><span class="p">,</span><span class="n">wt</span><span class="o">=</span><span class="n">P.Value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># n = -5：- 表示按升序取最小的 5 个，+ 表示按降序取最大的 5 个</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># wt = P.Value：按 P.Value 列来排序，P 值越小代表差异越显著</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 由此选取最小的5组就是最小的5个P，最显著的5个</span>
+</span></span><span class="line"><span class="cl"><span class="n">DOWNDEG</span><span class="o">&lt;-</span><span class="nf">subset</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">change</span><span class="o">==</span><span class="s">&#34;DOWN&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DOWNDEG_5</span><span class="o">&lt;-</span><span class="nf">top_n</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">DOWNDEG</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="m">-5</span><span class="p">,</span><span class="n">wt</span><span class="o">=</span><span class="n">P.Value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">DEG</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">logFC</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">adj.P.Val</span><span class="p">)))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_point</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">4.5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="nf">aes</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="n">change</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">ylab</span><span class="p">(</span><span class="s">&#34;-log10(adj.P.Val)&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">xlab</span><span class="p">(</span><span class="s">&#34;log2(Fold Change)&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;#1F77B4&#34;</span><span class="p">,</span> <span class="s">&#34;grey&#34;</span><span class="p">,</span> <span class="s">&#34;#FF7F0E&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_vline</span><span class="p">(</span><span class="n">xintercept</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="m">0.05</span><span class="p">),</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">theme_half_open</span><span class="p">()</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># 标记最显著的5个上调基因</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_text_repel</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">UPDEG_5</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                  <span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">Gene_symbol</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                  <span class="n">vjust</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">box.padding</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="s">&#34;lines&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">point.padding</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="s">&#34;lines&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">segment.color</span> <span class="o">=</span> <span class="s">&#39;grey50&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">nudge_y</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">direction</span> <span class="o">=</span> <span class="s">&#34;y&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># 标记最显著的5个下调基因</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_text_repel</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">DOWNDEG_5</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                  <span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">Gene_symbol</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                  <span class="n">vjust</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">box.padding</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="s">&#34;lines&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">point.padding</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="s">&#34;lines&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">segment.color</span> <span class="o">=</span> <span class="s">&#39;grey50&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">nudge_y</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">direction</span> <span class="o">=</span> <span class="s">&#34;y&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="c1"># 查看火山图</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><img src="Rplot.png" width="600">
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%94%9F%E4%BF%A1/">生信</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Feb 05, 2026 13:56 &#43;0800
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/rscript/">
+        
+        
+            <div class="article-image">
+                <img src="/p/rscript/672e9c2eebe8fcd0b130ef28dbb29b6a.5cdf125b37881fc488849e13641d3ffb_hu_b633fa497d344d76.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Rscript"
+                        
+                        data-hash="md5-XN8SWzeIH8SIhJ4TZB0/&#43;w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rscript</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 龙林
+    </section>
+    
+    <section class="powerby">
+        
+            Copyright：hanbing <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<html>
+<body>
+  
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article =  document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+    
+    showHideView();
+</script>
+
+  <style>
+      body {
+        background: url(https://hanbing116.github.io/background/12.png) no-repeat center top;
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 0;
+        min-height: 100vh;
+      }
+    </style>
+    <script>
+      
+
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+const cssPath = "https://hanbing116.github.io/waifu/waifu.css"
+const waifuTipsJasonPath = "https://hanbing116.github.io/waifu/waifu-tips.json"
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(cssPath, 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: waifuTipsJasonPath,
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+    </script>
+    <script src=https://hanbing116.github.io/background/sakura.js></script>
+    
+    
+</body>
+
+</html>
+    </body>
+</html>
