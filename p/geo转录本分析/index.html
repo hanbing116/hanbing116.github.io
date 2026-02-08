@@ -10,7 +10,7 @@
 <meta property='og:description' content="数据下载及处理 页面介绍 GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台\nLink：Home - GEO - NCBI\n如下是进入搜索的一个关于甲状腺癌的文件\nGEO Accession viewer\nPlatforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。 Samples：（GSMxxxx）样本列表，可以查看每一个样本信息 Relations：关联信息，可找到该项目的其他数据 Download family： SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。 Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。 Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。 Platform里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。\n">
 <meta property='og:url' content='https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/'>
 <meta property='og:site_name' content='龙林'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='生信' /><meta property='article:published_time' content='2026-02-01T18:49:46&#43;08:00'/><meta property='article:modified_time' content='2026-02-05T22:16:40&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='生信' /><meta property='article:published_time' content='2026-02-01T18:49:46&#43;08:00'/><meta property='article:modified_time' content='2026-02-08T19:14:05&#43;08:00'/>
 <meta name="twitter:title" content="GEO转录本分析">
 <meta name="twitter:description" content="数据下载及处理 页面介绍 GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台\nLink：Home - GEO - NCBI\n如下是进入搜索的一个关于甲状腺癌的文件\nGEO Accession viewer\nPlatforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。 Samples：（GSMxxxx）样本列表，可以查看每一个样本信息 Relations：关联信息，可找到该项目的其他数据 Download family： SOFT formatted family file(s) 、 MINiML formatted family file(s)：包含原始信号和所有元数据，信息非常全，但格式比较复杂，适合进阶分析。 Series Matrix File(s)：GEO 整理好的表达矩阵，TXT 格式，直接就能用。里面的行是基因或探针，列是样本，每个单元格是对应的表达量。 Supplementary file：作者上传的补充材料，未经过GEO统一处理的文件，是作者对原数据的个性化解读加工。 Platform里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。\n"><!DOCTYPE html>
 <html lang="zh-CN">
@@ -482,7 +482,7 @@
         <li><a href="#geo高通量数据">GEO高通量数据</a></li>
       </ol>
     </li>
-    <li><a href="#geo数据差异分析">GEO数据差异分析</a>
+    <li><a href="#差异分析">差异分析</a>
       <ol>
         <li><a href="#limma芯片数据差异分析">limma芯片数据差异分析</a>
           <ol>
@@ -491,6 +491,18 @@
           </ol>
         </li>
         <li><a href="#高通量数据分析">高通量数据分析</a></li>
+      </ol>
+    </li>
+    <li><a href="#富集分析">富集分析</a>
+      <ol>
+        <li><a href="#go富集">GO富集</a></li>
+        <li><a href="#kegg分析">KEGG分析</a></li>
+        <li><a href="#gsea分析">GSEA分析</a>
+          <ol>
+            <li><a href="#常规gsea">常规GSEA</a></li>
+            <li><a href="#单基因gsea">单基因GSEA</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -527,7 +539,7 @@
 
 
                 <time>
-                    Feb 05, 2026 22:16 &#43;0800
+                    Feb 08, 2026 19:14 &#43;0800
                 </time>
             </div></footer>
 
@@ -826,7 +838,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/GSE200539&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 中间部分与上述GEO数据处理部分一致</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 基因注释，soft导入（没有Download full table…的情况下）</span>
-</span></span><span class="line"><span class="cl"><span class="n">GPL</span><span class="o">&lt;-</span><span class="nf">getGEO</span><span class="p">(</span><span class="n">filenames</span><span class="o">=</span><span class="s">&#34;GPL23159_family.soft.gz&#34;</span><span class="p">,</span><span class="n">destdir</span><span class="o">=</span><span class="s">&#34;.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">GPL</span><span class="o">&lt;-</span><span class="nf">getGEO</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&#34;GPL23159_family.soft.gz&#34;</span><span class="p">,</span><span class="n">destdir</span><span class="o">=</span><span class="s">&#34;.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">gpl</span><span class="o">&lt;-</span><span class="n">GPL</span><span class="o">@</span><span class="n">dataTable</span><span class="o">@</span><span class="n">table</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 由于这个注释文件没有Gene symbol，有NM_序列，因此提取这一列</span>
@@ -1097,7 +1109,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </span></span><span class="line"><span class="cl"><span class="c1"># 注意，这里得到exp1之后记得看看需要标准化，归一化那一系列操作，之后再进行热图绘制。</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="geo数据差异分析">GEO数据差异分析
+</div><h1 id="差异分析">差异分析
 </h1><p>差异分析：芯片数据——array limma ；高通量——count DESeq2</p>
 <h2 id="limma芯片数据差异分析">limma芯片数据差异分析
 </h2><div class="highlight"><div class="chroma">
@@ -1514,6 +1526,499 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 <p>如下是limma后进行的火山图与热图分析结果：</p>
 <img src="volcanoGSE309139.jpg" width="600">
 <img src="heatmap2_GSE309139.jpg" width="600">
+<h1 id="富集分析">富集分析
+</h1><p>在先前差异分析得到的差异表格基础上进行，先前差异分析已经注释好的DOWN、UP或NOT的数据，即DEG2.txt</p>
+<p><strong>GO 富集</strong>：关注<strong>基因的功能属性</strong>（这个基因<strong>干什么</strong>、在<strong>哪里</strong>、怎么参与过程）</p>
+<p><strong>KEGG 富集</strong>：关注<strong>基因所在的通路 / 代谢网络</strong>（这些基因一起<strong>参与哪条通路、哪条代谢链</strong>）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">clusterProfiler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">org.Hs.eg.db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">enrichplot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/富集分析&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span><span class="o">&lt;-</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#34;DEG2.txt&#34;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;\t&#34;</span><span class="p">,</span><span class="n">check.names</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">DEG</span><span class="o">$</span><span class="n">change</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">diff</span><span class="o">&lt;-</span><span class="nf">rownames</span><span class="p">(</span><span class="n">DEG</span><span class="p">)</span><span class="n">[DEG</span><span class="o">$</span><span class="n">change</span><span class="o">!=</span><span class="s">&#39;NOT&#39;</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将基因ID从Symbol转换为Entrez ID（富集分析主要用Entrez ID 或 Ensembl ID来索引基因，因此要进行转换）</span>
+</span></span><span class="line"><span class="cl"><span class="n">gene_entrez</span> <span class="o">&lt;-</span> <span class="nf">bitr</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">fromType</span> <span class="o">=</span><span class="s">&#34;SYMBOL&#34;</span><span class="p">,</span> <span class="n">toType</span> <span class="o">=</span><span class="s">&#34;ENTREZID&#34;</span><span class="p">,</span> <span class="n">OrgDb</span> <span class="o">=</span> <span class="n">org.Hs.eg.db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># OrgDb = org.Hs.eg.db：使用人类（Homo sapiens）的注释数据库</span>
+</span></span><span class="line"><span class="cl"><span class="nf">cat</span><span class="p">(</span><span class="s">&#34;所有基因ID转换&#34;</span><span class="p">,</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">gene_entrez</span><span class="p">),</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span> <span class="c1"># 看转换成功多少个</span>
+</span></span><span class="line"><span class="cl"><span class="n">untrans</span> <span class="o">&lt;-</span> <span class="nf">setdiff</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">gene_entrez</span><span class="o">$</span><span class="n">SYMBOL</span><span class="p">)</span> <span class="c1"># 两部分的差，得出哪些转换成功</span>
+</span></span><span class="line"><span class="cl"><span class="n">untrans</span> 
+</span></span><span class="line"><span class="cl"><span class="n">isValid</span> <span class="o">&lt;-</span> <span class="s">&#34;C9orf92&#34;</span> <span class="o">%in%</span> <span class="nf">keys</span><span class="p">(</span><span class="n">org.Hs.eg.db</span><span class="p">,</span> <span class="n">keytype</span> <span class="o">=</span> <span class="s">&#34;SYMBOL&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">isValid</span> <span class="c1"># 查看T还是F，判断没有被转换的基因是否被收录在org.Hs.eg.db里面</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用mapIds函数转换</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">AnnotationDbi</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">entrez_ids</span> <span class="o">&lt;-</span> <span class="nf">mapIds</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="n">org.Hs.eg.db</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">keys</span> <span class="o">=</span> <span class="n">untrans</span><span class="p">,</span>       <span class="c1"># 输入的基因别名列表</span>
+</span></span><span class="line"><span class="cl">  <span class="n">keytype</span> <span class="o">=</span> <span class="s">&#34;ALIAS&#34;</span><span class="p">,</span>    <span class="c1"># 明确指定输入类型为别名（ALIAS）</span>
+</span></span><span class="line"><span class="cl">  <span class="n">column</span> <span class="o">=</span> <span class="s">&#34;ENTREZID&#34;</span><span class="p">,</span>  <span class="c1"># 转换为ENTREZID作为中间步骤</span>
+</span></span><span class="line"><span class="cl">  <span class="n">multiVals</span> <span class="o">=</span> <span class="s">&#34;first&#34;</span>   <span class="c1"># 多个匹配时取第一个</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">entrez_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">ENTREZID</span> <span class="o">=</span> <span class="n">entrez_ids</span><span class="p">,</span> <span class="n">check.names</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">entrez_df</span> <span class="o">&lt;-</span> <span class="nf">na.omit</span><span class="p">(</span><span class="n">entrez_df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">entrez_df</span> <span class="o">&lt;-</span> <span class="n">entrez_df</span> <span class="o">%&gt;%</span> <span class="nf">rownames_to_column</span><span class="p">(</span><span class="n">var</span> <span class="o">=</span> <span class="s">&#39;SYMBOL&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#合并</span>
+</span></span><span class="line"><span class="cl"><span class="n">gene_entrez2</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">gene_entrez</span><span class="p">,</span><span class="n">entrez_df</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="go富集">GO富集
+</h2><p>上述完成ID转换后得到gene_entrez2，再进行GO富集</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">GO</span> <span class="o">&lt;-</span> <span class="nf">enrichGO</span><span class="p">(</span><span class="n">gene</span> <span class="o">=</span> <span class="n">gene_entrez2</span><span class="o">$</span><span class="n">ENTREZID</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="n">OrgDb</span> <span class="o">=</span> <span class="n">org.Hs.eg.db</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="n">keyType</span> <span class="o">=</span><span class="s">&#34;ENTREZID&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="n">ont</span> <span class="o">=</span><span class="s">&#34;ALL&#34;</span><span class="p">,</span> <span class="c1"># &#34;BP&#34;, &#34;MF&#34;, &#34;CC&#34;或&#34;ALL&#34;</span>
+</span></span><span class="line"><span class="cl">               <span class="n">pAdjustMethod</span> <span class="o">=</span><span class="s">&#34;BH&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="n">pvalueCutoff</span> <span class="o">=</span><span class="m">0.05</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="n">qvalueCutoff</span> <span class="o">=</span><span class="m">0.05</span><span class="p">,</span><span class="n">readable</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># GO 分为三个分支：BP（Biological Process，生物学过程）；MF（Molecular Function，分子功能）；CC（Cellular Component，细胞组分）；ALL 表示同时分析三个分支</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pAdjustMethod = &#34;BH&#34;：多重检验校正方法，BH（Benjamini-Hochberg）是最常用的方法，用于控制假阳性率</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># readable = T：将结果中的Entrez ID自动转换为更易读的基因Symbol，方便解读</span>
+</span></span><span class="line"><span class="cl"><span class="n">GO_res</span> <span class="o">&lt;-</span> <span class="n">GO</span><span class="o">@</span><span class="n">result</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="n">GO_res</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#34;GO_res.txt&#34;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;\t&#34;</span><span class="p">,</span><span class="n">quote</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">row.names</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#简单作图</span>
+</span></span><span class="line"><span class="cl"><span class="nf">barplot</span><span class="p">(</span><span class="n">GO</span><span class="p">,</span> <span class="n">showCategory</span> <span class="o">=</span> <span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dotplot</span><span class="p">(</span><span class="n">GO</span><span class="p">,</span> <span class="n">showCategory</span> <span class="o">=</span> <span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#分类展示，按 GO 的三个分支（BP/MF/CC）分别展示最显著的富集条目</span>
+</span></span><span class="line"><span class="cl"><span class="nf">barplot</span><span class="p">(</span><span class="n">GO</span><span class="p">,</span> <span class="n">showCategory</span> <span class="o">=</span> <span class="m">5</span><span class="p">,,</span><span class="n">split</span><span class="o">=</span><span class="s">&#34;ONTOLOGY&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">facet_grid</span><span class="p">(</span><span class="n">ONTOLOGY</span><span class="o">~</span><span class="n">.,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;free&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># showCategory = 5：每个分类下只展示最显著的5个GO条目</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># split=&#34;ONTOLOGY&#34;：按ONTOLOGY（即BP/MF/CC三个分支）对结果进行分组</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># facet_grid(ONTOLOGY~.)：将分组后的结果分面展示，生成三个独立的子图</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="kegg分析">KEGG分析
+</h2><p>也是紧接上述完成ID转换后得到gene_entrez2进行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">KEGG</span> <span class="o">&lt;-</span> <span class="nf">enrichKEGG</span><span class="p">(</span><span class="n">gene</span> <span class="o">=</span> <span class="n">gene_entrez2</span><span class="o">$</span><span class="n">ENTREZID</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">organism</span>     <span class="o">=</span> <span class="s">&#39;hsa&#39;</span><span class="p">,</span> <span class="c1"># 物种：hsa = Homo sapiens（人类）</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">pvalueCutoff</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                   <span class="n">qvalueCutoff</span> <span class="o">=</span><span class="m">0.05</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">KEGG_res</span> <span class="o">&lt;-</span> <span class="n">KEGG</span><span class="o">@</span><span class="n">result</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="n">KEGG_res</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#34;KEGG_res.txt&#34;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;\t&#34;</span><span class="p">,</span><span class="n">quote</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">row.names</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#简单作图</span>
+</span></span><span class="line"><span class="cl"><span class="nf">barplot</span><span class="p">(</span><span class="n">KEGG</span><span class="p">,</span> <span class="n">showCategory</span> <span class="o">=</span> <span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dotplot</span><span class="p">(</span><span class="n">KEGG</span><span class="p">,</span> <span class="n">showCategory</span> <span class="o">=</span> <span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#通路图可视化</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#BiocManager::install(&#39;pathview&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">pathview</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span> <span class="o">&lt;-</span> <span class="nf">rownames_to_column</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">var</span> <span class="o">=</span> <span class="s">&#39;SYMBOL&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pgenes</span> <span class="o">&lt;-</span> <span class="nf">inner_join</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">gene_entrez2</span><span class="p">,</span><span class="n">by</span> <span class="o">=</span> <span class="s">&#39;SYMBOL&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pgenes</span> <span class="o">&lt;-</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="n">pgenes</span><span class="p">,</span><span class="n">ENTREZID</span><span class="p">,</span><span class="n">P.Value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">pgenes</span><span class="o">$</span><span class="n">P.Value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gene_names</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">pgenes</span><span class="o">$</span><span class="n">ENTREZID</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">gene_data</span> <span class="o">&lt;-</span> <span class="n">pvalue</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">gene_data</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">gene_names</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#选择兴趣的通路</span>
+</span></span><span class="line"><span class="cl"><span class="n">hsa04978</span> <span class="o">&lt;-</span> <span class="nf">pathview</span><span class="p">(</span><span class="n">gene.data</span>  <span class="o">=</span> <span class="n">gene_data</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">pathway.id</span> <span class="o">=</span> <span class="s">&#34;hsa04978&#34;</span><span class="p">,</span> <span class="c1">#通路名字</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">species</span>    <span class="o">=</span> <span class="s">&#34;hsa&#34;</span><span class="p">,</span> <span class="c1">#代表人类</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">out.suffix</span> <span class="o">=</span> <span class="s">&#34;pathview&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                     <span class="n">limit</span>      <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">gene</span><span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">cpd</span><span class="o">=</span> <span class="m">1</span><span class="p">))</span> <span class="c1">#对基因数量限制，cpd化合物数量</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="gsea分析">GSEA分析
+</h2><p>GSEA分析（Gene Set Enrichment Analysis，基因集富集分析），与差异富集分析不同。</p>
+<p>GSEA 不是看 “差异显著的基因” 富集到哪些通路 / 功能，而是看<strong>整个基因列表（不分差异与否）</strong> 中，某一 “基因集”（比如某条 KEGG 通路的所有基因）是否<strong>整体偏向于列表的顶端或底端</strong>，以此判断该基因集是否被显著激活 / 抑制。</p>
+<p>GSEA官网：<a class="link" href="https://www.gsea-msigdb.org/gsea/index.jsp"  target="_blank" rel="noopener"
+    >GSEA</a></p>
+<p>如下是进入页面后的Database页面，右侧的 <strong>Human Collections</strong> 就是给人类研究用的 10 类基因集</p>
+<p>H：<strong>特征基因集</strong>，把多个相似基因集合并，代表最核心、最清晰的生物学状态 / 过程，快速抓最关键的通路，结果干净、易解释。</p>
+<img src="image-20260207223242346.png" width="600">
+<img src="image-20260207223652781.png" width="600">
+<p>选取H的右侧<a class="link" href="https://www.gsea-msigdb.org/gsea/msigdb/download_file.jsp?filePath=/msigdb/release/2026.1.Hs/h.all.v2026.1.Hs.symbols.gmt"  target="_blank" rel="noopener"
+    >Gene Symbols</a>进行下载，下载得到gmt文件</p>
+<h3 id="常规gsea">常规GSEA
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/富集分析/GSEA分析&#39;</span><span class="p">)</span><span class="c1">#设置工作路径</span>
+</span></span><span class="line"><span class="cl"><span class="nf">load</span><span class="p">(</span><span class="s">&#39;GSE299988.rda&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span> <span class="o">&lt;-</span> <span class="n">rt3</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span> <span class="o">&lt;-</span> <span class="n">exp3</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">exp</span> <span class="o">&lt;-</span> <span class="n">exp</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="nf">everything</span><span class="p">(),</span> <span class="n">as.numeric</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#确认行名列名一致#确认行名列名一致</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#组间差异分析</span>
+</span></span><span class="line"><span class="cl"><span class="n">group_list</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">rt</span><span class="o">$</span><span class="n">group</span><span class="p">,</span><span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Normal&#34;</span><span class="p">,</span><span class="s">&#34;Tumor&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">group_list</span>
+</span></span><span class="line"><span class="cl"><span class="n">design</span> <span class="o">&lt;-</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="o">~</span><span class="n">group_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#比较矩阵命名</span>
+</span></span><span class="line"><span class="cl"><span class="n">design</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#线性模型拟合</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lmFit</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">design</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#贝叶斯检验</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">eBayes</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">deg</span> <span class="o">&lt;-</span> <span class="nf">topTable</span><span class="p">(</span><span class="n">fit2</span><span class="p">,</span> <span class="n">coef</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span> <span class="o">=</span> <span class="nf">na.omit</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span> <span class="o">&lt;-</span> <span class="nf">rownames_to_column</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">var</span> <span class="o">=</span> <span class="s">&#39;Gene&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 至此其实和差异分析的处理相类似</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#整理输入数据</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">enrichplot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">clusterProfiler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">org.Hs.eg.db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#转换ENTREZID（如果在GSEA中下载的是ENTREZID则需要转换，下载的Symbol则不需要）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># genelist &lt;- bitr(DEG$Gene, fromType=&#34;SYMBOL&#34;,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                  toType=&#34;ENTREZID&#34;, OrgDb=&#39;org.Hs.eg.db&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># DEG &lt;- inner_join(DEG,genelist,by=c(&#34;Gene&#34;=&#34;SYMBOL&#34;))</span>
+</span></span><span class="line"><span class="cl"><span class="n">geneList</span> <span class="o">&lt;-</span> <span class="n">DEG[</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">geneList</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">DEG[</span><span class="p">,</span><span class="s">&#39;Gene&#39;</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">geneList</span> <span class="o">&lt;-</span> <span class="nf">sort</span><span class="p">(</span><span class="n">geneList</span><span class="p">,</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="c1"># sort默认是从小到大排列</span>
+</span></span><span class="line"><span class="cl"><span class="n">geneList</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#读取gmt文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">gmt</span> <span class="o">&lt;-</span> <span class="nf">read.gmt</span><span class="p">(</span><span class="s">&#39;h.all.v2026.1.Hs.symbols.gmt&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">GSEA</span> <span class="o">&lt;-</span> <span class="nf">GSEA</span><span class="p">(</span><span class="n">geneList</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">TERM2GENE</span> <span class="o">=</span> <span class="n">gmt</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">             <span class="n">pvalueCutoff</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">pAdjustMethod</span> <span class="o">=</span> <span class="s">&#34;BH&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">minGSSize</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">maxGSSize</span> <span class="o">=</span> <span class="m">500</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">&lt;-</span> <span class="n">GSEA</span><span class="o">@</span><span class="n">result</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.csv</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;H_GSEA.csv&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 选择一条通路进行展示</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">gseaplot2</span><span class="p">(</span><span class="n">GSEA</span><span class="p">,</span><span class="n">geneSetID</span> <span class="o">=</span> <span class="s">&#39;HALLMARK_ALLOGRAFT_REJECTION&#39;</span><span class="p">,</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;HALLMARK_ALLOGRAFT_REJECTION&#39;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 选择多条通路进行展示</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">gseaplot2</span><span class="p">(</span><span class="n">GSEA</span><span class="p">,</span><span class="n">geneSetID</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="n">pvalue_table</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">subplots</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下是富集分析得到的结果res：</p>
+<img src="image-20260208152147704.png" width="600">
+<p>enrichmentScore (ES)：原始富集分数</p>
+<p>NES (Normalized ES)：标准化富集分数，大于0表示上调</p>
+<p>rank：该基因集在所有结果中的排名</p>
+<p>leading_edge：核心富集基因的标签。<code>tags</code>：核心基因占该基因集的比例；<code>list</code>：占全基因列表的比例；<code>signal</code>：富集信号强度</p>
+<p>core_enrichment：核心富集基因列表</p>
+<p>以下是分析结果图：</p>
+<img src="GSEA_1.png" width="600">
+<img src="GSEA_2.png" width="600">
+<h3 id="单基因gsea">单基因GSEA
+</h3><p>单基因GSEA分析可以明确一个基因表达的变化时通路的变化情况</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;C:/Users/30521/Desktop/R自学/GEO-analysis/富集分析/GSEA分析&#39;</span><span class="p">)</span><span class="c1">#设置工作路径</span>
+</span></span><span class="line"><span class="cl"><span class="nf">load</span><span class="p">(</span><span class="s">&#39;GSE299988.rda&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt</span> <span class="o">&lt;-</span> <span class="n">rt3</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span> <span class="o">&lt;-</span> <span class="n">exp3</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">exp</span> <span class="o">&lt;-</span> <span class="n">exp</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="nf">everything</span><span class="p">(),</span> <span class="n">as.numeric</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#确认行名列名一致#确认行名列名一致</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#提取 自定义基因,整理高低表达组</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt1</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">exp[</span><span class="s">&#39;PTPRC&#39;</span><span class="p">,</span><span class="n">]</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 选取的基因表达如果是大于这一组中的中位数，则认为是上调，完成单个基因的高表达或低表达区分</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt1</span><span class="o">$</span><span class="n">group</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">rt1</span><span class="o">$</span><span class="n">PTPRC</span> <span class="o">&gt;</span> <span class="nf">median</span><span class="p">(</span><span class="n">rt1</span><span class="o">$</span><span class="n">PTPRC</span><span class="p">),</span><span class="s">&#39;up&#39;</span><span class="p">,</span><span class="s">&#39;down&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 依照group进行排列，中间的&#39;PTPRC&#39;没用</span>
+</span></span><span class="line"><span class="cl"><span class="n">rt1</span> <span class="o">&lt;-</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">rt1</span><span class="p">,</span><span class="s">&#39;PTPRC&#39;</span><span class="p">,</span><span class="n">group</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt1</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 让exp的列名与rt1的行名一致</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span> <span class="o">&lt;-</span> <span class="n">exp[</span><span class="p">,</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt1</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">rt1</span><span class="p">),</span><span class="nf">colnames</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 组间差异分析</span>
+</span></span><span class="line"><span class="cl"><span class="n">group_list</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">rt1</span><span class="o">$</span><span class="n">group</span><span class="p">,</span><span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">,</span><span class="s">&#34;up&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">group_list</span>
+</span></span><span class="line"><span class="cl"><span class="n">design</span> <span class="o">&lt;-</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="o">~</span><span class="n">group_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 比较矩阵命名</span>
+</span></span><span class="line"><span class="cl"><span class="n">design</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 线性模型拟合</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lmFit</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span><span class="n">design</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 贝叶斯检验</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">eBayes</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">deg</span> <span class="o">&lt;-</span> <span class="nf">topTable</span><span class="p">(</span><span class="n">fit2</span><span class="p">,</span> <span class="n">coef</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span> <span class="o">=</span> <span class="nf">na.omit</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">DEG</span> <span class="o">&lt;-</span> <span class="nf">rownames_to_column</span><span class="p">(</span><span class="n">DEG</span><span class="p">,</span><span class="n">var</span> <span class="o">=</span> <span class="s">&#39;Gene&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">enrichplot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">clusterProfiler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">org.Hs.eg.db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 转换ENTREZID</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># genelist &lt;- bitr(DEG$Gene, fromType=&#34;SYMBOL&#34;,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                  toType=&#34;ENTREZID&#34;, OrgDb=&#39;org.Hs.eg.db&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># DEG &lt;- inner_join(DEG,genelist,by=c(&#34;Gene&#34;=&#34;SYMBOL&#34;))</span>
+</span></span><span class="line"><span class="cl"><span class="n">geneList</span> <span class="o">&lt;-</span> <span class="n">DEG[</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">geneList</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">DEG[</span><span class="p">,</span><span class="s">&#39;Gene&#39;</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">geneList</span> <span class="o">&lt;-</span> <span class="nf">sort</span><span class="p">(</span><span class="n">geneList</span><span class="p">,</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">geneList</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 读取gmt文件，去官网下载的C2基因集</span>
+</span></span><span class="line"><span class="cl"><span class="n">gmt</span> <span class="o">&lt;-</span> <span class="nf">read.gmt</span><span class="p">(</span><span class="s">&#39;c2.cp.kegg_medicus.v2026.1.Hs.symbols.gmt&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">GSEA</span> <span class="o">&lt;-</span> <span class="nf">GSEA</span><span class="p">(</span><span class="n">geneList</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">TERM2GENE</span> <span class="o">=</span> <span class="n">gmt</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">pvalueCutoff</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="c1">#改成1获得全部结果</span>
+</span></span><span class="line"><span class="cl">             <span class="n">pAdjustMethod</span> <span class="o">=</span> <span class="s">&#34;BH&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">minGSSize</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="n">maxGSSize</span> <span class="o">=</span> <span class="m">500</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">&lt;-</span> <span class="n">GSEA</span><span class="o">@</span><span class="n">result</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.csv</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;KEGG_GSEA.csv&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">gseaplot2</span><span class="p">(</span><span class="n">GSEA</span><span class="p">,</span><span class="n">geneSetID</span> <span class="o">=</span> <span class="s">&#39;KEGG_MEDICUS_REFERENCE_COPI_VESICLE_FORMATION&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="n">title</span> <span class="o">=</span> <span class="s">&#39;KEGG_MEDICUS_REFERENCE_COPI_VESICLE_FORMATION&#39;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">gseaplot2</span><span class="p">(</span><span class="n">GSEA</span><span class="p">,</span><span class="n">geneSetID</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">gseaplot2</span><span class="p">(</span><span class="n">GSEA</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">geneSetID</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;KEGG_MEDICUS_REFERENCE_WNT_SIGNALING_PATHWAY&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                              <span class="s">&#39;KEGG_MEDICUS_REFERENCE_ITGA_B_FAK_CDC42_SIGNALING_PATHWAY&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#3.是不是可以自创基因集？更改文件内容即可</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">enrichplot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">clusterProfiler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">org.Hs.eg.db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gmt</span> <span class="o">&lt;-</span> <span class="nf">read.gmt</span><span class="p">(</span><span class="s">&#39;GOBP_MITOPHAGY.v2025.1.Hs.gmt&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># GO 生物学过程（GOBP）下的「线粒体自噬」功能模块</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下是单基因GSEA分析的作图结果：结果曲线为正即为该通路上调</p>
+<img src="GSEA_single_gene.png" width="600">
+<img src="GSEA_single_gene2.png" width="600">
 
 </section>
 
@@ -1537,7 +2042,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 
 
         <span>
-            最后更新于 Feb 05, 2026 22:16 &#43;0800
+            最后更新于 Feb 08, 2026 19:14 &#43;0800
         </span>
     </section></footer>
 
