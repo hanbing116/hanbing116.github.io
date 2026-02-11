@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Wed, 11 Feb 2026 22:40:23 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Feb 2026 23:13:54 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>无机及分析化学实验</title>
         <link>https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/</link>
         <pubDate>Wed, 28 May 2025 10:06:42 +0800</pubDate>
@@ -96,221 +96,891 @@
 &lt;h1 id=&#34;常见阳离子分离及鉴定&#34;&gt;常见阳离子分离及鉴定
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/阳离子实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
     &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;阳离子实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
-&lt;h1 id=&#34;滴定分析基本操作训练&#34;&gt;滴定分析基本操作训练
-&lt;/h1&gt;&lt;!-- PDF预览容器 - Iframe版本（兼容性更优） --&gt;
-&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;滴定分析基本操作训练&#34;&gt;滴定分析基本操作训练
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/滴定分析.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;滴定分析.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
-&lt;!-- 全局样式重置（建议放在页面&lt;head&gt;标签内） --&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
 &lt;style&gt;
-  /* 强制iframe预览容器下的所有元素宽度不收缩 */
-  #pdf-container-iframe,
-  #pdf-container-iframe * {
-    box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
   }
-  #pdf-container-iframe iframe {
-    display: block !important;
-    overflow: visible !important;
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
   }
 &lt;/style&gt;
 &lt;h1 id=&#34;莫尔盐的制备及表征&#34;&gt;莫尔盐的制备及表征
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/莫尔盐实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
     &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;莫尔盐实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 &lt;h1 id=&#34;可见分光光度法测定铁含量实验&#34;&gt;可见分光光度法测定铁含量实验
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/分光实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
     &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;分光实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 &lt;h1 id=&#34;茶叶中氟离子含量的测定&#34;&gt;茶叶中氟离子含量的测定
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/茶叶氟测定.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
     &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;茶叶氟测定.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 &lt;h1 id=&#34;三种磷酸盐的制备及表征&#34;&gt;三种磷酸盐的制备及表征
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/磷酸盐实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
     &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;磷酸盐实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 &lt;h1 id=&#34;三种钴氨产品的制备及表征&#34;&gt;三种钴氨产品的制备及表征
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/钴氨实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
     &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;钴氨实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 &lt;h1 id=&#34;三草酸合铁酸钾的制备及表征&#34;&gt;三草酸合铁酸钾的制备及表征
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/三草酸合铁酸钾.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
     &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
     &lt;a 
       href=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;三草酸合铁酸钾.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;</description>
+        </item>
+        <item>
+        <title>普通物理学实验I</title>
+        <link>https://hanbing116.github.io/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6%E5%AE%9E%E9%AA%8Ci/</link>
+        <pubDate>Fri, 23 May 2025 22:51:13 +0800</pubDate>
+        
+        <guid>https://hanbing116.github.io/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6%E5%AE%9E%E9%AA%8Ci/</guid>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6%E5%AE%9E%E9%AA%8Ci/f4c181700edf3a41d04b39d65e664d0a.jpg" alt="Featured image of post 普通物理学实验I" /&gt;&lt;p&gt;整体实验报告认真写，老师给分给都还不错的，可惜期末两个必考的实验理论考太烂了……&lt;/p&gt;
+&lt;h1 id=&#34;分光计的调整和使用&#34;&gt;分光计的调整和使用
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/分光计的调整和使用.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/分光计的调整和使用.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/分光计的调整和使用.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;分光计的调整和使用.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;光电效应测定普朗克常数&#34;&gt;光电效应测定普朗克常数
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/光电效应测定普朗克常数.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/光电效应测定普朗克常数.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/光电效应测定普朗克常数.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;光电效应测定普朗克常数.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;惠斯登电桥&#34;&gt;惠斯登电桥
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/惠斯登电桥.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/惠斯登电桥.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/惠斯登电桥.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;惠斯登电桥.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;金属材料杨氏模量的测定&#34;&gt;金属材料杨氏模量的测定
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/金属材料杨氏模量的测定.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/金属材料杨氏模量的测定.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/金属材料杨氏模量的测定.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;金属材料杨氏模量的测定.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;密立根油滴实验&#34;&gt;密立根油滴实验
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/密立根油滴实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/密立根油滴实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/密立根油滴实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;密立根油滴实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;碰撞实验&#34;&gt;碰撞实验
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/碰撞实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/碰撞实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/碰撞实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;碰撞实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;声速的测定&#34;&gt;声速的测定
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/声速的测定.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/声速的测定.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/声速的测定.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;声速的测定.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;示波器的使用&#34;&gt;示波器的使用
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/示波器的使用.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/示波器的使用.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/示波器的使用.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;示波器的使用.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;万用表的设计&#34;&gt;万用表的设计
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/万用表的设计.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/万用表的设计.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/万用表的设计.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;万用表的设计.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;演示实验&#34;&gt;演示实验
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/演示实验.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/演示实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/演示实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;演示实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;液体表面张力系数测定&#34;&gt;液体表面张力系数测定
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/液体表面张力系数测定.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/液体表面张力系数测定.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/液体表面张力系数测定.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;液体表面张力系数测定.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;用霍尔法测直流圆线圈与亥姆霍兹线圈磁场&#34;&gt;用霍尔法测直流圆线圈与亥姆霍兹线圈磁场
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/用霍尔法测直流圆线圈与亥姆霍兹线圈磁场.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/用霍尔法测直流圆线圈与亥姆霍兹线圈磁场.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/用霍尔法测直流圆线圈与亥姆霍兹线圈磁场.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;用霍尔法测直流圆线圈与亥姆霍兹线圈磁场.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;用双臂电桥测低电阻&#34;&gt;用双臂电桥测低电阻
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/用双臂电桥测低电阻.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/用双臂电桥测低电阻.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/用双臂电桥测低电阻.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;用双臂电桥测低电阻.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;组装整流器&#34;&gt;组装整流器
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/组装整流器.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/组装整流器.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/组装整流器.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;组装整流器.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 </description>
         </item>
         
