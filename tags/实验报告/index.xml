@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Wed, 11 Feb 2026 22:30:37 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Feb 2026 22:40:23 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>无机及分析化学实验</title>
         <link>https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/</link>
         <pubDate>Wed, 28 May 2025 10:06:42 +0800</pubDate>
@@ -16,16 +16,15 @@
         <description>&lt;img src="https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/picture.png" alt="Featured image of post 无机及分析化学实验" /&gt;&lt;h1 id=&#34;明矾的制备&#34;&gt;明矾的制备
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：新增overflow:hidden + 清除默认边距，解决嵌套问题 --&gt;
-  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box;&#34;&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
     &lt;object
       data=&#34;/pdfs/明矾实验.pdf#view=FitH&amp;zoom=100&#34;
       type=&#34;application/pdf&#34;
-      style=&#34;width: 100%; height: 1000px; border: none; display: block; box-sizing: border-box; overflow: hidden;&#34;
-      &lt;!-- 新增：防止object标签产生额外滚动/嵌套 --&gt;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
       scrolling=&#34;no&#34;
     &gt;
-      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box;&#34;&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
         无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
       &lt;/div&gt;
     &lt;/object&gt;
@@ -40,19 +39,32 @@
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 &lt;h1 id=&#34;反应速率活化能实验&#34;&gt;反应速率、活化能实验
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：新增overflow:hidden + 清除默认边距，解决嵌套问题 --&gt;
-  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box;&#34;&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
     &lt;object
       data=&#34;/pdfs/活化能实验.pdf#view=FitH&amp;zoom=100&#34;
       type=&#34;application/pdf&#34;
-      style=&#34;width: 100%; height: 1000px; border: none; display: block; box-sizing: border-box; overflow: hidden;&#34;
-      &lt;!-- 新增：防止object标签产生额外滚动/嵌套 --&gt;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
       scrolling=&#34;no&#34;
     &gt;
-      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box;&#34;&gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
         无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/活化能实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
       &lt;/div&gt;
     &lt;/object&gt;
@@ -67,6 +79,20 @@
       📥 下载 PDF 文件
     &lt;/a&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
 &lt;h1 id=&#34;常见阳离子分离及鉴定&#34;&gt;常见阳离子分离及鉴定
 &lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
   &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
