@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Sun, 08 Feb 2026 19:14:05 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Feb 2026 22:18:28 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>GEO转录本分析</title>
         <link>https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/</link>
         <pubDate>Sun, 01 Feb 2026 18:49:46 +0800</pubDate>
         
         <guid>https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
-        <description>&lt;h1 id=&#34;数据下载及处理&#34;&gt;数据下载及处理
+        <description>&lt;img src="https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/volcanoGSE309139.jpg" alt="Featured image of post GEO转录本分析" /&gt;&lt;h1 id=&#34;数据下载及处理&#34;&gt;数据下载及处理
 &lt;/h1&gt;&lt;h2 id=&#34;页面介绍&#34;&gt;页面介绍
 &lt;/h2&gt;&lt;p&gt;GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台&lt;/p&gt;
 &lt;p&gt;Link：&lt;a class=&#34;link&#34; href=&#34;https://www.ncbi.nlm.nih.gov/geo/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1446,301 +1446,6 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/div&gt;&lt;p&gt;如下是单基因GSEA分析的作图结果：结果曲线为正即为该通路上调&lt;/p&gt;
 &lt;img src=&#34;GSEA_single_gene.png&#34; width=&#34;600&#34;&gt;
 &lt;img src=&#34;GSEA_single_gene2.png&#34; width=&#34;600&#34;&gt;
-</description>
-        </item>
-        <item>
-        <title>无机及分析化学实验</title>
-        <link>https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/</link>
-        <pubDate>Sat, 31 Jan 2026 10:06:42 +0800</pubDate>
-        
-        <guid>https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/</guid>
-        <description>&lt;h1 id=&#34;明矾的制备&#34;&gt;明矾的制备
-&lt;/h1&gt;&lt;!-- PDF预览容器 - Iframe版本（兼容性更优） --&gt;
-&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;明矾实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;style&gt;
-  /* 强制iframe预览容器下的所有元素宽度不收缩 */
-  #pdf-container-iframe,
-  #pdf-container-iframe * {
-    box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-  #pdf-container-iframe iframe {
-    display: block !important;
-    overflow: visible !important;
-  }
-&lt;/style&gt;
-&lt;h1 id=&#34;反应速率活化能实验&#34;&gt;反应速率、活化能实验
-&lt;/h1&gt;&lt;!-- PDF预览容器 - Iframe版本（兼容性更优） --&gt;
-&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/活化能实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/活化能实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/活化能实验.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;活化能实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;h1 id=&#34;常见阳离子分离及鉴定&#34;&gt;常见阳离子分离及鉴定
-&lt;/h1&gt;&lt;!-- PDF预览容器 - Iframe版本（兼容性更优） --&gt;
-&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;阳离子实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;h1 id=&#34;滴定分析基本操作训练&#34;&gt;滴定分析基本操作训练
-&lt;/h1&gt;&lt;!-- PDF预览容器 - Iframe版本（兼容性更优） --&gt;
-&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;滴定分析.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;!-- 全局样式重置（建议放在页面&lt;head&gt;标签内） --&gt;
-&lt;style&gt;
-  /* 强制iframe预览容器下的所有元素宽度不收缩 */
-  #pdf-container-iframe,
-  #pdf-container-iframe * {
-    box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-  #pdf-container-iframe iframe {
-    display: block !important;
-    overflow: visible !important;
-  }
-&lt;/style&gt;
-&lt;h1 id=&#34;莫尔盐的制备及表征&#34;&gt;莫尔盐的制备及表征
-&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;莫尔盐实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;h1 id=&#34;可见分光光度法测定铁含量实验&#34;&gt;可见分光光度法测定铁含量实验
-&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;分光实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;h1 id=&#34;茶叶中氟离子含量的测定&#34;&gt;茶叶中氟离子含量的测定
-&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;茶叶氟测定.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;h1 id=&#34;三种磷酸盐的制备及表征&#34;&gt;三种磷酸盐的制备及表征
-&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;磷酸盐实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;h1 id=&#34;三种钴氨产品的制备及表征&#34;&gt;三种钴氨产品的制备及表征
-&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;钴氨实验.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;h1 id=&#34;三草酸合铁酸钾的制备及表征&#34;&gt;三草酸合铁酸钾的制备及表征
-&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
-  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
-  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
-  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
-    &lt;iframe 
-      src=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf#view=FitH&amp;zoom=100&#34;
-      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
-      frameborder=&#34;0&#34;
-      scrolling=&#34;auto&#34;
-    &gt;
-      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
-    &lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
-    &lt;a 
-      href=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf&#34;
-      target=&#34;_blank&#34;
-      download=&#34;三草酸合铁酸钾.pdf&#34;
-      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
-    &gt;
-      📥 下载 PDF 文件
-    &lt;/a&gt;
-  &lt;/div&gt;
 </description>
         </item>
         <item>
@@ -3948,13 +3653,357 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 </description>
         </item>
         <item>
-        <title>Blog</title>
-        <link>https://hanbing116.github.io/p/blog/</link>
-        <pubDate>Sun, 28 Dec 2025 20:54:38 +0800</pubDate>
+        <title>无机及分析化学实验</title>
+        <link>https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/</link>
+        <pubDate>Wed, 28 May 2025 10:06:42 +0800</pubDate>
         
-        <guid>https://hanbing116.github.io/p/blog/</guid>
-        <description>&lt;h4 id=&#34;hello-world&#34;&gt;hello world!
-&lt;/h4&gt;</description>
+        <guid>https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/</guid>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E6%97%A0%E6%9C%BA%E5%8F%8A%E5%88%86%E6%9E%90%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/picture.png" alt="Featured image of post 无机及分析化学实验" /&gt;&lt;h1 id=&#34;明矾的制备&#34;&gt;明矾的制备
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 移动端/PC端分流 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;!-- 移动端提示 --&gt;
+    &lt;div id=&#34;mobile-tip&#34; style=&#34;display: none; padding: 20px; text-align: center; color: #666;&#34;&gt;
+      📱 移动端暂不支持内嵌预览，点击下方按钮查看/下载PDF文件
+    &lt;/div&gt;
+    &lt;!-- PC端iframe --&gt;
+    &lt;iframe 
+      id=&#34;pc-iframe&#34;
+      src=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt; 
+&lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;a 
+    href=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf&#34;
+    target=&#34;_blank&#34;
+    style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+  &gt;
+    📥 查看/下载 PDF 文件
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- 仅添加少量原生JS做设备判断，无外部依赖 --&gt;
+&lt;script&gt;
+  // 简单判断移动端设备
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+    // 页面加载后执行
+  window.onload = function() {
+    const mobileTip = document.getElementById(&#39;mobile-tip&#39;);
+    const pcIframe = document.getElementById(&#39;pc-iframe&#39;);
+      if (isMobile()) {
+  // 移动端隐藏iframe，显示提示
+  pcIframe.style.display = &#39;none&#39;;
+  mobileTip.style.display = &#39;block&#39;;
+}
+
+
+&lt;/script&gt;
+&lt;style&gt;
+  #pdf-container-iframe,
+  #pdf-container-iframe * {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  #pdf-container-iframe iframe {
+    display: block !important;
+    overflow: visible !important;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;反应速率活化能实验&#34;&gt;反应速率、活化能实验
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 移动端/PC端分流 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;!-- 移动端提示 --&gt;
+    &lt;div id=&#34;mobile-tip&#34; style=&#34;display: none; padding: 20px; text-align: center; color: #666;&#34;&gt;
+      📱 移动端暂不支持内嵌预览，点击下方按钮查看/下载PDF文件
+    &lt;/div&gt;
+    &lt;!-- PC端iframe --&gt;
+    &lt;iframe 
+      id=&#34;pc-iframe&#34;
+      src=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt; 
+&lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+  &lt;a 
+    href=&#34;https://hanbing116.github.io/pdfs/明矾实验.pdf&#34;
+    target=&#34;_blank&#34;
+    style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+  &gt;
+    📥 查看/下载 PDF 文件
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- 仅添加少量原生JS做设备判断，无外部依赖 --&gt;
+&lt;script&gt;
+  // 简单判断移动端设备
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  // 页面加载后执行
+  window.onload = function() {
+    const mobileTip = document.getElementById(&#39;mobile-tip&#39;);
+    const pcIframe = document.getElementById(&#39;pc-iframe&#39;);
+    
+    if (isMobile()) {
+      // 移动端隐藏iframe，显示提示
+      pcIframe.style.display = &#39;none&#39;;
+      mobileTip.style.display = &#39;block&#39;;
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  #pdf-container-iframe,
+  #pdf-container-iframe * {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  #pdf-container-iframe iframe {
+    display: block !important;
+    overflow: visible !important;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;常见阳离子分离及鉴定&#34;&gt;常见阳离子分离及鉴定
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/阳离子实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;阳离子实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;h1 id=&#34;滴定分析基本操作训练&#34;&gt;滴定分析基本操作训练
+&lt;/h1&gt;&lt;!-- PDF预览容器 - Iframe版本（兼容性更优） --&gt;
+&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/滴定分析.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;滴定分析.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;!-- 全局样式重置（建议放在页面&lt;head&gt;标签内） --&gt;
+&lt;style&gt;
+  /* 强制iframe预览容器下的所有元素宽度不收缩 */
+  #pdf-container-iframe,
+  #pdf-container-iframe * {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  #pdf-container-iframe iframe {
+    display: block !important;
+    overflow: visible !important;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;莫尔盐的制备及表征&#34;&gt;莫尔盐的制备及表征
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/莫尔盐实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;莫尔盐实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;h1 id=&#34;可见分光光度法测定铁含量实验&#34;&gt;可见分光光度法测定铁含量实验
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/分光实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;分光实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;h1 id=&#34;茶叶中氟离子含量的测定&#34;&gt;茶叶中氟离子含量的测定
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/茶叶氟测定.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;茶叶氟测定.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;h1 id=&#34;三种磷酸盐的制备及表征&#34;&gt;三种磷酸盐的制备及表征
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/磷酸盐实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;磷酸盐实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;h1 id=&#34;三种钴氨产品的制备及表征&#34;&gt;三种钴氨产品的制备及表征
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/钴氨实验.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;钴氨实验.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;h1 id=&#34;三草酸合铁酸钾的制备及表征&#34;&gt;三草酸合铁酸钾的制备及表征
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：固定宽度规则，禁止收缩 --&gt;
+  &lt;div id=&#34;pdf-container-iframe&#34; style=&#34;width: 100%; margin: 0 auto; box-sizing: border-box; overflow: hidden;&#34;&gt;
+    &lt;iframe 
+      src=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf#view=FitH&amp;zoom=100&#34;
+      style=&#34;width: 100% !important; height: 1000px !important; border: none; display: block; box-sizing: border-box;&#34;
+      frameborder=&#34;0&#34;
+      scrolling=&#34;auto&#34;
+    &gt;
+      无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/三草酸合铁酸钾.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;三草酸合铁酸钾.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+</description>
         </item>
         
     </channel>

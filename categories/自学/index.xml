@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Sun, 08 Feb 2026 19:14:05 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E8%87%AA%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Feb 2026 22:18:28 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E8%87%AA%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>GEO转录本分析</title>
         <link>https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/</link>
         <pubDate>Sun, 01 Feb 2026 18:49:46 +0800</pubDate>
         
         <guid>https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
-        <description>&lt;h1 id=&#34;数据下载及处理&#34;&gt;数据下载及处理
+        <description>&lt;img src="https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/volcanoGSE309139.jpg" alt="Featured image of post GEO转录本分析" /&gt;&lt;h1 id=&#34;数据下载及处理&#34;&gt;数据下载及处理
 &lt;/h1&gt;&lt;h2 id=&#34;页面介绍&#34;&gt;页面介绍
 &lt;/h2&gt;&lt;p&gt;GEO（Gene Expression Omnibus）是 NCBI 中公共高通量基因数据共享平台&lt;/p&gt;
 &lt;p&gt;Link：&lt;a class=&#34;link&#34; href=&#34;https://www.ncbi.nlm.nih.gov/geo/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
