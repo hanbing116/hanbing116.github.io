@@ -10,7 +10,7 @@
 <meta property='og:description' content="哦~这是一支无能的移液枪，欢迎来到他的备忘录，你可以查看他的任何资料，对了！当心污染的培养基和爆炸的离心机！！！">
 <meta property='og:url' content='https://hanbing116.github.io/post/'>
 <meta property='og:site_name' content='龙林'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-02-13T18:35:34&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-02-13T23:00:52&#43;08:00 '/>
 <meta name="twitter:title" content="Posts">
 <meta name="twitter:description" content="哦~这是一支无能的移液枪，欢迎来到他的备忘录，你可以查看他的任何资料，对了！当心污染的培养基和爆炸的离心机！！！"><link rel="alternate" type="application/rss&#43;xml" href="https://hanbing116.github.io/post/index.xml"><!DOCTYPE html>
 <html lang="zh-CN">
@@ -130,67 +130,255 @@
     })();
 </script>
 
-        <div id="global-music-player" style="position: fixed; bottom: 80px; left: 10px; z-index: 9999; background: var(--card-bg); padding: 3px 6px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <p style="color: var(--text-color); font-size: 12px; margin: 0 0 2px 0; text-align: center;" id="music-title">正在播放：see you soon</p>
-            <div style="display: flex; gap: 6px; align-items: center; justify-content: center; margin-bottom: 2px;">
-                <button onclick="prevMusic()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">←上曲</button>
+        <div id="global-music-player" style="position: fixed; bottom: 80px; left: 10px; z-index: 9999; background: var(--card-bg); padding: 3px 6px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;">
+            
+            <div id="minimize-btn" style="display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-color);">
+                🎵 音乐
+            </div>
+            
+            
+            <div id="player-controls" style="display: none; margin-top: 4px; transition: all 0.3s ease;">
+                <p style="color: var(--text-color); font-size: 12px; margin: 0 0 2px 0; text-align: center;" id="music-title">正在播放：see you soon</p>
                 
-                <button onclick="togglePlay()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;" id="play-btn">▶️ 播放</button>
-                <button onclick="nextMusic()" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">下曲→</button>
+                
+                <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 4px; padding: 0 4px;">
+                    
+                    <input 
+                        type="range" 
+                        id="progress-bar" 
+                        min="0" 
+                        max="100" 
+                        step="0.1" 
+                        value="0"
+                        style="width: 100%; height: 4px; cursor: pointer; accent-color: var(--link-color); margin: 0;"
+                    >
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span id="current-time" style="color: var(--text-color); font-size: 9px;">00:00</span>
+                        <span id="total-time" style="color: var(--text-color); font-size: 9px;">00:00</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 6px; align-items: center; justify-content: center; margin-bottom: 2px;">
+                    <button onclick="prevMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">←上曲</button>
+                    
+                    <button onclick="togglePlay(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;" id="play-btn">▶️ 播放</button>
+                    <button onclick="nextMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">下曲→</button>
+                    
+                    <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">📜 列表</button>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
+                    <span style="color: var(--text-color); font-size: 10px;">音量🔊</span>
+                    <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.3" 
+                           style="width: 120px; height: 4px; cursor: pointer; accent-color: var(--link-color);">
+                </div>
             </div>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
-                <span style="color: var(--text-color); font-size: 10px;">音量🔊</span>
-                <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.3" 
-                       style="width: 120px; height: 6px; cursor: pointer; accent-color: var(--link-color);">
+            <audio id="bg-music" preload="metadata" style="display: none;"></audio>
+        </div>
+
+        
+        <div id="music-list-modal" style="position: fixed; bottom: 170px; left: 110px; z-index: 9998; background: var(--card-bg); padding: 8px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; max-height: 200px; overflow-y: auto; min-width: 150px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <span style="color: var(--text-color); font-size: 12px; font-weight: bold;">🎵 播放列表</span>
+                <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 10px; padding: 0;">✕</button>
             </div>
-            <audio id="bg-music" preload="metadata" style="display: none;">
+            <div id="music-list-container" style="display: flex; flex-direction: column; gap: 3px;">
+                
+            </div>
         </div>
 
         
         <script>
+            
             const musicList = [
                 { src: "/audio/1.mp3", title: "See you soon" },
                 { src: "/audio/flower.mp3", title: "Flower dance" },
+                { src: "/audio/song3.mp3", title: "song3" },
+                { src: "/audio/黄昏-周传雄.mp3", title: "黄昏-周传雄" },
+                { src: "/audio/一生有你-水木年华.mp3", title: "一生有你-水木年华" },
+                
+                
             ];
 
+            
             const audio = document.getElementById('bg-music');
             const titleEl = document.getElementById('music-title');
             const playBtn = document.getElementById('play-btn');
             const volumeControl = document.getElementById('volume-control');
+            const playerContainer = document.getElementById('global-music-player');
+            const playerControls = document.getElementById('player-controls');
+            const minimizeBtn = document.getElementById('minimize-btn');
+            
+            const musicListModal = document.getElementById('music-list-modal');
+            const musicListContainer = document.getElementById('music-list-container');
+            
+            const progressBar = document.getElementById('progress-bar');
+            const currentTimeEl = document.getElementById('current-time');
+            const totalTimeEl = document.getElementById('total-time');
+            
+            
             let currentTrack = 0;
+            let isExpanded = false;
+            let isListShow = false; 
             audio.volume = 0.3;
+            let isDraggingProgress = false; 
 
             
-            function restoreState() {
-                const savedTrack = localStorage.getItem('currentMusicTrack');
-                if (savedTrack) currentTrack = parseInt(savedTrack);
-                
-                const savedTime = localStorage.getItem('musicPlayTime');
-                if (savedTime) audio.currentTime = parseFloat(savedTime);
-                
-                const isPlaying = localStorage.getItem('musicIsPlaying') === 'true';
-                const savedVolume = localStorage.getItem('musicVolume');
-                if (savedVolume) {
-                    audio.volume = parseFloat(savedVolume);
-                    volumeControl.value = audio.volume;
-                }
-                
-                audio.src = musicList[currentTrack].src;
-                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
-                
-                if (isPlaying) {
-                    audio.play().then(() => {
-                        playBtn.innerHTML = '⏸️ 暂停';
-                    }).catch(err => console.log('自动播放被阻止：', err));
+            const STORAGE = {
+                TRACK: 'blog_music_current_track',
+                TIME: 'blog_music_play_time',
+                PLAYING: 'blog_music_is_playing',
+                VOLUME: 'blog_music_volume'
+            };
+
+            
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return '00:00';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            
+            function updateProgressBar() {
+                if (isDraggingProgress) return; 
+                if (audio.duration) {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressBar.value = progress;
+                    currentTimeEl.textContent = formatTime(audio.currentTime);
                 }
             }
 
             
-            function saveState() {
-                localStorage.setItem('currentMusicTrack', currentTrack);
-                localStorage.setItem('musicPlayTime', audio.currentTime);
-                localStorage.setItem('musicIsPlaying', !audio.paused);
-                localStorage.setItem('musicVolume', audio.volume);
+            function setAudioProgress() {
+                if (!audio.duration) return;
+                const progress = parseFloat(progressBar.value);
+                const newTime = (progress / 100) * audio.duration;
+                audio.currentTime = newTime;
+                currentTimeEl.textContent = formatTime(newTime);
+                saveAllState(); 
+            }
+
+            
+            function initMusicList() {
+                musicListContainer.innerHTML = '';
+                musicList.forEach((item, index) => {
+                    const listItem = document.createElement('div');
+                    listItem.style = `
+                        padding: 4px 8px;
+                        border-radius: 4px;
+                        color: var(--text-color);
+                        font-size: 11px;
+                        cursor: pointer;
+                        transition: background 0.2s;
+                    `;
+                    
+                    if (index === currentTrack) {
+                        listItem.style.background = 'var(--link-color)';
+                        listItem.style.color = '#fff';
+                    }
+                    listItem.innerHTML = `${index + 1}. ${item.title}`;
+                    
+                    listItem.onclick = function() {
+                        selectMusic(index);
+                        toggleMusicList(); 
+                    };
+                    musicListContainer.appendChild(listItem);
+                });
+            }
+
+            
+            function toggleMusicList() {
+                isListShow = !isListShow;
+                musicListModal.style.display = isListShow ? 'block' : 'none';
+                if (isListShow) {
+                    initMusicList(); 
+                }
+            }
+
+            
+            function selectMusic(index) {
+                currentTrack = index;
+                audio.src = musicList[currentTrack].src;
+                audio.currentTime = 0; 
+                audio.play();
+                playBtn.innerHTML = '⏸️ 暂停';
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                updateMinimizeBtn();
+                saveAllState();
+                initMusicList(); 
+                
+                progressBar.value = 0;
+                currentTimeEl.textContent = '00:00';
+            }
+
+            
+            function togglePlayer() {
+                isExpanded = !isExpanded;
+                playerControls.style.display = isExpanded ? 'block' : 'none';
+                
+                if (musicListModal.style.display === 'block') {
+                    toggleMusicList();
+                }
+                updateMinimizeBtn();
+            }
+
+            
+            function updateMinimizeBtn() {
+                const statusIcon = audio.paused ? '▶️' : '⏸️';
+                minimizeBtn.innerHTML = `${statusIcon} ${musicList[currentTrack].title}`;
+            }
+
+            
+            function saveAllState() {
+                localStorage.setItem(STORAGE.TRACK, currentTrack);
+                localStorage.setItem(STORAGE.TIME, audio.currentTime); 
+                localStorage.setItem(STORAGE.PLAYING, !audio.paused);
+                localStorage.setItem(STORAGE.VOLUME, audio.volume);
+            }
+
+            
+            function restoreAllState() {
+                
+                const savedTrack = localStorage.getItem(STORAGE.TRACK);
+                if (savedTrack !== null) {
+                    currentTrack = parseInt(savedTrack);
+                    
+                    currentTrack = Math.max(0, Math.min(currentTrack, musicList.length - 1));
+                }
+
+                
+                const savedTime = localStorage.getItem(STORAGE.TIME);
+                const playTime = savedTime !== null ? parseFloat(savedTime) : 0;
+
+                
+                const savedVolume = localStorage.getItem(STORAGE.VOLUME);
+                if (savedVolume !== null) {
+                    audio.volume = parseFloat(savedVolume);
+                    volumeControl.value = audio.volume;
+                }
+
+                
+                audio.src = musicList[currentTrack].src;
+                audio.currentTime = playTime; 
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                updateMinimizeBtn();
+                initMusicList(); 
+
+                
+                const isPlaying = localStorage.getItem(STORAGE.PLAYING) === 'true';
+                if (isPlaying) {
+                    
+                    audio.play().then(() => {
+                        playBtn.innerHTML = '⏸️ 暂停';
+                        updateMinimizeBtn();
+                    }).catch(err => {
+                        console.log('自动播放需手动触发（浏览器安全策略）：', err);
+                        playBtn.innerHTML = '▶️ 播放';
+                    });
+                } else {
+                    playBtn.innerHTML = '▶️ 播放';
+                }
             }
 
             
@@ -202,47 +390,111 @@
                     audio.pause();
                     playBtn.innerHTML = '▶️ 播放';
                 }
-                saveState();
+                updateMinimizeBtn();
+                saveAllState();
             }
 
             
             function prevMusic() {
                 currentTrack = (currentTrack - 1 + musicList.length) % musicList.length;
                 audio.src = musicList[currentTrack].src;
-                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                audio.currentTime = 0; 
                 audio.play();
                 playBtn.innerHTML = '⏸️ 暂停';
-                saveState();
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                updateMinimizeBtn();
+                saveAllState();
+                initMusicList(); 
+                
+                progressBar.value = 0;
+                currentTimeEl.textContent = '00:00';
             }
 
             
             function nextMusic() {
                 currentTrack = (currentTrack + 1) % musicList.length;
                 audio.src = musicList[currentTrack].src;
-                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                audio.currentTime = 0; 
                 audio.play();
                 playBtn.innerHTML = '⏸️ 暂停';
-                saveState();
+                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+                updateMinimizeBtn();
+                saveAllState();
+                initMusicList(); 
+                
+                progressBar.value = 0;
+                currentTimeEl.textContent = '00:00';
             }
 
             
             volumeControl.addEventListener('input', function() {
                 audio.volume = this.value;
-                saveState();
+                saveAllState();
             });
 
             
-            audio.addEventListener('ended', function() {
-                nextMusic();
+            audio.addEventListener('ended', nextMusic);
+
+            
+            let saveTimer = null;
+            audio.addEventListener('timeupdate', function() {
+                
+                updateProgressBar();
+                
+                clearTimeout(saveTimer);
+                saveTimer = setTimeout(saveAllState, 300);
             });
 
             
-            audio.addEventListener('timeupdate', saveState);
-            audio.addEventListener('play', saveState);
-            audio.addEventListener('pause', saveState);
+            audio.addEventListener('loadedmetadata', function() {
+                totalTimeEl.textContent = formatTime(audio.duration);
+                updateProgressBar();
+            });
 
             
-            window.onload = restoreState;
+            
+            progressBar.addEventListener('mousedown', function() {
+                isDraggingProgress = true;
+            });
+            
+            document.addEventListener('mouseup', function() {
+                if (isDraggingProgress) {
+                    isDraggingProgress = false;
+                    setAudioProgress();
+                }
+            });
+            
+            progressBar.addEventListener('input', function() {
+                if (!isDraggingProgress) {
+                    setAudioProgress();
+                }
+            });
+            
+            progressBar.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            
+            window.addEventListener('beforeunload', saveAllState);
+
+            
+            document.addEventListener('click', function(e) {
+                if (isListShow && 
+                    !musicListModal.contains(e.target) && 
+                    !playerContainer.contains(e.target)) {
+                    toggleMusicList();
+                }
+            });
+
+            
+            playerContainer.addEventListener('click', togglePlayer);
+            audio.addEventListener('play', saveAllState);
+            audio.addEventListener('pause', saveAllState);
+
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                restoreAllState();
+            });
         </script>
 
         <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
@@ -401,25 +653,6 @@
             </a>
         </li>
         
-        
-        <li >
-            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-
-                
-                <span>友情链接</span>
-            </a>
-        </li>
-        
         <li class="menu-bottom-section">
             <ol class="menu">
 
@@ -493,7 +726,7 @@
                     <a href="/archives/#2026">
                         
                             <span class="year">2026</span>
-                            <span class="count">4</span>
+                            <span class="count">6</span>
                         
                     </a> 
                 </div>
@@ -528,20 +761,20 @@
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/%E5%A4%A7%E4%BA%8C/" class="font_size_3">
+            <a href="/categories/%E5%A4%A7%E4%BA%8C/" class="font_size_5">
                 大二
             </a>
         
-            <a href="/categories/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" class="font_size_3">
+            <a href="/categories/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" class="font_size_4">
                 笔记整理
+            </a>
+        
+            <a href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="font_size_3">
+                实验报告
             </a>
         
             <a href="/categories/%E5%A4%A7%E4%B8%80/" class="font_size_2">
                 大一
-            </a>
-        
-            <a href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="font_size_2">
-                实验报告
             </a>
         
             <a href="/categories/%E7%94%9F%E4%BF%A1/" class="font_size_2">
@@ -570,7 +803,7 @@
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">7 个页面</h3>
+                <h3 class="section-count">9 个页面</h3>
                 <h1 class="section-term">Posts</h1>
                 
             </div>
@@ -578,6 +811,50 @@
     </header>
     
     <section class="article-list--compact">
+        
+            <article>
+    <a href="/p/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">
+        <div class="article-details">
+            <h2 class="article-title">概率论和数理统计</h2>
+            
+            
+            <footer class="article-time">
+                <time datetime='2026-01-03T22:19:13&#43;08:00'>2026-01-03</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/normal_curve_hu_a43df33af1381486.png" 
+                        width="120"
+                        height="120" 
+                        alt="概率论和数理统计"
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
+        
+            <article>
+    <a href="/p/%E6%A4%8D%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/">
+        <div class="article-details">
+            <h2 class="article-title">植物学及实验（甲）</h2>
+            
+            
+            <footer class="article-time">
+                <time datetime='2026-01-02T23:43:01&#43;08:00'>2026-01-02</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/%E6%A4%8D%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/2_hu_423ce51247eeb5f0.jpg" 
+                        width="120"
+                        height="120" 
+                        alt="植物学及实验（甲）"
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
         
             <article>
     <a href="/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6%E7%94%B2/">
@@ -623,35 +900,16 @@
     </a>
 </article>
         
-            <article>
-    <a href="/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6%E5%AE%9E%E9%AA%8Ci/">
-        <div class="article-details">
-            <h2 class="article-title">普通物理学实验I</h2>
-            
-            
-            <footer class="article-time">
-                <time datetime='2025-05-23T22:51:13&#43;08:00'>2025-05-23</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                <img src="/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6%E5%AE%9E%E9%AA%8Ci/f4c181700edf3a41d04b39d65e664d0a_hu_fa70ea306c782e3b.jpg" 
-                        width="120"
-                        height="120" 
-                        alt="普通物理学实验I"
-                        loading="lazy">
-                
-            </div>
-        
-    </a>
-</article>
-        
     </section><nav class="pagination" role="navigation" aria-label="pagination"><a class="page-link "href="/post/"aria-label="Previous page">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
     </a><a class="page-link " aria-label="Page 1"href="/post/">
         1
-    </a><a class="page-link current"aria-label="Page 2"aria-current="page">
-        2
-    </a><a class="page-link disabled"aria-label="Next page"aria-disabled="true">
+    </a><a class="page-link current"aria-current="page"href="/post/page/2/"
+                aria-label="Page 2">
+                2
+            </a><a class="page-link "href="/post/page/3/"aria-label="Page 3">
+        3
+    </a><a class="page-link "href="/post/page/3/"aria-label="Next page">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
     </a>
 </nav><footer class="site-footer">
@@ -692,27 +950,6 @@
 </script>
 <html>
 <body>
-  
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script>
-    function showHideView() {
-        
-        let viewCounts = document.querySelectorAll("#viewCount");
-        if (viewCounts) {
-            
-            let article =  document.querySelector(".article-page");
-            if (!article) {
-                viewCounts.forEach(ele => {
-                    ele.style.display = 'none';
-                });
-            }
-        }
-    }
-    
-    showHideView();
-</script>
-
   <style>
       body {
         background: url(https://hanbing116.github.io/background/12.png) no-repeat center top;

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Fri, 13 Feb 2026 18:35:34 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Feb 2026 22:54:19 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>普通物理学Ⅱ（H）</title>
         <link>https://hanbing116.github.io/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6h/</link>
         <pubDate>Thu, 08 Jan 2026 22:26:15 +0800</pubDate>
@@ -77,6 +77,54 @@
       href=&#34;https://hanbing116.github.io/pdfs/普物2期末补天.pdf&#34;
       target=&#34;_blank&#34;
       download=&#34;普物2期末补天.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+</description>
+        </item>
+        <item>
+        <title>概率论和数理统计</title>
+        <link>https://hanbing116.github.io/p/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/</link>
+        <pubDate>Sat, 03 Jan 2026 22:19:13 +0800</pubDate>
+        
+        <guid>https://hanbing116.github.io/p/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/</guid>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/normal_curve.png" alt="Featured image of post 概率论和数理统计" /&gt;&lt;p&gt;不得不说，黄老师人真的太好了，讲的很详细，PPT也很全面欸，一学期下来收获很大。认真跟着老师学，期末也没想的那么难🥳&lt;/p&gt;
+&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/概和统.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/概和统.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/概和统.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;概和统.pdf&#34;
       style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
     &gt;
       📥 下载 PDF 文件
