@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Wed, 11 Feb 2026 22:18:28 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/tags/%E7%94%9F%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Feb 2026 08:53:14 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/tags/%E7%94%9F%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>GEO转录本分析</title>
         <link>https://hanbing116.github.io/p/geo%E8%BD%AC%E5%BD%95%E6%9C%AC%E5%88%86%E6%9E%90/</link>
         <pubDate>Sun, 01 Feb 2026 18:49:46 +0800</pubDate>
@@ -21,7 +21,7 @@
 &lt;p&gt;如下是进入搜索的一个关于甲状腺癌的文件&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299988&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GEO Accession viewer&lt;/a&gt;&lt;/p&gt;
-&lt;img src=&#34;image-20260201190547518.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260201190547518.png&#34; width=&#34;600&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;Platforms：（GPLxxxx）平台编号对应的检测技术体系，包含了探针序列与基因的对应关系，是后续进行探针 ID 转换为基因 Symbol/Ensembl ID 的必需文件，直接影响下游功能富集分析的准确性。&lt;/li&gt;
 &lt;li&gt;Samples：（GSMxxxx）样本列表，可以查看每一个样本信息&lt;/li&gt;
@@ -36,7 +36,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Platform&lt;/strong&gt;里面的GPL注释表和文件是注释信息，探针ID 到 基因。而Download family里面的文件是表达量数据，只能确定探针中的表达值。&lt;/p&gt;
 &lt;p&gt;需要Download full table…&lt;/p&gt;
-&lt;img src=&#34;image-20260201212109027.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260201212109027.png&#34; width=&#34;600&#34;&gt;
 &lt;h2 id=&#34;geo数据处理&#34;&gt;GEO数据处理
 &lt;/h2&gt;&lt;p&gt;下载Download family处的Series Matrix File(s)文件和Platform里的full table文件。&lt;/p&gt;
 &lt;ul&gt;
@@ -215,7 +215,7 @@
 &lt;/div&gt;&lt;h2 id=&#34;geo非symbol基因名的处理&#34;&gt;GEO非symbol基因名的处理
 &lt;/h2&gt;&lt;p&gt;常见标识类型：
 Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的基因编号；RefSeq Accession是NCBI RefSeq 数据库的转录本编号，如 &lt;code&gt;NM_000546&lt;/code&gt;；ENSEMBL ID对应Ensembl 数据库的基因 / 转录本编号，如 &lt;code&gt;ENSG00000141510&lt;/code&gt;；GenBank Accession（GB ACC）对应GenBank 数据库的核酸序列编号，如 &lt;code&gt;U94788&lt;/code&gt;。&lt;/p&gt;
-&lt;img src=&#34;image-20260203143207467.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260203143207467.png&#34; width=&#34;600&#34;&gt;
 &lt;p&gt;如GSE200539的GPL文件中不包含symbol文件&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE200539&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GEO Accession viewer&lt;/a&gt;&lt;/p&gt;
@@ -300,7 +300,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/h2&gt;&lt;p&gt;上述的GEO处理基于Download family中的Series Matrix File(s)下载后处理，这是已经预处理过的表达矩阵数据。通常是经过背景校正、归一化和探针注释后的表格。无法验证或调整预处理过程（如归一化方法）。&lt;/p&gt;
 &lt;p&gt;因此有时选取Supplementary file(s)里面的RAW原始文件，是原始的 CEL 文件压缩包，包含芯片扫描得到的原始荧光信号数据。&lt;/p&gt;
 &lt;p&gt;如上述的GSE200539的Supplementary file里面的GSE200539_RAW.tar&lt;/p&gt;
-&lt;img src=&#34;image-20260203193135429.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260203193135429.png&#34; width=&#34;600&#34;&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -405,7 +405,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;p&gt;选取GSE309139高通量数据为例，下载Series Matrix File(s)与GSE309139_raw_counts.txt.gz，原始的counts数据需解压&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GEO Accession viewer&lt;/a&gt;&lt;/p&gt;
-&lt;img src=&#34;image-20260204184434548.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260204184434548.png&#34; width=&#34;600&#34;&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -580,7 +580,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/div&gt;&lt;h3 id=&#34;火山图&#34;&gt;火山图
 &lt;/h3&gt;&lt;p&gt;接上述limma差异分析&lt;/p&gt;
 &lt;p&gt;如下是下述代码的DEG结果数据框图：&lt;/p&gt;
-&lt;img src=&#34;image-20260204223019416.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260204223019416.png&#34; width=&#34;600&#34;&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -725,7 +725,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;dev.off&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;Rplot.png&#34; width=&#34;600&#34;&gt;
+&lt;/div&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/Rplot.png&#34; width=&#34;600&#34;&gt;
 &lt;h3 id=&#34;热图&#34;&gt;热图
 &lt;/h3&gt;&lt;p&gt;接上述火山图&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -844,7 +844,7 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;dev.off&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;heatmap2.jpg&#34; width=&#34;600&#34;&gt;
+&lt;/div&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/heatmap2.jpg&#34; width=&#34;600&#34;&gt;
 &lt;h2 id=&#34;高通量数据分析&#34;&gt;高通量数据分析
 &lt;/h2&gt;&lt;p&gt;先前GEO高通量数据处理时运行得到degs那一步，仅在得到res1差异结果后增加一步，将其进行txt文件导出，作为DEG结果，如下是得到degs的代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -946,13 +946,13 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这是最后选出的degs表格样式：&lt;/p&gt;
-&lt;img src=&#34;image-20260205190953328.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260205190953328.png&#34; width=&#34;600&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;根据筛选出来的表格样式，使用导出的DEG1.txt进行火山图和热图绘制，与之前limma部分一致，注意纵轴名的相应更改即可。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;如下是limma后进行的火山图与热图分析结果：&lt;/p&gt;
-&lt;img src=&#34;volcanoGSE309139.jpg&#34; width=&#34;600&#34;&gt;
-&lt;img src=&#34;heatmap2_GSE309139.jpg&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/volcanoGSE309139.jpg&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/heatmap2_GSE309139.jpg&#34; width=&#34;600&#34;&gt;
 &lt;h1 id=&#34;富集分析&#34;&gt;富集分析
 &lt;/h1&gt;&lt;p&gt;在先前差异分析得到的差异表格基础上进行，先前差异分析已经注释好的DOWN、UP或NOT的数据，即DEG2.txt&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;GO 富集&lt;/strong&gt;：关注&lt;strong&gt;基因的功能属性&lt;/strong&gt;（这个基因&lt;strong&gt;干什么&lt;/strong&gt;、在&lt;strong&gt;哪里&lt;/strong&gt;、怎么参与过程）&lt;/p&gt;
@@ -1148,8 +1148,8 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
     &gt;GSEA&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如下是进入页面后的Database页面，右侧的 &lt;strong&gt;Human Collections&lt;/strong&gt; 就是给人类研究用的 10 类基因集&lt;/p&gt;
 &lt;p&gt;H：&lt;strong&gt;特征基因集&lt;/strong&gt;，把多个相似基因集合并，代表最核心、最清晰的生物学状态 / 过程，快速抓最关键的通路，结果干净、易解释。&lt;/p&gt;
-&lt;img src=&#34;image-20260207223242346.png&#34; width=&#34;600&#34;&gt;
-&lt;img src=&#34;image-20260207223652781.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260207223242346.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260207223652781.png&#34; width=&#34;600&#34;&gt;
 &lt;p&gt;选取H的右侧&lt;a class=&#34;link&#34; href=&#34;https://www.gsea-msigdb.org/gsea/msigdb/download_file.jsp?filePath=/msigdb/release/2026.1.Hs/h.all.v2026.1.Hs.symbols.gmt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Gene Symbols&lt;/a&gt;进行下载，下载得到gmt文件&lt;/p&gt;
 &lt;h3 id=&#34;常规gsea&#34;&gt;常规GSEA
@@ -1276,15 +1276,15 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下是富集分析得到的结果res：&lt;/p&gt;
-&lt;img src=&#34;image-20260208152147704.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/image-20260208152147704.png&#34; width=&#34;600&#34;&gt;
 &lt;p&gt;enrichmentScore (ES)：原始富集分数&lt;/p&gt;
 &lt;p&gt;NES (Normalized ES)：标准化富集分数，大于0表示上调&lt;/p&gt;
 &lt;p&gt;rank：该基因集在所有结果中的排名&lt;/p&gt;
 &lt;p&gt;leading_edge：核心富集基因的标签。&lt;code&gt;tags&lt;/code&gt;：核心基因占该基因集的比例；&lt;code&gt;list&lt;/code&gt;：占全基因列表的比例；&lt;code&gt;signal&lt;/code&gt;：富集信号强度&lt;/p&gt;
 &lt;p&gt;core_enrichment：核心富集基因列表&lt;/p&gt;
 &lt;p&gt;以下是分析结果图：&lt;/p&gt;
-&lt;img src=&#34;GSEA_1.png&#34; width=&#34;600&#34;&gt;
-&lt;img src=&#34;GSEA_2.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/GSEA_1.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/GSEA_2.png&#34; width=&#34;600&#34;&gt;
 &lt;h3 id=&#34;单基因gsea&#34;&gt;单基因GSEA
 &lt;/h3&gt;&lt;p&gt;单基因GSEA分析可以明确一个基因表达的变化时通路的变化情况&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1444,8 +1444,8 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下是单基因GSEA分析的作图结果：结果曲线为正即为该通路上调&lt;/p&gt;
-&lt;img src=&#34;GSEA_single_gene.png&#34; width=&#34;600&#34;&gt;
-&lt;img src=&#34;GSEA_single_gene2.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/GSEA_single_gene.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/hanbing116/hanbing116.github.io@main/p/geo转录本分析/GSEA_single_gene2.png&#34; width=&#34;600&#34;&gt;
 </description>
         </item>
         <item>
