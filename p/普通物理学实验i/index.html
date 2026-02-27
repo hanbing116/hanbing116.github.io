@@ -106,6 +106,22 @@
     </script>
 </body>
 </html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '\\[', right: '\\]', display: true}
+    ],
+    throwOnError: false  
+  });
+});
+</script>
     </head>
     <body class="
     article-page
@@ -199,6 +215,7 @@
                 { src: "/audio/song3.mp3", title: "song3" },
                 { src: "/audio/黄昏-周传雄.mp3", title: "黄昏-周传雄" },
                 { src: "/audio/一生有你-水木年华.mp3", title: "一生有你-水木年华" },
+                { src: "/audio/路过人间-郁可唯.mp3", title: "路过人间-郁可唯" },
                 
                 
             ];
@@ -1446,6 +1463,78 @@
 </article>
 
             
+                
+<article class="has-image">
+    <a href="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/P20251016-143708.0f0cc9946bb800c36f64ccb318a45f37_hu_22f02f3c6979c026.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 有机化学实验"
+                        
+                        data-hash="md5-DwzJlGu4AMNvZMyzGKRfNw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">有机化学实验</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C%E7%94%B2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C%E7%94%B2/pic1.942ed144ca257d6aecb9aa50ccb0c989_hu_58a8fadb526d356a.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 生物化学实验（甲）"
+                        
+                        data-hash="md5-lC7RRMolfWrsuapQzLDJiQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">生物化学实验（甲）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6/451b37fca816462eae4c23086daf67c3.bebc24e30bc5213cf8f212ad89b9075b_hu_c49821a3ccb49ee4.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 有机化学"
+                        
+                        data-hash="md5-vrwk4wvFITz48hKtibkHWw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">有机化学</h2>
+        </div>
+    </a>
+</article>
+
+            
         </div>
     </div>
 </aside>
@@ -1580,6 +1669,7 @@
         margin: 0;
         min-height: 100vh;
       }
+       
     </style>
     <script>
       
@@ -1646,13 +1736,27 @@ function loadExternalResource(url, type) {
     logLevel: 'warn',
     drag: false,
   });
+  
+setTimeout(() => {
+  const live2dEl = document.getElementById('live2d');
+  const waifuEl = document.getElementById('waifu');
+  if (live2dEl) {
+    live2dEl.addEventListener('wheel', (e) => {
+      e.preventDefault(); 
+      e.stopPropagation(); 
+    }, { passive: false }); 
+  }
+  if (waifuEl) {
+    waifuEl.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    }, { passive: false });
+  }
+}, 1000);
 })();
     </script>
     <script src=https://hanbing116.github.io/background/sakura.js></script>
-    
-    
 </body>
-
 </html>
     </body>
 </html>

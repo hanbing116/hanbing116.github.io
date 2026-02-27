@@ -84,11 +84,11 @@
     width: 250px;  /* 宽高保持一致 */
     transform: scale(1) !important; /* 强制固定缩放比例为1 */
     transform-origin: center center !important; /* 固定缩放原点 */
-    pointer-events: none; /* 可选：阻止鼠标事件触发（但会同时禁用拖拽） */
 }
 #live2d:active {
     cursor: grabbing;
 }
+
 
 #waifu-tool {
 	align-items: center;

@@ -105,6 +105,22 @@
     </script>
 </body>
 </html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '\\[', right: '\\]', display: true}
+    ],
+    throwOnError: false  
+  });
+});
+</script>
     </head>
     <body class="template-archives">
     <script>
@@ -196,6 +212,7 @@
                 { src: "/audio/song3.mp3", title: "song3" },
                 { src: "/audio/黄昏-周传雄.mp3", title: "黄昏-周传雄" },
                 { src: "/audio/一生有你-水木年华.mp3", title: "一生有你-水木年华" },
+                { src: "/audio/路过人间-郁可唯.mp3", title: "路过人间-郁可唯" },
                 
                 
             ];
@@ -912,6 +929,28 @@
     </a>
 </article>
             
+                <article>
+    <a href="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/">
+        <div class="article-details">
+            <h2 class="article-title">有机化学实验</h2>
+            
+            
+            <footer class="article-time">
+                <time datetime='2026-01-02T21:23:53&#43;08:00'>2026-01-02</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C/P20251016-143708_hu_f23fc58bc8708f2a.jpg" 
+                        width="120"
+                        height="120" 
+                        alt="有机化学实验"
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
+            
         </div>
     </div>
     
@@ -935,6 +974,50 @@
                         width="120"
                         height="120" 
                         alt="生物化学（甲）"
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
+            
+                <article>
+    <a href="/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C%E7%94%B2/">
+        <div class="article-details">
+            <h2 class="article-title">生物化学实验（甲）</h2>
+            
+            
+            <footer class="article-time">
+                <time datetime='2025-12-27T14:43:26&#43;08:00'>2025-12-27</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C%E7%94%B2/pic1_hu_f07e545923c6ae5f.png" 
+                        width="120"
+                        height="120" 
+                        alt="生物化学实验（甲）"
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
+            
+                <article>
+    <a href="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6/">
+        <div class="article-details">
+            <h2 class="article-title">有机化学</h2>
+            
+            
+            <footer class="article-time">
+                <time datetime='2025-06-01T10:32:30&#43;08:00'>2025-06-01</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6/451b37fca816462eae4c23086daf67c3_hu_654ecc0654d498a6.png" 
+                        width="120"
+                        height="120" 
+                        alt="有机化学"
                         loading="lazy">
                 
             </div>
@@ -1036,6 +1119,7 @@
         margin: 0;
         min-height: 100vh;
       }
+       
     </style>
     <script>
       
@@ -1102,13 +1186,27 @@ function loadExternalResource(url, type) {
     logLevel: 'warn',
     drag: false,
   });
+  
+setTimeout(() => {
+  const live2dEl = document.getElementById('live2d');
+  const waifuEl = document.getElementById('waifu');
+  if (live2dEl) {
+    live2dEl.addEventListener('wheel', (e) => {
+      e.preventDefault(); 
+      e.stopPropagation(); 
+    }, { passive: false }); 
+  }
+  if (waifuEl) {
+    waifuEl.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    }, { passive: false });
+  }
+}, 1000);
 })();
     </script>
     <script src=https://hanbing116.github.io/background/sakura.js></script>
-    
-    
 </body>
-
 </html>
     </body>
 </html>
