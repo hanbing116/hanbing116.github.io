@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><meta charset='utf-8'>
+<head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="R基础 基本操作 1 清屏 ctrl+L 1 2 3 4 5 6 getwd() #获取当前环境储存位置 setwd() #更改位置 #eg.setwd(&#34;C:/Users/30521/Desktop/R_script&#34;) list.files() #查看文件，默认为储存文件夹 dir() #与list.files() 用法一致 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # 变量赋值 x&lt;-3 x&lt;&lt;-3 #强制赋值给一个全局变量 #查看环境中的变量 ls() #详细查看 ls.str() # str()是列出某一个变量的信息 # 查看所有文件，包括“.”开头的隐藏文件 ls(all.names=TRUE) # 列出历史记录 history() # 删除环境中的对象 rm() # rm(x);rm(x,y) rm(list=ls()) # 删除环境中的所有对象 # 保存工作空间 save.image() # 返回对象前面或后面的部分 head() head(mtcars,2) # 返回mtcars数据集的前两行 R包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 # R包的安装 install.packages() #eg. install.packages(&#34;vcd&#34;) .libPaths() # 显示库所在的位置 library() # 显示库里的安装包 installed.packages() # 显示环境中已安装的包 # 一次安装多个包可使用c向量 install.packages(c(&#34;&#34;,&#34;&#34;)) # 更新安装包 update.packages() # 卸载安装包 remove.packages() # 环境中移除包 detach(&#34;package:包名&#34;) #载入包 library(&#34;包名&#34;) require(&#34;包名&#34;) # 查看一个包 help(package=&#34;包名&#34;) library(help=&#34;包名&#34;) # 列出包中所有包含的函数 ls(&#34;package:包名&#34;) # 查看包中包含的数据集 data(package=&#34;包名&#34;) 获取帮助 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 help.start() # 获取帮助 help(函数名) ?名称 args(名称) # 快速查阅 example() # 可以查看示例 demo(graphics) # 查看R的案例图 heatmap(矩阵) # 绘制热图 help(package=&#34;包名&#34;) vignette(package=&#34;包名&#34;) # 查看一个包更完整的案例等教程 vignette(&#34;教程名&#34;) # 具体查看某一个包里的某一个教程 ??函数名 # 不加载包可以直接搜索函数，本地搜索 help.search(&#34;函数名&#34;) # 模糊搜索，本地搜索函数。可用“??函数名”简写 apropos(&#34;关键字&#34;) # 搜索关键字的内容 apropos(&#34;关键字&#34;，mod=&#34;类型&#34;) # 含关键词指定类型的搜索 RSiteSearch(&#34;关键词&#34;) # 在线搜索 内置数据集 1 2 3 4 5 6 7 8 9 10 # 存在于datasets包中 help(package=&#34;datasets&#34;) data() # 列出数据集 data(package=&#34;包名&#34;) # R包中的数据集 data(package = .packages(all.available = TRUE)) # 查看所有可用数据集 data(数据集名,package=&#34;R包名&#34;) # 不加载R包使用其中的数据集 # 直接输入数据集名字，即可查看使用 data.frame(名称,名称，……) # 构成数据框 数据结构 向量 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 # 字母c连接 x&lt;-c(1,2,3,4) y&lt;-c(&#34;one&#34;,&#34;two&#34;,&#34;three&#34;) # 字符串一定要加引号，单双都可以 # 逻辑型向量 z&lt;-c(T,F) # 快捷构建向量——生成等差数列 c(1:100) # 构建1到100的等差数列 seq(from=1,to=100) seq(from=1,to=100,by=2) # by控制步长 seq(from=1,to=100,length.out=10) # length.out控制输出个数 # 快捷构建向量——生成重复序列 rep(x, times = 1, length.out = NA, each = 1) rep(1,5) #结果为1 1 1 1 1 x&lt;-c(1,2,3,4) rep(x,3) # 结果为1 2 3 4 1 2 3 4 1 2 3 4 rep(x,each=3) # 结果为1 1 1 2 2 2 3 3 3 4 4 4 rep(x,each=3,times=2) # 结果为1 1 1 2 2 2 3 3 3 4 4 4 1 1 1 2 2 2 3 3 3 4 4 4 # 一个向量中元素类型必须为同一类型 x&lt;-c(1,2,&#34;3&#34;) # 结果最后全部转换为字符类型是&#34;1&#34; &#34;2&#34; &#34;3&#34; # 查看类型 mode(x) # R为向量化编程 x&lt;-c(1,5,6,4) y&lt;-c(2,8,9,6) x+y # 结果为3 13 15 10向量 x[x&gt;3] #避免循环的使用，结果为5,6,4向量 # 在重复中也有好处 x&lt;-c(1,2,3,4) rep(x,c(2,4,6,8)) # 结果为1 1 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 4向量 向量索引 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 x&lt;-c(1:100) # 创建1到100的连续向量 length(x) # 向量长度100 x[1] # 访问第一个元素（与C++不同，R元素是从1开始） x[-19] # 表示输出除了19以外的所有元素！！ # 向量化索引 x[c(3:10)] # 结果为3 4 5 6 7 8 9 10向量 x[c(1,56,82,98)] # 结果为1 56 82 98向量 x[c(-2,5,6)] # 有正有负时，逻辑矛盾 #逻辑值索引 y&lt;-c(1:10) y[c(T,T,F)] # 输出1 2 4 5 7 8 10 y[c(T,F,T,T)] # 输出1 3 4 5 7 8 9 y[c(T,T,T,T,T,F,F,T,T,T,T)] # 输出1 2 3 4 5 8 9 10 NA y[y&gt;5] # 输出6 7 8 9 10 y[y&gt;5&amp;y&lt;9] # 输出6 7 8 # 字符串向量的逻辑型判断 z&lt;-c(&#34;one&#34;,&#34;two&#34;,&#34;three&#34;,&#34;four&#34;,&#34;five&#34;) &#34;one&#34; %in% z # 输出为TRUE z[&#34;one&#34; %in% z] # 输出为&#34;one&#34; &#34;two&#34; &#34;three&#34; &#34;four&#34; &#34;five&#34; z %in% c(&#34;one&#34;,&#34;two&#34;) # 输出为TRUE TRUE FALSE FALSE FALSE # 给对象命名 x&lt;-c(1,2,3,4,5) names(x)&lt;-c(&#34;one&#34;,&#34;two&#34;,&#34;three&#34;,&#34;four&#34;,&#34;five&#34;) x # 结果为one two three four five 1 2 3 4 5 x[&#34;one&#34;] # 由此可访问对应的列 #结果为 one 1 # 添加向量（对多的位数额外赋值即可） x&lt;-c(1:100) x[101]&lt;-101 # 结果即为c(1:101) v&lt;-c(1:3) v[c(4:5)]&lt;-c(4,5) v # 结果为1 2 3 4 5 # 也可以跨位赋值，中间的即为NA w&lt;-c(1:5) w[c(8:10)]&lt;-c(11,12,13) w # 结果为1 2 3 4 5 NA NA 11 12 13 #插入数据 append(x, values, after = length(x)) m&lt;-c(1:8) append(m,16,after=3) # 结果为1 2 3 16 4 5 6 7 8 # 删除向量中某个元素(负整数索引) x&lt;-c(1:10) x[-c(1:3)] # 结果为4 5 6 7 8 9 10 向量运算 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 # 向量运算作用于每一个元素 x&lt;-c(1:10) x+1 # 即为c(2:11) x-3 # 即为c(-2:7) # 向量间运算则一一对应运算 x&lt;-c(1:10) y&lt;-seq(1,100,length.out=10) x+y # 结果为2 14 26 38 50 62 74 86 98 110 x*y # 结果为 1 24 69 136 225 336 469 624 801 1000 x**y # 此时为乘幂运算 x%%y # 求余运算 y%/%x # 整除运算 # 向量中元素个数不对等时，循环使用（仅限于一个是另一个的倍数） x&lt;-c(1:10) z&lt;-c(1,2) x+z # 结果为 2 4 4 6 6 8 8 10 10 12 z1&lt;-c(1,2,3) x+z1 # Warning：In x + z1 : 长的对象长度不是短的对象长度的整倍数 # 向量逻辑运算（向量中元素比较返回逻辑值） x&lt;-c(1:10) x&gt;5 # 返回FALSE FALSE FALSE FALSE FALSE TRUE TRUE TRUE TRUE TRUE which(x&gt;5) # 返回&gt;5的位数 x[x&gt;5]==x[which(x&gt;5)] y&lt;-c(2:11) x&lt;y # 返回全是TRUE # 注意：向量中元素不对等时，依旧只有整数倍能循环比较，否则无法进行 x==y # 返回逻辑型判断是否相等 # 向量运算函数 abs() # 绝对值 sqrt() # 平方根计算 sum() #求和 mean() #均值 log(#真数,base=#底数) log(16,base=2)=4 log(#数) #默认是自然对数 exp() # 计算某个数的指数值 ceiling() # 向上取整 floor() # 向下取整 trunc() # 返回整数部分 round() # 四舍五入 round(x, digits = 保留小数点后的位数) signif() # 四舍五入，但位数是从最高位开始计 signif(x, digits = 保留位数) sin() # 三角函数 cos() # 三角函数 max() # 最大值 min() # 最小值 range() # 返回最大与最小值 var() # 方差 sd() # 标准差 prod() # 连乘的积 median() # 中位数 quantile() # 分位数计算 quantile(x, probs = c(0.1, 0.5, 0.9)) # 确定想要的分位数 which. () # 返回位置 which.min(x) # 返回x中最小值在第几位 which(x==3) # 返回等于3在第几位 矩阵与数组 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 # R内置数据集中的矩阵 iris3 state.x77 # 创建矩阵 x&lt;-c(1:20) matrix(x,nrow=4,ncol=5) matrix(1:20,4,5)# 先是“行”，后是“列” # [,1] [,2] [,3] [,4] [,5] [1,] 1 5 9 13 17 [2,] 2 6 10 14 18 [3,] 3 7 11 15 19 [4,] 4 8 12 16 20 # 默认是按列排列，可以增添byrow=T来按行排列 matrix(c(1:20),4,byrow=T) [,1] [,2] [,3] [,4] [,5] [1,] 1 2 3 4 5 [2,] 6 7 8 9 10 [3,] 11 12 13 14 15 [4,] 16 17 18 19 20 # 行列命名 m&lt;-matrix(1:20,4,5) rnames&lt;-c(&#34;R1&#34;,&#34;R2&#34;,&#34;R3&#34;,&#34;R4&#34;) cnames&lt;-c(&#34;C1&#34;,&#34;C2&#34;,&#34;C3&#34;,&#34;C4&#34;,&#34;C5&#34;) dimnames(m)&lt;-list(rnames,cnames) m C1 C2 C3 C4 C5 R1 1 5 9 13 17 R2 2 6 10 14 18 R3 3 7 11 15 19 R4 4 8 12 16 20 # dim()表示向量维数，也可来创造矩阵 x&lt;-1:10 dim(x)&lt;-c(2,5) x [,1] [,2] [,3] [,4] [,5] [1,] 1 3 5 7 9 [2,] 2 4 6 8 10 # R中的数组是多维矩阵 x&lt;-1:20 dim(x)&lt;-c(2,5,2) x , , 1 [,1] [,2] [,3] [,4] [,5] [1,] 1 3 5 7 9 [2,] 2 4 6 8 10 , , 2 [,1] [,2] [,3] [,4] [,5] [1,] 11 13 15 17 19 [2,] 12 14 16 18 20 # 数组创建 dim1&lt;-c(&#34;A1&#34;,&#34;A2&#34;) dim2&lt;-c(&#34;B1&#34;,&#34;B2&#34;,&#34;B3&#34;) dim3&lt;-c(&#34;C1&#34;,&#34;C2&#34;,&#34;C3&#34;,&#34;C4&#34;) z&lt;-array(1:24,c(2,3,4),dimnames=list(dim1,dim2,dim3)) z , , C1 B1 B2 B3 A1 1 3 5 A2 2 4 6 , , C2 B1 B2 B3 A1 7 9 11 A2 8 10 12 , , C3 B1 B2 B3 A1 13 15 17 A2 14 16 18 , , C4 B1 B2 B3 A1 19 21 23 A2 20 22 24 # 查找元素 x&lt;-matrix(1:20,4,5,byrow=T) x[1,2] # 查找为2 x[1,c(2,3,4)] # 访问多个元素 x[c(2,3),c(2,3)] # 访问子集 x[2,] # 访问第二行 x[,2] # 访问第二列 x[-1,2] # 负数索引，去除第一行后输出第二列 # 也可以通过名称访问 state.x77 state.x77[&#34;Alabama&#34;,] # 矩阵的运算就是每个元素的运算 colSums() # 分别计算矩阵每一列和 rowSums() # 分别计算矩阵每一行和 colMeans() # 列平均 rowMeans() # 行平均 #矩阵乘法 m&lt;-matrix(1:9,3,3) n&lt;-matrix(2:10,3,3) m*n # 内积，对应位置元素相乘即可 m%*%n # 外积，线代中的矩阵乘法运算 diag(n) # 返回对角矩阵的值2 6 10 t(n) # 矩阵转置，行列互换 列表 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 # 向量只能储存一种数据类型，列表中的对象则可以是任何数据结构，内置的state.center数据集就是一个列表 list() # 创建列表 a&lt;-c(&#34;A&#34;,&#34;B&#34;,&#34;C&#34;) b&lt;-c(1,2,3,4) c&lt;-head(mtcars,3) d&lt;-&#34;Test list&#34; m&lt;-list(a,b,c,d) #结果如下： [[1]] [1] &#34;A&#34; &#34;B&#34; &#34;C&#34; [[2]] [1] 1 2 3 4 [[3]] mpg cyl disp hp drat wt qsec vs am gear carb Mazda RX4 21.0 6 160 110 3.90 2.620 16.46 0 1 4 4 Mazda RX4 Wag 21.0 6 160 110 3.90 2.875 17.02 0 1 4 4 Datsun 710 22.8 4 108 93 3.85 2.320 18.61 1 1 4 1 [[4]] [1] &#34;Test list&#34; # 添加名称 list(A=a,B=b,C=c,D=d) # 结果如下： $A [1] &#34;A&#34; &#34;B&#34; &#34;C&#34; $B [1] 1 2 3 4 $C mpg cyl disp hp drat wt qsec vs am gear carb Mazda RX4 21.0 6 160 110 3.90 2.620 16.46 0 1 4 4 Mazda RX4 Wag 21.0 6 160 110 3.90 2.875 17.02 0 1 4 4 Datsun 710 22.8 4 108 93 3.85 2.320 18.61 1 1 4 1 $D [1] &#34;Test list&#34; # 列表的访问 m&lt;-list(……) m[1] # 访问第一个列表元素 m[c(1,3)] # 访问第一个与第三个列表元素 # 也可以通过名称访问列表元素 state.center[c(&#34;x&#34;,&#34;y&#34;)] state.center$x state.center[1]=state.center[&#34;x&#34;] # 一个中括号是输出的列表子集，依旧为列表格式，即包含$开头的标题部分 state.center[[1]] # 则是去除了列表格式，表示第一个原本的内容与格式 #同样的，给列表赋值也要到两个中括号的格式开始 mlist&lt;-state.center mlist[[3]]&lt;-c(1:10) names(mlist)[3]&lt;-&#34;z&#34; # 给新加入的列表内容命名 mlist[-3] # 负索引的方式去除列表内容 mlist[[3]]&lt;-NULL # 用NULL赋值删除列表中的元素 数据框 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # 表格式数据结构，实质上是一个列表，元素是向量，这些向量构成数据框的列，每列长度相等。因此数据框是矩形结构，且数据框的列必须命名 # 内置的数据框如iris,mtcars,rock，women # 合成数据框 state&lt;-data.frame(state.name,state.abb,state.region,state.x77) # 访问 state[1] # 第一列内容数据框 state[1,2] # 第一行第二列的元素 state[c(1,2)] # 第一列与第二列 state[,&#34;state.abb&#34;] # 第二列内容向量 state$state.abb # 快速取出第二列内容向量 # 如访问women数据框并绘图 plot(women$height,women$weight) lmplot&lt;-lm(weight~height,data=women) # 线性拟合 summary(lmplot) # 可以查看详细的报告 # 访问数据框的内容时每次使用数据框名+$+名称较为繁琐，选用attach函数，此类方法同样适用于列表 attach(mtcars) mpy # 即可直接输出这一列 rownames(mtcars) # 查看行名 colnames(mtcars) # 查看列名 detach(mtcars) # 解除使用 # 还可以选用with函数 with(mtcars,{mpg}) # 直接查看mtcars里面的mpg列 因子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 # 因子是R中对分类变量的特殊编码形式，它会把分类数据的字符/数值标签和底层整数编码绑定在一起，R中自带的因子数据有state.region,state.division mtcars$cyl # 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4 table(mtcars$cyl) # table函数进行频数统计 # 4 6 8 11 7 14 f&lt;-factor(c(&#34;red&#34;,&#34;red&#34;,&#34;green&#34;,&#34;blue&#34;,&#34;green&#34;,&#34;red&#34;,&#34;blue&#34;)) f # [1] red red green blue green red blue Levels: blue green red factor(c(&#34;red&#34;,&#34;red&#34;,&#34;green&#34;,&#34;blue&#34;,&#34;green&#34;,&#34;red&#34;,&#34;blue&#34;),ordered=T,levels=c(&#34;red&#34;,&#34;blue&#34;,&#34;green&#34;)) # 输出有序 #[1] red red green blue green red blue Levels: red &lt; blue &lt; green as.integer(f) # 即可查看因子的底层整数编码3 3 2 1 2 3 1 plot(mtcars$cyl) # 向量绘图是散点图 plot(factor(mtcars$cyl)) # 因子绘图是柱状图 # 分割连续型向量 cut(x, breaks, labels = NULL, include.lowest = FALSE, right = TRUE, dig.lab = 3, ordered_result = FALSE, ...) num&lt;-c(1:100) cut(num,breaks=c(seq(0,100,by=10))) 缺失数据 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # NA代表缺失值，不代表值为0！！ # 带有NA的数据计算结果都为NA a&lt;-c(NA,1:50) sum(a,na.rm=T) # 添加na.rm=T后就会跳过NA来计算 mean(a,na.rm=T) # 个数也算移除NA后的个数 is.na(a) # 查看a数据集中是否含有NA,返回内容是逻辑型 # 下载的VIM库里面的数据集如sleep含有较多NA，可以求和看是否包含NA colSums(sleep) rowSums(sleep) # 清除带有的NA值 a&lt;-c(NA,1:20,NA,NA) na.omit(a) # [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 attr(,&#34;na.action&#34;) [1] 1 22 23 attr(,&#34;class&#34;) [1] &#34;omit&#34; na.omit(sleep) # 对含有NA的数据框处理，会清除含有NA的所有行内容 1/0 # Inf表示无穷值 0/0 # NaN表示不可能的值 字符串 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 # R中的month.name也是一个字符串向量 nchar(&#34;Hello world!&#34;) # 输出为12，用于统计字符串长度 nchar(month.name) # 7 8 5 5 3 4 4 6 9 7 8 8 # 注意length()函数返回的是向量中元素的个数，nchar()返回的是字符串的长度 paste(&#34;Hello&#34;,&#34;world&#34;,&#34;!&#34;) # 将字符向量合并成字符串 &#34;Hello world !&#34;，默认空格分隔，可以选用sep确定分割方式 paste(&#34;Hello&#34;,&#34;world&#34;,&#34;!&#34;,sep=&#34;-&#34;) # &#34;Hello-world-!&#34; # 含有向量是分别连接处理 paste(c(&#34;I&#34;,&#34;You&#34;,&#34;We&#34;),&#34;love&#34;,&#34;China&#34;,&#34;!&#34;) # &#34;I love China !&#34; &#34;You love China !&#34; &#34;We love China !&#34; # 分割选取字符串 substr(&#34;ABCDEFG&#34;,start=1,stop=3) # 输出ABC substr(month.name,1,3) # 输出&#34;Jan&#34; &#34;Feb&#34; &#34;Mar&#34; &#34;Apr&#34; &#34;May&#34; &#34;Jun&#34; &#34;Jul&#34; &#34;Aug&#34; &#34;Sep&#34; &#34;Oct&#34; &#34;Nov&#34; &#34;Dec&#34; toupper(substr(month.name,1,3)) # 大写转化字符串的每一个字母 tolower(substr(month.name,1,3)) # 小写转化字符串的每一个字母 gsub() # 使用正则表达式来更换某个位置字母的大小写 s1&lt;-tolower(substr(month.name,1,3)) gsub(&#34;^(\\\\w)&#34;,&#34;\\\\U\\\\1&#34;,tolower(s1),perl=T) # 首字母大写 grep() # 正则函数表达式的匹配 x&lt;-c(&#34;b&#34;,&#34;A+&#34;,&#34;AD&#34;,&#34;B+&#34;) grep(&#34;A+&#34;,x) # 输出结果为2 3 grep(&#34;A+&#34;,x,fixed=T) # 输出结果为2。类似于which(x==&#34;A+&#34;) dna_seqs &lt;- c(&#34;ATGCGTACG&#34;, &#34;CGTATGCCC&#34;, &#34;GCTAGCTAA&#34;, &#34;ATGGCTAGC&#34;, &#34;GCCCGTATA&#34;, &#34;atgcgtacg&#34;) grep(&#34;ATG&#34;,dna_seqs,value=T) # 由此则会返回字符串 &#34;ATGCGTACG&#34; &#34;CGTATGCCC&#34; &#34;ATGGCTAGC&#34; # match函数同样也能匹配，不过不如grep能支持正则表达式 match(&#34;A+&#34;,x) # 输出结果为2 # strsplit用于字符串分割 path&lt;-&#34;/user/local/bin/R&#34; strsplit(path,&#34;/&#34;) # 结果按照‘/’分割为 &#34;&#34; &#34;user&#34; &#34;local&#34; &#34;bin&#34; &#34;R&#34; ，注意结果是列表形式 # outer函数对两个向量的所有元素两两做指定运算，返回一个矩阵 x&lt;-c(1:3) y&lt;-c(&#34;A&#34;,&#34;B&#34;,&#34;C&#34;) outer(y,x,FUN=paste) # [,1] [,2] [,3] [1,] &#34;A 1&#34; &#34;A 2&#34; &#34;A 3&#34; [2,] &#34;B 1&#34; &#34;B 2&#34; &#34;B 3&#34; [3,] &#34;C 1&#34; &#34;C 2&#34; &#34;C 3&#34; outer(y,x,FUN=paste,sep=&#34;-&#34;) # [,1] [,2] [,3] [1,] &#34;A-1&#34; &#34;A-2&#34; &#34;A-3&#34; [2,] &#34;B-1&#34; &#34;B-2&#34; &#34;B-3&#34; [3,] &#34;C-1&#34; &#34;C-2&#34; &#34;C-3&#34; 时间序列 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 # R中的时间序列sunspots，presidents，airmiles Sys.Date() # 查看当前日期，其类型属于Date a&lt;-&#34;2026-01-01&#34; # character as.Date(a,format=&#34;%Y-%m-%d&#34;) # 转换为Date类型 seq(as.Date(&#34;2026-01-01&#34;),as.Date(&#34;2026-05-05&#34;),by=8) # 创建系列时间 #[1] &#34;2026-01-01&#34; &#34;2026-01-09&#34; &#34;2026-01-17&#34; &#34;2026-01-25&#34; &#34;2026-02-02&#34; &#34;2026-02-10&#34; &#34;2026-02-18&#34; #[8] &#34;2026-02-26&#34; &#34;2026-03-06&#34; &#34;2026-03-14&#34; &#34;2026-03-22&#34; &#34;2026-03-30&#34; &#34;2026-04-07&#34; &#34;2026-04-15&#34; #[15] &#34;2026-04-23&#34; &#34;2026-05-01&#34; runif(48,min=50,max=100) # runif()函数生成随机数 sales&lt;-round(runif(48,min=50,max=100)) ts(sales,start=c(2025,5),end=c(2026,8),frequency=1) # frequency=1表示按年来算，开始于25年来算的第5个年头，结束于26来算的第8个年头，因此是2029到2033 #Time Series: Start = 2029 End = 2033 Frequency = 1 [1] 92 62 62 54 62 ts(sales,start=c(2025,5),end=c(2026,8),frequency=4) # frequency=4表示按季度来算，开始于26年第一季度，结束于27年第四季度 # Qtr1 Qtr2 Qtr3 Qtr4 2026 92 62 62 54 2027 62 87 92 75 ts(sales,start=c(2025,5),end=c(2026,8),frequency=12) # frequency=12表示按月来算，开始于25年5月，结束于26年8月 # Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec 2025 92 62 62 54 62 87 92 75 2026 69 62 56 69 79 61 72 61 数据获取 基础数据获取 1 2 3 4 5 6 7 8 9 10 11 12 13 14 # 手动输入数据 patientID&lt;-c(1,2,3,4) admdate&lt;-c(&#34;10/15/2009&#34;,&#34;11/01/2009&#34;,&#34;10/21/2009&#34;,&#34;10/28/2009&#34;) age&lt;-c(25,34,28,52) diabetes&lt;-c(&#34;Type1&#34;,&#34;Type2&#34;,&#34;Type1&#34;,&#34;Type1&#34;) status&lt;-c(&#34;Poor&#34;,&#34;Improved&#34;,&#34;Excellent&#34;,&#34;Poor&#34;) data&lt;-data.frame(patientID,admdate,age,diabetes,status) # 构造一个病人信息的数据框 # 文本编辑器输入edit函数 data&lt;-data.frame(patientID=character(),admdate=character(),age=numeric(),diabetes=character(),status=character()) data&lt;-edit(data) # 形成一个可输入编辑框 # 访问数据库读取：RODBC包 读入数据 1 2 3 4 5 6 7 8 9 10 read.table(&#34;table.txt&#34;) # 不在当前工作目录下要使用文件的全路径，如C:/Users/…… read.table(&#34;iris.data&#34;,sep=&#34;,&#34;) # 以逗号分割 read.table(&#34;iris.data&#34;,sep=&#34;,&#34;,skip=50,nrows=100) # 读取的50到100行的数据 read.table(&#34;网址&#34;,header=T) # 网址获取文件 # foreign包内有很多读取文件的函数 read.table(gzfile(&#34;名.gz&#34;)) # 读取压缩包里面的文件 …… 写入文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # write函数进行函数的写入，主要处理向量或矩阵这类简单结构 write(rivers,file=&#34;rivers.txt&#34;) # write.table函数将数据框、矩阵等表格型数据写入文本文件 write.table(mtcars,file=&#34;mtcars.txt&#34;,sep=&#34;,&#34;,row.names=FALSE) # row.name部分用于不写入行名 write.table(mtcars,file=&#34;mtcars.csv&#34;,sep=&#34;,&#34;) write.csv(mtcars,file=&#34;mtcars.csv&#34;) write.table(iris,file=&#34;mtcars.txt&#34;,append=T) # append用于追加到文件后面 write.csv(mtcars,gzfile(&#34;mtcars.csv.gz&#34;)) # 创建压缩文件 # 存储与读取RDS文件 saveRDS(iris,file=&#34;iris.RDS&#34;) readRDS(iris,file=&#34;iris.RDS&#34;) # 存储为R.data文件 save(iris,iris3,file=&#34;c:/Users/30521/Desktop/iris.Rdata&#34;) # 如需读写excel文件，选取readxl,writexl,openxlsx包来读写，可以不依赖java 数据转换 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 as.matrix(data.frame(state.region,state.x77)) # 将数据框内容全部转化为矩阵格式 x&lt;-state.abb dim(x)&lt;-c(5,10) as.factor(x) # 转换为向量类型 as.list(x) # 转换为列表类型 y&lt;-mtcars[&#34;Valiant&#34;,] y # 输出 mpg cyl disp hp drat wt qsec vs am gear carb Valiant 18.1 6 225 105 2.76 3.46 20.22 1 0 3 1 unname(y) # 去除列名，输出Valiant 18.1 6 225 105 2.76 3.46 20.22 1 0 3 1 unlist(y) # 去除行名，输出 mpg cyl disp hp drat wt qsec vs am gear carb 18.10 6.00 225.00 105.00 2.76 3.46 20.22 1.00 0.00 3.00 1.00 cars&lt;-mtcars cars[c(1:10),c(2:5)] # 数据框取值，取1到10行，2到5列的内容，输出数据框 # sample函数用于无返回抽样 sample(1:100,60) # 抽60个，默认不放回 sample(1:100,60,replace=T) # 抽60个，有放回 # sort函数进行从小到大排序 ">
 <title>Rscript</title>
 
 <link rel='canonical' href='https://hanbing116.github.io/p/rscript/'>
 
-<link rel="stylesheet" href="/scss/style.min.c0d605b7953fc0036a87c3d146cec3966b491ddd221d9da6ce05903357fa1037.css"><meta property='og:title' content="Rscript">
+<link rel="stylesheet" href="/scss/style.min.fe165590cd22b7d781bc988f20bb332d3a036d2ab2047baad5b3236e3fc7578b.css"><meta property='og:title' content="Rscript">
 <meta property='og:description' content="R基础 基本操作 1 清屏 ctrl+L 1 2 3 4 5 6 getwd() #获取当前环境储存位置 setwd() #更改位置 #eg.setwd(&#34;C:/Users/30521/Desktop/R_script&#34;) list.files() #查看文件，默认为储存文件夹 dir() #与list.files() 用法一致 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # 变量赋值 x&lt;-3 x&lt;&lt;-3 #强制赋值给一个全局变量 #查看环境中的变量 ls() #详细查看 ls.str() # str()是列出某一个变量的信息 # 查看所有文件，包括“.”开头的隐藏文件 ls(all.names=TRUE) # 列出历史记录 history() # 删除环境中的对象 rm() # rm(x);rm(x,y) rm(list=ls()) # 删除环境中的所有对象 # 保存工作空间 save.image() # 返回对象前面或后面的部分 head() head(mtcars,2) # 返回mtcars数据集的前两行 R包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 # R包的安装 install.packages() #eg. install.packages(&#34;vcd&#34;) .libPaths() # 显示库所在的位置 library() # 显示库里的安装包 installed.packages() # 显示环境中已安装的包 # 一次安装多个包可使用c向量 install.packages(c(&#34;&#34;,&#34;&#34;)) # 更新安装包 update.packages() # 卸载安装包 remove.packages() # 环境中移除包 detach(&#34;package:包名&#34;) #载入包 library(&#34;包名&#34;) require(&#34;包名&#34;) # 查看一个包 help(package=&#34;包名&#34;) library(help=&#34;包名&#34;) # 列出包中所有包含的函数 ls(&#34;package:包名&#34;) # 查看包中包含的数据集 data(package=&#34;包名&#34;) 获取帮助 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 help.start() # 获取帮助 help(函数名) ?名称 args(名称) # 快速查阅 example() # 可以查看示例 demo(graphics) # 查看R的案例图 heatmap(矩阵) # 绘制热图 help(package=&#34;包名&#34;) vignette(package=&#34;包名&#34;) # 查看一个包更完整的案例等教程 vignette(&#34;教程名&#34;) # 具体查看某一个包里的某一个教程 ??函数名 # 不加载包可以直接搜索函数，本地搜索 help.search(&#34;函数名&#34;) # 模糊搜索，本地搜索函数。可用“??函数名”简写 apropos(&#34;关键字&#34;) # 搜索关键字的内容 apropos(&#34;关键字&#34;，mod=&#34;类型&#34;) # 含关键词指定类型的搜索 RSiteSearch(&#34;关键词&#34;) # 在线搜索 内置数据集 1 2 3 4 5 6 7 8 9 10 # 存在于datasets包中 help(package=&#34;datasets&#34;) data() # 列出数据集 data(package=&#34;包名&#34;) # R包中的数据集 data(package = .packages(all.available = TRUE)) # 查看所有可用数据集 data(数据集名,package=&#34;R包名&#34;) # 不加载R包使用其中的数据集 # 直接输入数据集名字，即可查看使用 data.frame(名称,名称，……) # 构成数据框 数据结构 向量 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 # 字母c连接 x&lt;-c(1,2,3,4) y&lt;-c(&#34;one&#34;,&#34;two&#34;,&#34;three&#34;) # 字符串一定要加引号，单双都可以 # 逻辑型向量 z&lt;-c(T,F) # 快捷构建向量——生成等差数列 c(1:100) # 构建1到100的等差数列 seq(from=1,to=100) seq(from=1,to=100,by=2) # by控制步长 seq(from=1,to=100,length.out=10) # length.out控制输出个数 # 快捷构建向量——生成重复序列 rep(x, times = 1, length.out = NA, each = 1) rep(1,5) #结果为1 1 1 1 1 x&lt;-c(1,2,3,4) rep(x,3) # 结果为1 2 3 4 1 2 3 4 1 2 3 4 rep(x,each=3) # 结果为1 1 1 2 2 2 3 3 3 4 4 4 rep(x,each=3,times=2) # 结果为1 1 1 2 2 2 3 3 3 4 4 4 1 1 1 2 2 2 3 3 3 4 4 4 # 一个向量中元素类型必须为同一类型 x&lt;-c(1,2,&#34;3&#34;) # 结果最后全部转换为字符类型是&#34;1&#34; &#34;2&#34; &#34;3&#34; # 查看类型 mode(x) # R为向量化编程 x&lt;-c(1,5,6,4) y&lt;-c(2,8,9,6) x+y # 结果为3 13 15 10向量 x[x&gt;3] #避免循环的使用，结果为5,6,4向量 # 在重复中也有好处 x&lt;-c(1,2,3,4) rep(x,c(2,4,6,8)) # 结果为1 1 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 4向量 向量索引 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 x&lt;-c(1:100) # 创建1到100的连续向量 length(x) # 向量长度100 x[1] # 访问第一个元素（与C++不同，R元素是从1开始） x[-19] # 表示输出除了19以外的所有元素！！ # 向量化索引 x[c(3:10)] # 结果为3 4 5 6 7 8 9 10向量 x[c(1,56,82,98)] # 结果为1 56 82 98向量 x[c(-2,5,6)] # 有正有负时，逻辑矛盾 #逻辑值索引 y&lt;-c(1:10) y[c(T,T,F)] # 输出1 2 4 5 7 8 10 y[c(T,F,T,T)] # 输出1 3 4 5 7 8 9 y[c(T,T,T,T,T,F,F,T,T,T,T)] # 输出1 2 3 4 5 8 9 10 NA y[y&gt;5] # 输出6 7 8 9 10 y[y&gt;5&amp;y&lt;9] # 输出6 7 8 # 字符串向量的逻辑型判断 z&lt;-c(&#34;one&#34;,&#34;two&#34;,&#34;three&#34;,&#34;four&#34;,&#34;five&#34;) &#34;one&#34; %in% z # 输出为TRUE z[&#34;one&#34; %in% z] # 输出为&#34;one&#34; &#34;two&#34; &#34;three&#34; &#34;four&#34; &#34;five&#34; z %in% c(&#34;one&#34;,&#34;two&#34;) # 输出为TRUE TRUE FALSE FALSE FALSE # 给对象命名 x&lt;-c(1,2,3,4,5) names(x)&lt;-c(&#34;one&#34;,&#34;two&#34;,&#34;three&#34;,&#34;four&#34;,&#34;five&#34;) x # 结果为one two three four five 1 2 3 4 5 x[&#34;one&#34;] # 由此可访问对应的列 #结果为 one 1 # 添加向量（对多的位数额外赋值即可） x&lt;-c(1:100) x[101]&lt;-101 # 结果即为c(1:101) v&lt;-c(1:3) v[c(4:5)]&lt;-c(4,5) v # 结果为1 2 3 4 5 # 也可以跨位赋值，中间的即为NA w&lt;-c(1:5) w[c(8:10)]&lt;-c(11,12,13) w # 结果为1 2 3 4 5 NA NA 11 12 13 #插入数据 append(x, values, after = length(x)) m&lt;-c(1:8) append(m,16,after=3) # 结果为1 2 3 16 4 5 6 7 8 # 删除向量中某个元素(负整数索引) x&lt;-c(1:10) x[-c(1:3)] # 结果为4 5 6 7 8 9 10 向量运算 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 # 向量运算作用于每一个元素 x&lt;-c(1:10) x+1 # 即为c(2:11) x-3 # 即为c(-2:7) # 向量间运算则一一对应运算 x&lt;-c(1:10) y&lt;-seq(1,100,length.out=10) x+y # 结果为2 14 26 38 50 62 74 86 98 110 x*y # 结果为 1 24 69 136 225 336 469 624 801 1000 x**y # 此时为乘幂运算 x%%y # 求余运算 y%/%x # 整除运算 # 向量中元素个数不对等时，循环使用（仅限于一个是另一个的倍数） x&lt;-c(1:10) z&lt;-c(1,2) x+z # 结果为 2 4 4 6 6 8 8 10 10 12 z1&lt;-c(1,2,3) x+z1 # Warning：In x + z1 : 长的对象长度不是短的对象长度的整倍数 # 向量逻辑运算（向量中元素比较返回逻辑值） x&lt;-c(1:10) x&gt;5 # 返回FALSE FALSE FALSE FALSE FALSE TRUE TRUE TRUE TRUE TRUE which(x&gt;5) # 返回&gt;5的位数 x[x&gt;5]==x[which(x&gt;5)] y&lt;-c(2:11) x&lt;y # 返回全是TRUE # 注意：向量中元素不对等时，依旧只有整数倍能循环比较，否则无法进行 x==y # 返回逻辑型判断是否相等 # 向量运算函数 abs() # 绝对值 sqrt() # 平方根计算 sum() #求和 mean() #均值 log(#真数,base=#底数) log(16,base=2)=4 log(#数) #默认是自然对数 exp() # 计算某个数的指数值 ceiling() # 向上取整 floor() # 向下取整 trunc() # 返回整数部分 round() # 四舍五入 round(x, digits = 保留小数点后的位数) signif() # 四舍五入，但位数是从最高位开始计 signif(x, digits = 保留位数) sin() # 三角函数 cos() # 三角函数 max() # 最大值 min() # 最小值 range() # 返回最大与最小值 var() # 方差 sd() # 标准差 prod() # 连乘的积 median() # 中位数 quantile() # 分位数计算 quantile(x, probs = c(0.1, 0.5, 0.9)) # 确定想要的分位数 which. () # 返回位置 which.min(x) # 返回x中最小值在第几位 which(x==3) # 返回等于3在第几位 矩阵与数组 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 # R内置数据集中的矩阵 iris3 state.x77 # 创建矩阵 x&lt;-c(1:20) matrix(x,nrow=4,ncol=5) matrix(1:20,4,5)# 先是“行”，后是“列” # [,1] [,2] [,3] [,4] [,5] [1,] 1 5 9 13 17 [2,] 2 6 10 14 18 [3,] 3 7 11 15 19 [4,] 4 8 12 16 20 # 默认是按列排列，可以增添byrow=T来按行排列 matrix(c(1:20),4,byrow=T) [,1] [,2] [,3] [,4] [,5] [1,] 1 2 3 4 5 [2,] 6 7 8 9 10 [3,] 11 12 13 14 15 [4,] 16 17 18 19 20 # 行列命名 m&lt;-matrix(1:20,4,5) rnames&lt;-c(&#34;R1&#34;,&#34;R2&#34;,&#34;R3&#34;,&#34;R4&#34;) cnames&lt;-c(&#34;C1&#34;,&#34;C2&#34;,&#34;C3&#34;,&#34;C4&#34;,&#34;C5&#34;) dimnames(m)&lt;-list(rnames,cnames) m C1 C2 C3 C4 C5 R1 1 5 9 13 17 R2 2 6 10 14 18 R3 3 7 11 15 19 R4 4 8 12 16 20 # dim()表示向量维数，也可来创造矩阵 x&lt;-1:10 dim(x)&lt;-c(2,5) x [,1] [,2] [,3] [,4] [,5] [1,] 1 3 5 7 9 [2,] 2 4 6 8 10 # R中的数组是多维矩阵 x&lt;-1:20 dim(x)&lt;-c(2,5,2) x , , 1 [,1] [,2] [,3] [,4] [,5] [1,] 1 3 5 7 9 [2,] 2 4 6 8 10 , , 2 [,1] [,2] [,3] [,4] [,5] [1,] 11 13 15 17 19 [2,] 12 14 16 18 20 # 数组创建 dim1&lt;-c(&#34;A1&#34;,&#34;A2&#34;) dim2&lt;-c(&#34;B1&#34;,&#34;B2&#34;,&#34;B3&#34;) dim3&lt;-c(&#34;C1&#34;,&#34;C2&#34;,&#34;C3&#34;,&#34;C4&#34;) z&lt;-array(1:24,c(2,3,4),dimnames=list(dim1,dim2,dim3)) z , , C1 B1 B2 B3 A1 1 3 5 A2 2 4 6 , , C2 B1 B2 B3 A1 7 9 11 A2 8 10 12 , , C3 B1 B2 B3 A1 13 15 17 A2 14 16 18 , , C4 B1 B2 B3 A1 19 21 23 A2 20 22 24 # 查找元素 x&lt;-matrix(1:20,4,5,byrow=T) x[1,2] # 查找为2 x[1,c(2,3,4)] # 访问多个元素 x[c(2,3),c(2,3)] # 访问子集 x[2,] # 访问第二行 x[,2] # 访问第二列 x[-1,2] # 负数索引，去除第一行后输出第二列 # 也可以通过名称访问 state.x77 state.x77[&#34;Alabama&#34;,] # 矩阵的运算就是每个元素的运算 colSums() # 分别计算矩阵每一列和 rowSums() # 分别计算矩阵每一行和 colMeans() # 列平均 rowMeans() # 行平均 #矩阵乘法 m&lt;-matrix(1:9,3,3) n&lt;-matrix(2:10,3,3) m*n # 内积，对应位置元素相乘即可 m%*%n # 外积，线代中的矩阵乘法运算 diag(n) # 返回对角矩阵的值2 6 10 t(n) # 矩阵转置，行列互换 列表 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 # 向量只能储存一种数据类型，列表中的对象则可以是任何数据结构，内置的state.center数据集就是一个列表 list() # 创建列表 a&lt;-c(&#34;A&#34;,&#34;B&#34;,&#34;C&#34;) b&lt;-c(1,2,3,4) c&lt;-head(mtcars,3) d&lt;-&#34;Test list&#34; m&lt;-list(a,b,c,d) #结果如下： [[1]] [1] &#34;A&#34; &#34;B&#34; &#34;C&#34; [[2]] [1] 1 2 3 4 [[3]] mpg cyl disp hp drat wt qsec vs am gear carb Mazda RX4 21.0 6 160 110 3.90 2.620 16.46 0 1 4 4 Mazda RX4 Wag 21.0 6 160 110 3.90 2.875 17.02 0 1 4 4 Datsun 710 22.8 4 108 93 3.85 2.320 18.61 1 1 4 1 [[4]] [1] &#34;Test list&#34; # 添加名称 list(A=a,B=b,C=c,D=d) # 结果如下： $A [1] &#34;A&#34; &#34;B&#34; &#34;C&#34; $B [1] 1 2 3 4 $C mpg cyl disp hp drat wt qsec vs am gear carb Mazda RX4 21.0 6 160 110 3.90 2.620 16.46 0 1 4 4 Mazda RX4 Wag 21.0 6 160 110 3.90 2.875 17.02 0 1 4 4 Datsun 710 22.8 4 108 93 3.85 2.320 18.61 1 1 4 1 $D [1] &#34;Test list&#34; # 列表的访问 m&lt;-list(……) m[1] # 访问第一个列表元素 m[c(1,3)] # 访问第一个与第三个列表元素 # 也可以通过名称访问列表元素 state.center[c(&#34;x&#34;,&#34;y&#34;)] state.center$x state.center[1]=state.center[&#34;x&#34;] # 一个中括号是输出的列表子集，依旧为列表格式，即包含$开头的标题部分 state.center[[1]] # 则是去除了列表格式，表示第一个原本的内容与格式 #同样的，给列表赋值也要到两个中括号的格式开始 mlist&lt;-state.center mlist[[3]]&lt;-c(1:10) names(mlist)[3]&lt;-&#34;z&#34; # 给新加入的列表内容命名 mlist[-3] # 负索引的方式去除列表内容 mlist[[3]]&lt;-NULL # 用NULL赋值删除列表中的元素 数据框 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # 表格式数据结构，实质上是一个列表，元素是向量，这些向量构成数据框的列，每列长度相等。因此数据框是矩形结构，且数据框的列必须命名 # 内置的数据框如iris,mtcars,rock，women # 合成数据框 state&lt;-data.frame(state.name,state.abb,state.region,state.x77) # 访问 state[1] # 第一列内容数据框 state[1,2] # 第一行第二列的元素 state[c(1,2)] # 第一列与第二列 state[,&#34;state.abb&#34;] # 第二列内容向量 state$state.abb # 快速取出第二列内容向量 # 如访问women数据框并绘图 plot(women$height,women$weight) lmplot&lt;-lm(weight~height,data=women) # 线性拟合 summary(lmplot) # 可以查看详细的报告 # 访问数据框的内容时每次使用数据框名+$+名称较为繁琐，选用attach函数，此类方法同样适用于列表 attach(mtcars) mpy # 即可直接输出这一列 rownames(mtcars) # 查看行名 colnames(mtcars) # 查看列名 detach(mtcars) # 解除使用 # 还可以选用with函数 with(mtcars,{mpg}) # 直接查看mtcars里面的mpg列 因子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 # 因子是R中对分类变量的特殊编码形式，它会把分类数据的字符/数值标签和底层整数编码绑定在一起，R中自带的因子数据有state.region,state.division mtcars$cyl # 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4 table(mtcars$cyl) # table函数进行频数统计 # 4 6 8 11 7 14 f&lt;-factor(c(&#34;red&#34;,&#34;red&#34;,&#34;green&#34;,&#34;blue&#34;,&#34;green&#34;,&#34;red&#34;,&#34;blue&#34;)) f # [1] red red green blue green red blue Levels: blue green red factor(c(&#34;red&#34;,&#34;red&#34;,&#34;green&#34;,&#34;blue&#34;,&#34;green&#34;,&#34;red&#34;,&#34;blue&#34;),ordered=T,levels=c(&#34;red&#34;,&#34;blue&#34;,&#34;green&#34;)) # 输出有序 #[1] red red green blue green red blue Levels: red &lt; blue &lt; green as.integer(f) # 即可查看因子的底层整数编码3 3 2 1 2 3 1 plot(mtcars$cyl) # 向量绘图是散点图 plot(factor(mtcars$cyl)) # 因子绘图是柱状图 # 分割连续型向量 cut(x, breaks, labels = NULL, include.lowest = FALSE, right = TRUE, dig.lab = 3, ordered_result = FALSE, ...) num&lt;-c(1:100) cut(num,breaks=c(seq(0,100,by=10))) 缺失数据 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # NA代表缺失值，不代表值为0！！ # 带有NA的数据计算结果都为NA a&lt;-c(NA,1:50) sum(a,na.rm=T) # 添加na.rm=T后就会跳过NA来计算 mean(a,na.rm=T) # 个数也算移除NA后的个数 is.na(a) # 查看a数据集中是否含有NA,返回内容是逻辑型 # 下载的VIM库里面的数据集如sleep含有较多NA，可以求和看是否包含NA colSums(sleep) rowSums(sleep) # 清除带有的NA值 a&lt;-c(NA,1:20,NA,NA) na.omit(a) # [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 attr(,&#34;na.action&#34;) [1] 1 22 23 attr(,&#34;class&#34;) [1] &#34;omit&#34; na.omit(sleep) # 对含有NA的数据框处理，会清除含有NA的所有行内容 1/0 # Inf表示无穷值 0/0 # NaN表示不可能的值 字符串 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 # R中的month.name也是一个字符串向量 nchar(&#34;Hello world!&#34;) # 输出为12，用于统计字符串长度 nchar(month.name) # 7 8 5 5 3 4 4 6 9 7 8 8 # 注意length()函数返回的是向量中元素的个数，nchar()返回的是字符串的长度 paste(&#34;Hello&#34;,&#34;world&#34;,&#34;!&#34;) # 将字符向量合并成字符串 &#34;Hello world !&#34;，默认空格分隔，可以选用sep确定分割方式 paste(&#34;Hello&#34;,&#34;world&#34;,&#34;!&#34;,sep=&#34;-&#34;) # &#34;Hello-world-!&#34; # 含有向量是分别连接处理 paste(c(&#34;I&#34;,&#34;You&#34;,&#34;We&#34;),&#34;love&#34;,&#34;China&#34;,&#34;!&#34;) # &#34;I love China !&#34; &#34;You love China !&#34; &#34;We love China !&#34; # 分割选取字符串 substr(&#34;ABCDEFG&#34;,start=1,stop=3) # 输出ABC substr(month.name,1,3) # 输出&#34;Jan&#34; &#34;Feb&#34; &#34;Mar&#34; &#34;Apr&#34; &#34;May&#34; &#34;Jun&#34; &#34;Jul&#34; &#34;Aug&#34; &#34;Sep&#34; &#34;Oct&#34; &#34;Nov&#34; &#34;Dec&#34; toupper(substr(month.name,1,3)) # 大写转化字符串的每一个字母 tolower(substr(month.name,1,3)) # 小写转化字符串的每一个字母 gsub() # 使用正则表达式来更换某个位置字母的大小写 s1&lt;-tolower(substr(month.name,1,3)) gsub(&#34;^(\\\\w)&#34;,&#34;\\\\U\\\\1&#34;,tolower(s1),perl=T) # 首字母大写 grep() # 正则函数表达式的匹配 x&lt;-c(&#34;b&#34;,&#34;A+&#34;,&#34;AD&#34;,&#34;B+&#34;) grep(&#34;A+&#34;,x) # 输出结果为2 3 grep(&#34;A+&#34;,x,fixed=T) # 输出结果为2。类似于which(x==&#34;A+&#34;) dna_seqs &lt;- c(&#34;ATGCGTACG&#34;, &#34;CGTATGCCC&#34;, &#34;GCTAGCTAA&#34;, &#34;ATGGCTAGC&#34;, &#34;GCCCGTATA&#34;, &#34;atgcgtacg&#34;) grep(&#34;ATG&#34;,dna_seqs,value=T) # 由此则会返回字符串 &#34;ATGCGTACG&#34; &#34;CGTATGCCC&#34; &#34;ATGGCTAGC&#34; # match函数同样也能匹配，不过不如grep能支持正则表达式 match(&#34;A+&#34;,x) # 输出结果为2 # strsplit用于字符串分割 path&lt;-&#34;/user/local/bin/R&#34; strsplit(path,&#34;/&#34;) # 结果按照‘/’分割为 &#34;&#34; &#34;user&#34; &#34;local&#34; &#34;bin&#34; &#34;R&#34; ，注意结果是列表形式 # outer函数对两个向量的所有元素两两做指定运算，返回一个矩阵 x&lt;-c(1:3) y&lt;-c(&#34;A&#34;,&#34;B&#34;,&#34;C&#34;) outer(y,x,FUN=paste) # [,1] [,2] [,3] [1,] &#34;A 1&#34; &#34;A 2&#34; &#34;A 3&#34; [2,] &#34;B 1&#34; &#34;B 2&#34; &#34;B 3&#34; [3,] &#34;C 1&#34; &#34;C 2&#34; &#34;C 3&#34; outer(y,x,FUN=paste,sep=&#34;-&#34;) # [,1] [,2] [,3] [1,] &#34;A-1&#34; &#34;A-2&#34; &#34;A-3&#34; [2,] &#34;B-1&#34; &#34;B-2&#34; &#34;B-3&#34; [3,] &#34;C-1&#34; &#34;C-2&#34; &#34;C-3&#34; 时间序列 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 # R中的时间序列sunspots，presidents，airmiles Sys.Date() # 查看当前日期，其类型属于Date a&lt;-&#34;2026-01-01&#34; # character as.Date(a,format=&#34;%Y-%m-%d&#34;) # 转换为Date类型 seq(as.Date(&#34;2026-01-01&#34;),as.Date(&#34;2026-05-05&#34;),by=8) # 创建系列时间 #[1] &#34;2026-01-01&#34; &#34;2026-01-09&#34; &#34;2026-01-17&#34; &#34;2026-01-25&#34; &#34;2026-02-02&#34; &#34;2026-02-10&#34; &#34;2026-02-18&#34; #[8] &#34;2026-02-26&#34; &#34;2026-03-06&#34; &#34;2026-03-14&#34; &#34;2026-03-22&#34; &#34;2026-03-30&#34; &#34;2026-04-07&#34; &#34;2026-04-15&#34; #[15] &#34;2026-04-23&#34; &#34;2026-05-01&#34; runif(48,min=50,max=100) # runif()函数生成随机数 sales&lt;-round(runif(48,min=50,max=100)) ts(sales,start=c(2025,5),end=c(2026,8),frequency=1) # frequency=1表示按年来算，开始于25年来算的第5个年头，结束于26来算的第8个年头，因此是2029到2033 #Time Series: Start = 2029 End = 2033 Frequency = 1 [1] 92 62 62 54 62 ts(sales,start=c(2025,5),end=c(2026,8),frequency=4) # frequency=4表示按季度来算，开始于26年第一季度，结束于27年第四季度 # Qtr1 Qtr2 Qtr3 Qtr4 2026 92 62 62 54 2027 62 87 92 75 ts(sales,start=c(2025,5),end=c(2026,8),frequency=12) # frequency=12表示按月来算，开始于25年5月，结束于26年8月 # Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec 2025 92 62 62 54 62 87 92 75 2026 69 62 56 69 79 61 72 61 数据获取 基础数据获取 1 2 3 4 5 6 7 8 9 10 11 12 13 14 # 手动输入数据 patientID&lt;-c(1,2,3,4) admdate&lt;-c(&#34;10/15/2009&#34;,&#34;11/01/2009&#34;,&#34;10/21/2009&#34;,&#34;10/28/2009&#34;) age&lt;-c(25,34,28,52) diabetes&lt;-c(&#34;Type1&#34;,&#34;Type2&#34;,&#34;Type1&#34;,&#34;Type1&#34;) status&lt;-c(&#34;Poor&#34;,&#34;Improved&#34;,&#34;Excellent&#34;,&#34;Poor&#34;) data&lt;-data.frame(patientID,admdate,age,diabetes,status) # 构造一个病人信息的数据框 # 文本编辑器输入edit函数 data&lt;-data.frame(patientID=character(),admdate=character(),age=numeric(),diabetes=character(),status=character()) data&lt;-edit(data) # 形成一个可输入编辑框 # 访问数据库读取：RODBC包 读入数据 1 2 3 4 5 6 7 8 9 10 read.table(&#34;table.txt&#34;) # 不在当前工作目录下要使用文件的全路径，如C:/Users/…… read.table(&#34;iris.data&#34;,sep=&#34;,&#34;) # 以逗号分割 read.table(&#34;iris.data&#34;,sep=&#34;,&#34;,skip=50,nrows=100) # 读取的50到100行的数据 read.table(&#34;网址&#34;,header=T) # 网址获取文件 # foreign包内有很多读取文件的函数 read.table(gzfile(&#34;名.gz&#34;)) # 读取压缩包里面的文件 …… 写入文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # write函数进行函数的写入，主要处理向量或矩阵这类简单结构 write(rivers,file=&#34;rivers.txt&#34;) # write.table函数将数据框、矩阵等表格型数据写入文本文件 write.table(mtcars,file=&#34;mtcars.txt&#34;,sep=&#34;,&#34;,row.names=FALSE) # row.name部分用于不写入行名 write.table(mtcars,file=&#34;mtcars.csv&#34;,sep=&#34;,&#34;) write.csv(mtcars,file=&#34;mtcars.csv&#34;) write.table(iris,file=&#34;mtcars.txt&#34;,append=T) # append用于追加到文件后面 write.csv(mtcars,gzfile(&#34;mtcars.csv.gz&#34;)) # 创建压缩文件 # 存储与读取RDS文件 saveRDS(iris,file=&#34;iris.RDS&#34;) readRDS(iris,file=&#34;iris.RDS&#34;) # 存储为R.data文件 save(iris,iris3,file=&#34;c:/Users/30521/Desktop/iris.Rdata&#34;) # 如需读写excel文件，选取readxl,writexl,openxlsx包来读写，可以不依赖java 数据转换 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 as.matrix(data.frame(state.region,state.x77)) # 将数据框内容全部转化为矩阵格式 x&lt;-state.abb dim(x)&lt;-c(5,10) as.factor(x) # 转换为向量类型 as.list(x) # 转换为列表类型 y&lt;-mtcars[&#34;Valiant&#34;,] y # 输出 mpg cyl disp hp drat wt qsec vs am gear carb Valiant 18.1 6 225 105 2.76 3.46 20.22 1 0 3 1 unname(y) # 去除列名，输出Valiant 18.1 6 225 105 2.76 3.46 20.22 1 0 3 1 unlist(y) # 去除行名，输出 mpg cyl disp hp drat wt qsec vs am gear carb 18.10 6.00 225.00 105.00 2.76 3.46 20.22 1.00 0.00 3.00 1.00 cars&lt;-mtcars cars[c(1:10),c(2:5)] # 数据框取值，取1到10行，2到5列的内容，输出数据框 # sample函数用于无返回抽样 sample(1:100,60) # 抽60个，默认不放回 sample(1:100,60,replace=T) # 抽60个，有放回 # sort函数进行从小到大排序 ">
 <meta property='og:url' content='https://hanbing116.github.io/p/rscript/'>
 <meta property='og:site_name' content='龙林'>
@@ -136,8 +136,9 @@
             });
           }
         "></script>
-    </head>
-    <body class="
+</head>
+
+<body class="
     article-page
     ">
     <script>
@@ -163,375 +164,329 @@
     })();
 </script>
 
-        <div id="global-music-player" style="position: fixed; bottom: 80px; left: 10px; z-index: 9999; background: var(--card-bg); padding: 3px 6px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;">
-            
-            <div id="minimize-btn" style="display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-color);">
-                🎵 音乐
-            </div>
-            
-            
-            <div id="player-controls" style="display: none; margin-top: 4px; transition: all 0.3s ease;">
-                <p style="color: var(--text-color); font-size: 12px; margin: 0 0 2px 0; text-align: center;" id="music-title">正在播放：see you soon</p>
-                
-                
-                <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 4px; padding: 0 4px;">
-                    
-                    <input 
-                        type="range" 
-                        id="progress-bar" 
-                        min="0" 
-                        max="100" 
-                        step="0.1" 
-                        value="0"
-                        style="width: 100%; height: 4px; cursor: pointer; accent-color: var(--link-color); margin: 0;"
-                    >
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span id="current-time" style="color: var(--text-color); font-size: 9px;">00:00</span>
-                        <span id="total-time" style="color: var(--text-color); font-size: 9px;">00:00</span>
-                    </div>
-                </div>
+  
+  <div id="global-music-player" style="position: fixed; bottom: 80px; left: 10px; z-index: 9999; background: var(--card-background); padding: 3px 6px; border-radius: 8px; box-shadow: var(--shadow-l1); cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
+    
+    
+    <div id="minimize-btn" style="display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--card-text-color-main);">
+      🎵 音乐
+    </div>
 
-                <div style="display: flex; gap: 6px; align-items: center; justify-content: center; margin-bottom: 2px;">
-                    <button onclick="prevMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">←上曲</button>
-                    
-                    <button onclick="togglePlay(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;" id="play-btn">▶️ 播放</button>
-                    <button onclick="nextMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">下曲→</button>
-                    
-                    <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 11px;">📜 列表</button>
-                </div>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
-                    <span style="color: var(--text-color); font-size: 10px;">音量🔊</span>
-                    <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.3" 
-                           style="width: 120px; height: 4px; cursor: pointer; accent-color: var(--link-color);">
-                </div>
-            </div>
-            <audio id="bg-music" preload="metadata" style="display: none;"></audio>
-        </div>
+    
+    <div id="player-controls" style="display: none; margin-top: 4px; transition: all 0.3s ease;">
+      
+      <p style="color: var(--card-text-color-secondary); font-size: 12px; margin: 0 0 2px 0; text-align: center;" id="music-title">正在播放：see you soon</p>
 
+      
+      <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 4px; padding: 0 4px;">
         
-        <div id="music-list-modal" style="position: fixed; bottom: 170px; left: 110px; z-index: 9998; background: var(--card-bg); padding: 8px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; max-height: 200px; overflow-y: auto; min-width: 150px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <span style="color: var(--text-color); font-size: 12px; font-weight: bold;">🎵 播放列表</span>
-                <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 10px; padding: 0;">✕</button>
-            </div>
-            <div id="music-list-container" style="display: flex; flex-direction: column; gap: 3px;">
-                
-            </div>
-        </div>
-
         
-        <script>
-            
-            const musicList = [
-                { src: "/audio/1.mp3", title: "See you soon" },
-                { src: "/audio/flower.mp3", title: "Flower dance" },
-                { src: "/audio/song3.mp3", title: "song3" },
-                { src: "/audio/黄昏-周传雄.mp3", title: "黄昏-周传雄" },
-                { src: "/audio/一生有你-水木年华.mp3", title: "一生有你-水木年华" },
-                { src: "/audio/路过人间-郁可唯.mp3", title: "路过人间-郁可唯" },
-                
-                
-            ];
+        <input
+          type="range"
+          id="progress-bar"
+          min="0"
+          max="100"
+          step="0.1"
+          value="0"
+          style="width: 100%; height: 4px; cursor: pointer; accent-color: var(--accent-color); margin: 0;"
+        >
+        
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span id="current-time" style="color: var(--card-text-color-tertiary); font-size: 9px;">00:00</span>
+          <span id="total-time" style="color: var(--card-text-color-tertiary); font-size: 9px;">00:00</span>
+        </div>
+      </div>
 
-            
-            const audio = document.getElementById('bg-music');
-            const titleEl = document.getElementById('music-title');
-            const playBtn = document.getElementById('play-btn');
-            const volumeControl = document.getElementById('volume-control');
-            const playerContainer = document.getElementById('global-music-player');
-            const playerControls = document.getElementById('player-controls');
-            const minimizeBtn = document.getElementById('minimize-btn');
-            
-            const musicListModal = document.getElementById('music-list-modal');
-            const musicListContainer = document.getElementById('music-list-container');
-            
-            const progressBar = document.getElementById('progress-bar');
-            const currentTimeEl = document.getElementById('current-time');
-            const totalTimeEl = document.getElementById('total-time');
-            
-            
-            let currentTrack = 0;
-            let isExpanded = false;
-            let isListShow = false; 
-            audio.volume = 0.3;
-            let isDraggingProgress = false; 
+      <div style="display: flex; gap: 6px; align-items: center; justify-content: center; margin-bottom: 2px;">
+        
+        <button onclick="prevMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;">←上曲</button>
+        <button onclick="togglePlay(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;" id="play-btn">▶️ 播放</button>
+        <button onclick="nextMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;">下曲→</button>
+        <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;">📜 列表</button>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
+        <span style="color: var(--card-text-color-secondary); font-size: 10px;">音量🔊</span>
+        
+        <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.3"
+          style="width: 120px; height: 4px; cursor: pointer; accent-color: var(--accent-color);">
+      </div>
+    </div>
+    <audio id="bg-music" preload="metadata" style="display: none;">
+  </div>
 
-            
-            const STORAGE = {
-                TRACK: 'blog_music_current_track',
-                TIME: 'blog_music_play_time',
-                PLAYING: 'blog_music_is_playing',
-                VOLUME: 'blog_music_volume'
-            };
+  
+  
+  <div id="music-list-modal" style="position: fixed; bottom: 170px; left: 110px; z-index: 9998; background: var(--card-background); padding: 8px; border-radius: 8px; box-shadow: var(--shadow-l2); display: none; max-height: 200px; overflow-y: auto; min-width: 150px; border: 1px solid var(--card-separator-color);">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; padding-bottom: 4px; border-bottom: 1px solid var(--card-separator-color);">
+      <span style="color: var(--card-text-color-main); font-size: 12px; font-weight: bold;">🎵 播放列表</span>
+      <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 10px; padding: 0;">✕</button>
+    </div>
+    <div id="music-list-container" style="display: flex; flex-direction: column; gap: 3px;">
+    </div>
+  </div>
 
-            
-            function formatTime(seconds) {
-                if (isNaN(seconds)) return '00:00';
-                const mins = Math.floor(seconds / 60);
-                const secs = Math.floor(seconds % 60);
-                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            }
+  
+  <script>
+    
+    const musicList = [
+      { src: "/audio/1.mp3", title: "See you soon" },
+      { src: "/audio/flower.mp3", title: "Flower dance" },
+      { src: "/audio/song3.mp3", title: "song3" },
+      { src: "/audio/黄昏-周传雄.mp3", title: "黄昏-周传雄" },
+      { src: "/audio/一生有你-水木年华.mp3", title: "一生有你-水木年华" },
+      { src: "/audio/路过人间-郁可唯.mp3", title: "路过人间-郁可唯" },
+    ];
 
-            
-            function updateProgressBar() {
-                if (isDraggingProgress) return; 
-                if (audio.duration) {
-                    const progress = (audio.currentTime / audio.duration) * 100;
-                    progressBar.value = progress;
-                    currentTimeEl.textContent = formatTime(audio.currentTime);
-                }
-            }
+    const audio = document.getElementById('bg-music');
+    const titleEl = document.getElementById('music-title');
+    const playBtn = document.getElementById('play-btn');
+    const volumeControl = document.getElementById('volume-control');
+    const playerContainer = document.getElementById('global-music-player');
+    const playerControls = document.getElementById('player-controls');
+    const minimizeBtn = document.getElementById('minimize-btn');
+    const musicListModal = document.getElementById('music-list-modal');
+    const musicListContainer = document.getElementById('music-list-container');
+    const progressBar = document.getElementById('progress-bar');
+    const currentTimeEl = document.getElementById('current-time');
+    const totalTimeEl = document.getElementById('total-time');
 
-            
-            function setAudioProgress() {
-                if (!audio.duration) return;
-                const progress = parseFloat(progressBar.value);
-                const newTime = (progress / 100) * audio.duration;
-                audio.currentTime = newTime;
-                currentTimeEl.textContent = formatTime(newTime);
-                saveAllState(); 
-            }
+    let currentTrack = 0;
+    let isExpanded = false;
+    let isListShow = false;
+    audio.volume = 0.3;
+    let isDraggingProgress = false;
 
-            
-            function initMusicList() {
-                musicListContainer.innerHTML = '';
-                musicList.forEach((item, index) => {
-                    const listItem = document.createElement('div');
-                    listItem.style = `
-                        padding: 4px 8px;
-                        border-radius: 4px;
-                        color: var(--text-color);
-                        font-size: 11px;
-                        cursor: pointer;
-                        transition: background 0.2s;
-                    `;
-                    
-                    if (index === currentTrack) {
-                        listItem.style.background = 'var(--link-color)';
-                        listItem.style.color = '#fff';
-                    }
-                    listItem.innerHTML = `${index + 1}. ${item.title}`;
-                    
-                    listItem.onclick = function() {
-                        selectMusic(index);
-                        toggleMusicList(); 
-                    };
-                    musicListContainer.appendChild(listItem);
-                });
-            }
+    const STORAGE = {
+      TRACK: 'blog_music_current_track',
+      TIME: 'blog_music_play_time',
+      PLAYING: 'blog_music_is_playing',
+      VOLUME: 'blog_music_volume'
+    };
 
-            
-            function toggleMusicList() {
-                isListShow = !isListShow;
-                musicListModal.style.display = isListShow ? 'block' : 'none';
-                if (isListShow) {
-                    initMusicList(); 
-                }
-            }
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '00:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
 
-            
-            function selectMusic(index) {
-                currentTrack = index;
-                audio.src = musicList[currentTrack].src;
-                audio.currentTime = 0; 
-                audio.play();
-                playBtn.innerHTML = '⏸️ 暂停';
-                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
-                updateMinimizeBtn();
-                saveAllState();
-                initMusicList(); 
-                
-                progressBar.value = 0;
-                currentTimeEl.textContent = '00:00';
-            }
+    function updateProgressBar() {
+      if (isDraggingProgress) return;
+      if (audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.value = progress;
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+      }
+    }
 
-            
-            function togglePlayer() {
-                isExpanded = !isExpanded;
-                playerControls.style.display = isExpanded ? 'block' : 'none';
-                
-                if (musicListModal.style.display === 'block') {
-                    toggleMusicList();
-                }
-                updateMinimizeBtn();
-            }
+    function setAudioProgress() {
+      if (!audio.duration) return;
+      const progress = parseFloat(progressBar.value);
+      const newTime = (progress / 100) * audio.duration;
+      audio.currentTime = newTime;
+      currentTimeEl.textContent = formatTime(newTime);
+      saveAllState();
+    }
 
-            
-            function updateMinimizeBtn() {
-                const statusIcon = audio.paused ? '▶️' : '⏸️';
-                minimizeBtn.innerHTML = `${statusIcon} ${musicList[currentTrack].title}`;
-            }
+    function initMusicList() {
+      musicListContainer.innerHTML = '';
+      musicList.forEach((item, index) => {
+        const listItem = document.createElement('div');
+        
+        listItem.style = `
+          padding: 4px 8px;
+          border-radius: 4px;
+          color: var(--card-text-color-main);
+          font-size: 11px;
+          cursor: pointer;
+          transition: background 0.2s;
+        `;
+        if (index === currentTrack) {
+          listItem.style.background = 'var(--accent-color)';
+          listItem.style.color = 'var(--accent-color-text)'; 
+        }
+        listItem.innerHTML = `${index + 1}. ${item.title}`;
+        listItem.onclick = function () {
+          selectMusic(index);
+          toggleMusicList();
+        };
+        musicListContainer.appendChild(listItem);
+      });
+    }
 
-            
-            function saveAllState() {
-                localStorage.setItem(STORAGE.TRACK, currentTrack);
-                localStorage.setItem(STORAGE.TIME, audio.currentTime); 
-                localStorage.setItem(STORAGE.PLAYING, !audio.paused);
-                localStorage.setItem(STORAGE.VOLUME, audio.volume);
-            }
+    function toggleMusicList() {
+      isListShow = !isListShow;
+      musicListModal.style.display = isListShow ? 'block' : 'none';
+      if (isListShow) {
+        initMusicList();
+      }
+    }
 
-            
-            function restoreAllState() {
-                
-                const savedTrack = localStorage.getItem(STORAGE.TRACK);
-                if (savedTrack !== null) {
-                    currentTrack = parseInt(savedTrack);
-                    
-                    currentTrack = Math.max(0, Math.min(currentTrack, musicList.length - 1));
-                }
+    function selectMusic(index) {
+      currentTrack = index;
+      audio.src = musicList[currentTrack].src;
+      audio.currentTime = 0;
+      audio.play();
+      playBtn.innerHTML = '⏸️ 暂停';
+      titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+      updateMinimizeBtn();
+      saveAllState();
+      initMusicList();
+      progressBar.value = 0;
+      currentTimeEl.textContent = '00:00';
+    }
 
-                
-                const savedTime = localStorage.getItem(STORAGE.TIME);
-                const playTime = savedTime !== null ? parseFloat(savedTime) : 0;
+    function togglePlayer() {
+      isExpanded = !isExpanded;
+      playerControls.style.display = isExpanded ? 'block' : 'none';
+      if (musicListModal.style.display === 'block') {
+        toggleMusicList();
+      }
+      updateMinimizeBtn();
+    }
 
-                
-                const savedVolume = localStorage.getItem(STORAGE.VOLUME);
-                if (savedVolume !== null) {
-                    audio.volume = parseFloat(savedVolume);
-                    volumeControl.value = audio.volume;
-                }
+    function updateMinimizeBtn() {
+      const statusIcon = audio.paused ? '▶️' : '⏸️';
+      minimizeBtn.innerHTML = `${statusIcon} ${musicList[currentTrack].title}`;
+    }
 
-                
-                audio.src = musicList[currentTrack].src;
-                audio.currentTime = playTime; 
-                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
-                updateMinimizeBtn();
-                initMusicList(); 
+    function saveAllState() {
+      localStorage.setItem(STORAGE.TRACK, currentTrack);
+      localStorage.setItem(STORAGE.TIME, audio.currentTime);
+      localStorage.setItem(STORAGE.PLAYING, !audio.paused);
+      localStorage.setItem(STORAGE.VOLUME, audio.volume);
+    }
 
-                
-                const isPlaying = localStorage.getItem(STORAGE.PLAYING) === 'true';
-                if (isPlaying) {
-                    
-                    audio.play().then(() => {
-                        playBtn.innerHTML = '⏸️ 暂停';
-                        updateMinimizeBtn();
-                    }).catch(err => {
-                        console.log('自动播放需手动触发（浏览器安全策略）：', err);
-                        playBtn.innerHTML = '▶️ 播放';
-                    });
-                } else {
-                    playBtn.innerHTML = '▶️ 播放';
-                }
-            }
+    function restoreAllState() {
+      const savedTrack = localStorage.getItem(STORAGE.TRACK);
+      if (savedTrack !== null) {
+        currentTrack = parseInt(savedTrack);
+        currentTrack = Math.max(0, Math.min(currentTrack, musicList.length - 1));
+      }
+      const savedTime = localStorage.getItem(STORAGE.TIME);
+      const playTime = savedTime !== null ? parseFloat(savedTime) : 0;
+      const savedVolume = localStorage.getItem(STORAGE.VOLUME);
+      if (savedVolume !== null) {
+        audio.volume = parseFloat(savedVolume);
+        volumeControl.value = audio.volume;
+      }
+      audio.src = musicList[currentTrack].src;
+      audio.currentTime = playTime;
+      titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+      updateMinimizeBtn();
+      initMusicList();
+      const isPlaying = localStorage.getItem(STORAGE.PLAYING) === 'true';
+      if (isPlaying) {
+        audio.play().then(() => {
+          playBtn.innerHTML = '⏸️ 暂停';
+          updateMinimizeBtn();
+        }).catch(err => {
+          playBtn.innerHTML = '▶️ 播放';
+        });
+      } else {
+        playBtn.innerHTML = '▶️ 播放';
+      }
+    }
 
-            
-            function togglePlay() {
-                if (audio.paused) {
-                    audio.play();
-                    playBtn.innerHTML = '⏸️ 暂停';
-                } else {
-                    audio.pause();
-                    playBtn.innerHTML = '▶️ 播放';
-                }
-                updateMinimizeBtn();
-                saveAllState();
-            }
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        playBtn.innerHTML = '⏸️ 暂停';
+      } else {
+        audio.pause();
+        playBtn.innerHTML = '▶️ 播放';
+      }
+      updateMinimizeBtn();
+      saveAllState();
+    }
 
-            
-            function prevMusic() {
-                currentTrack = (currentTrack - 1 + musicList.length) % musicList.length;
-                audio.src = musicList[currentTrack].src;
-                audio.currentTime = 0; 
-                audio.play();
-                playBtn.innerHTML = '⏸️ 暂停';
-                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
-                updateMinimizeBtn();
-                saveAllState();
-                initMusicList(); 
-                
-                progressBar.value = 0;
-                currentTimeEl.textContent = '00:00';
-            }
+    function prevMusic() {
+      currentTrack = (currentTrack - 1 + musicList.length) % musicList.length;
+      audio.src = musicList[currentTrack].src;
+      audio.currentTime = 0;
+      audio.play();
+      playBtn.innerHTML = '⏸️ 暂停';
+      titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+      updateMinimizeBtn();
+      saveAllState();
+      initMusicList();
+      progressBar.value = 0;
+      currentTimeEl.textContent = '00:00';
+    }
 
-            
-            function nextMusic() {
-                currentTrack = (currentTrack + 1) % musicList.length;
-                audio.src = musicList[currentTrack].src;
-                audio.currentTime = 0; 
-                audio.play();
-                playBtn.innerHTML = '⏸️ 暂停';
-                titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
-                updateMinimizeBtn();
-                saveAllState();
-                initMusicList(); 
-                
-                progressBar.value = 0;
-                currentTimeEl.textContent = '00:00';
-            }
+    function nextMusic() {
+      currentTrack = (currentTrack + 1) % musicList.length;
+      audio.src = musicList[currentTrack].src;
+      audio.currentTime = 0;
+      audio.play();
+      playBtn.innerHTML = '⏸️ 暂停';
+      titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
+      updateMinimizeBtn();
+      saveAllState();
+      initMusicList();
+      progressBar.value = 0;
+      currentTimeEl.textContent = '00:00';
+    }
 
-            
-            volumeControl.addEventListener('input', function() {
-                audio.volume = this.value;
-                saveAllState();
-            });
+    volumeControl.addEventListener('input', function () {
+      audio.volume = this.value;
+      saveAllState();
+    });
 
-            
-            audio.addEventListener('ended', nextMusic);
+    audio.addEventListener('ended', nextMusic);
 
-            
-            let saveTimer = null;
-            audio.addEventListener('timeupdate', function() {
-                
-                updateProgressBar();
-                
-                clearTimeout(saveTimer);
-                saveTimer = setTimeout(saveAllState, 300);
-            });
+    let saveTimer = null;
+    audio.addEventListener('timeupdate', function () {
+      updateProgressBar();
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(saveAllState, 300);
+    });
 
-            
-            audio.addEventListener('loadedmetadata', function() {
-                totalTimeEl.textContent = formatTime(audio.duration);
-                updateProgressBar();
-            });
+    audio.addEventListener('loadedmetadata', function () {
+      totalTimeEl.textContent = formatTime(audio.duration);
+      updateProgressBar();
+    });
 
-            
-            
-            progressBar.addEventListener('mousedown', function() {
-                isDraggingProgress = true;
-            });
-            
-            document.addEventListener('mouseup', function() {
-                if (isDraggingProgress) {
-                    isDraggingProgress = false;
-                    setAudioProgress();
-                }
-            });
-            
-            progressBar.addEventListener('input', function() {
-                if (!isDraggingProgress) {
-                    setAudioProgress();
-                }
-            });
-            
-            progressBar.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
+    progressBar.addEventListener('mousedown', function () {
+      isDraggingProgress = true;
+    });
 
-            
-            window.addEventListener('beforeunload', saveAllState);
+    document.addEventListener('mouseup', function () {
+      if (isDraggingProgress) {
+        isDraggingProgress = false;
+        setAudioProgress();
+      }
+    });
 
-            
-            document.addEventListener('click', function(e) {
-                if (isListShow && 
-                    !musicListModal.contains(e.target) && 
-                    !playerContainer.contains(e.target)) {
-                    toggleMusicList();
-                }
-            });
+    progressBar.addEventListener('input', function () {
+      if (!isDraggingProgress) {
+        setAudioProgress();
+      }
+    });
 
-            
-            playerContainer.addEventListener('click', togglePlayer);
-            audio.addEventListener('play', saveAllState);
-            audio.addEventListener('pause', saveAllState);
+    progressBar.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
 
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                restoreAllState();
-            });
-        </script>
+    window.addEventListener('beforeunload', saveAllState);
 
-        <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    document.addEventListener('click', function (e) {
+      if (isListShow &&
+        !musicListModal.contains(e.target) &&
+        !playerContainer.contains(e.target)) {
+        toggleMusicList();
+      }
+    });
+
+    playerContainer.addEventListener('click', togglePlayer);
+    audio.addEventListener('play', saveAllState);
+    audio.addEventListener('pause', saveAllState);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      restoreAllState();
+    });
+  </script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -778,7 +733,7 @@
     </aside>
 
 
-            <main class="main full-width">
+    <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -2427,9 +2382,9 @@
             >
     
 
-            </main>
-        </div>
-        <script 
+    </main>
+  </div>
+  <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
@@ -2448,101 +2403,114 @@
 <html>
 <body>
   <style>
-      body {
-        background: url(https://hanbing116.github.io/background/12.png) no-repeat center top;
-        background-size: cover;
-        background-attachment: fixed;
-        margin: 0;
-        min-height: 100vh;
-      }
+    body {
+      margin: 0;
+      min-height: 100vh;
        
-    </style>
-    <script>
-      
-
-
-
-
-const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
-
-const cssPath = "https://hanbing116.github.io/waifu/waifu.css"
-const waifuTipsJasonPath = "https://hanbing116.github.io/waifu/waifu-tips.json"
-
-
-function loadExternalResource(url, type) {
-  return new Promise((resolve, reject) => {
-    let tag;
-
-    if (type === 'css') {
-      tag = document.createElement('link');
-      tag.rel = 'stylesheet';
-      tag.href = url;
+      background-attachment: fixed !important;
+      background-size: cover !important;
+      background-position: center top !important;
+      background-repeat: no-repeat !important;
     }
-    else if (type === 'js') {
-      tag = document.createElement('script');
-      tag.type = 'module';
-      tag.src = url;
+     
+    .light-bg {
+      background-image: url(https://hanbing116.github.io/background/12.png) !important;
     }
-    if (tag) {
-      tag.onload = () => resolve(url);
-      tag.onerror = () => reject(url);
-      document.head.appendChild(tag);
+     
+    .dark-bg {
+      background-image: url(https://hanbing116.github.io/background/11.jpg) !important;
     }
-  });
-}
+  </style>
 
-(async () => {
-  
-  
-  
-
-  
-  
-  const OriginalImage = window.Image;
-  window.Image = function(...args) {
-    const img = new OriginalImage(...args);
-    img.crossOrigin = "anonymous";
-    return img;
-  };
-  window.Image.prototype = OriginalImage.prototype;
-  
-  
-  await Promise.all([
-    loadExternalResource(cssPath, 'css'),
-    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
-  ]);
-  
-  
-  initWidget({
-    waifuPath: waifuTipsJasonPath,
+  <script>
     
-    cubism2Path: live2d_path + 'live2d.min.js',
-    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
-    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
-    logLevel: 'warn',
-    drag: false,
-  });
+    document.body.classList.add(localStorage.getItem('isDark') === 'true' ? 'dark-bg' : 'light-bg');
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('dark-mode-toggle');
+      if (btn) {
+        btn.onclick = () => {
+          
+          const isDark = document.body.classList.contains('light-bg');
+          document.body.classList.toggle('dark-bg', isDark);
+          document.body.classList.toggle('light-bg', !isDark);
+          localStorage.setItem('isDark', isDark);
+        };
+      }
+    });
+  </script>
+
+  <script src=https://hanbing116.github.io/background/sakura.js></script>
+
+<script>
+  const cdnPath = "https://cdn.jsdelivr.net/gh/hanbing116/live2d-widget-v3@944c352";
+  const config = {
+    
+    path: {
+      modelPath: cdnPath + "/Resources/",
+      cssPath: cdnPath + "/waifu.css",
+      tipsJsonPath: cdnPath + "/waifu-tips.json",
+      tipsJsPath: cdnPath + "/waifu-tips.js",
+      live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+      live2dSdkPath: cdnPath + "/live2d-sdk.js"
+    },
+    
+    tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+    
+    drag: {
+      enable: true,
+      direction: ["x", "y"]
+    },
+    
+    switchType: "order"
+  }
+
   
-setTimeout(() => {
-  const live2dEl = document.getElementById('live2d');
-  const waifuEl = document.getElementById('waifu');
-  if (live2dEl) {
-    live2dEl.addEventListener('wheel', (e) => {
-      e.preventDefault(); 
-      e.stopPropagation(); 
-    }, { passive: false }); 
+  if (screen.width >= 768) {
+    Promise.all([
+      loadExternalResource(config.path.cssPath, "css"),
+      loadExternalResource(config.path.live2dCorePath, "js"),
+      loadExternalResource(config.path.live2dSdkPath, "js"),
+      loadExternalResource(config.path.tipsJsPath, "js")
+    ]).then(() => {
+      initWidget({
+        waifuPath: config.path.tipsJsonPath,
+        cdnPath: config.path.modelPath,
+        tools: config.tools,
+        dragEnable: config.drag.enable,
+        dragDirection: config.drag.direction,
+        switchType: config.switchType
+      });
+    });
   }
-  if (waifuEl) {
-    waifuEl.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-    }, { passive: false });
+
+  
+  function loadExternalResource(url, type) {
+    return new Promise((resolve, reject) => {
+      let tag;
+      if (type === "css") {
+        tag = document.createElement("link");
+        tag.rel = "stylesheet";
+        tag.href = url;
+      }
+      else if (type === "js") {
+        tag = document.createElement("script");
+        tag.src = url;
+      }
+      if (tag) {
+        tag.onload = () => resolve(url);
+        tag.onerror = () => reject(url);
+        document.head.appendChild(tag);
+      }
+    });
   }
-}, 1000);
-})();
-    </script>
-    <script src=https://hanbing116.github.io/background/sakura.js></script>
+</script>
+
+
+
+
 </body>
 </html>
-    </body>
+</body>
 </html>
