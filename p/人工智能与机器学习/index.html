@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="机器学习的定义、分类和方法要素 机器学习：是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测与分析的一门学科。\n研究对象是数据，从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。 基本假设：同类数据具有一定的统计规律性。 方法：1、给定的、有限的、用于学习的训练数据出发；2、模型——属于某个函数的集合，称为假设空间（hypothesis space）；3、从假设空间中选取一个最优模型，使它对已知的训练数据及未知的测试数据（test data）在给定的评价准则下有最优的预测 监督学习（Supervised Learning） 定义： 从标注数据中学习预测模型的机器学习问题\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="历时一学期终于用latex写完这份讲义了，整体上内容都是按照课程PPT所写的，适合搭配脑院的《人工智能与机器学习》（课程代码MED2308M）使用。第一次接触这方面的课程（学生物的为啥要学这个啊啊啊😫），学起来还是比较痛苦的，尤其是每周的实践课，但是收获还是不少的。\n">
 <title>人工智能与机器学习</title>
 
 <link rel='canonical' href='https://hanbing116.github.io/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/'>
 
 <link rel="stylesheet" href="/scss/style.min.fe165590cd22b7d781bc988f20bb332d3a036d2ab2047baad5b3236e3fc7578b.css"><meta property='og:title' content="人工智能与机器学习">
-<meta property='og:description' content="机器学习的定义、分类和方法要素 机器学习：是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测与分析的一门学科。\n研究对象是数据，从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。 基本假设：同类数据具有一定的统计规律性。 方法：1、给定的、有限的、用于学习的训练数据出发；2、模型——属于某个函数的集合，称为假设空间（hypothesis space）；3、从假设空间中选取一个最优模型，使它对已知的训练数据及未知的测试数据（test data）在给定的评价准则下有最优的预测 监督学习（Supervised Learning） 定义： 从标注数据中学习预测模型的机器学习问题\n">
+<meta property='og:description' content="历时一学期终于用latex写完这份讲义了，整体上内容都是按照课程PPT所写的，适合搭配脑院的《人工智能与机器学习》（课程代码MED2308M）使用。第一次接触这方面的课程（学生物的为啥要学这个啊啊啊😫），学起来还是比较痛苦的，尤其是每周的实践课，但是收获还是不少的。\n">
 <meta property='og:url' content='https://hanbing116.github.io/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/'>
 <meta property='og:site_name' content='龙林'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-09T20:29:04&#43;08:00'/><meta property='article:modified_time' content='2026-03-15T16:40:19&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='讲义' /><meta property='article:tag' content='整理' /><meta property='article:published_time' content='2026-06-30T15:29:04&#43;08:00'/><meta property='article:modified_time' content='2026-06-30T16:01:13&#43;08:00'/><meta property='og:image' content='https://hanbing116.github.io/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/21.jpg' />
 <meta name="twitter:title" content="人工智能与机器学习">
-<meta name="twitter:description" content="机器学习的定义、分类和方法要素 机器学习：是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测与分析的一门学科。\n研究对象是数据，从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。 基本假设：同类数据具有一定的统计规律性。 方法：1、给定的、有限的、用于学习的训练数据出发；2、模型——属于某个函数的集合，称为假设空间（hypothesis space）；3、从假设空间中选取一个最优模型，使它对已知的训练数据及未知的测试数据（test data）在给定的评价准则下有最优的预测 监督学习（Supervised Learning） 定义： 从标注数据中学习预测模型的机器学习问题\n"><!DOCTYPE html>
+<meta name="twitter:description" content="历时一学期终于用latex写完这份讲义了，整体上内容都是按照课程PPT所写的，适合搭配脑院的《人工智能与机器学习》（课程代码MED2308M）使用。第一次接触这方面的课程（学生物的为啥要学这个啊啊啊😫），学起来还是比较痛苦的，尤其是每周的实践课，但是收获还是不少的。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://hanbing116.github.io/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/21.jpg' /><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -692,18 +693,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#机器学习的定义分类和方法要素">机器学习的定义、分类和方法要素</a>
-      <ol>
-        <li><a href="#监督学习supervised-learning">监督学习（Supervised Learning）</a></li>
-        <li><a href="#无监督学习unsupervised-learning">无监督学习（Unsupervised Learning）</a></li>
-      </ol>
-    </li>
-    <li><a href="#线性回归">线性回归</a>
-      <ol>
-        <li><a href="#最小二乘线性回归">最小二乘线性回归</a></li>
-        <li><a href="#岭回归">岭回归</a></li>
-      </ol>
-    </li>
+    <li><a href="#讲义">讲义</a></li>
+    <li><a href="#作业">作业</a></li>
+    <li><a href="#实践课作业">实践课作业</a></li>
+    <li><a href="#实践课代码">实践课代码</a></li>
   </ol>
 </nav>
         </div>
@@ -715,8 +708,20 @@
 
 
     <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                <img src="/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/21_hu_5fe9bdcbd66badae.jpg"
+                        srcset="/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/21_hu_5fe9bdcbd66badae.jpg 800w, /p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/21_hu_83d5bb088183b1f5.jpg 1600w"
+                        width="800" 
+                        height="510" 
+                        loading="lazy"
+                        alt="Featured image of post 人工智能与机器学习" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -748,7 +753,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published" datetime='2026-03-09T20:29:04&#43;08:00'>2026-03-09</time>
+                <time class="article-time--published" datetime='2026-06-30T15:29:04&#43;08:00'>2026-06-30</time>
             </div>
         
 
@@ -764,158 +769,68 @@
     <section class="article-content">
     
     
-    <h1 id="机器学习的定义分类和方法要素">机器学习的定义、分类和方法要素
-</h1><p>机器学习：是关于计算机基于数据<mark>构建概率统计模型</mark>并运用模型对数据进行预测与分析的一门学科。</p>
-<ul>
-<li>研究对象是数据，从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。</li>
-<li>基本假设：同类数据具有一定的统计规律性。</li>
-<li>方法：1、给定的、有限的、用于学习的训练数据出发；2、模型——属于某个函数的集合，称为假设空间（hypothesis space）；3、从假设空间中选取一个最优模型，使它对已知的训练数据及未知的测试数据（test data）在给定的评价准则下有最优的预测</li>
-</ul>
-<h2 id="监督学习supervised-learning">监督学习（Supervised Learning）
-</h2><p><mark>定义</mark>：
-从<strong>标注数据</strong>中学习预测模型的机器学习问题</p>
-<ul>
-<li>标注数据表示输入输出的对应关系</li>
-<li>预测模型对给定的输入产生相应的输出</li>
-<li>输入到输出的映射的统计规律</li>
-<li>标注的数据集往往是人工给出的，所以叫监督学习
-利用训练数据集学习一个模型，再用模型对测试样本集进行预测，因此分为学习系统和预测系统。
-<mark>数据</mark>：</li>
-<li>输入/特征：随机变量𝑋；每个具体的输入是一个实例（instance）,取值为特征向量𝑥</li>
-<li>输出：随机变量𝑌；每个具体的输出是一个标签（label）,取值为特征向量𝑦</li>
-<li>样本点：输入-输出对$(𝑥_𝑖，𝑦_𝑖)$</li>
-<li>训练数据：学习模型使用的输入-输出集合</li>
-<li>测试数据：模型需要预测的输入-输出集合</li>
-<li>独立同分布假设
-输入变量与输出变量均为连续变量的预测问题称为回归问题
-输出变量为有限个离散变量的预测问题称为分类问题
-输入变量与输出变量均为变量序列的预测问题称为标注问题
-<mark>模型</mark>：
-输入到输出的映射，这一映射由来表示</li>
-<li>假设空间：模型属于由输入空间到输出空间的映射的集合；假设空间的确定意味着学习的范围的确定</li>
-<li><strong>模型类别</strong>：概率模型或非概率模型</li>
-<li>概率模型：条件概率分布$𝑃(𝑌|𝑋)$</li>
-<li>非概率模型表示：决策函数$𝑌=𝑓(𝑋)$</li>
-<li>对具体的输入进行相应的输出预测时，写作$𝑃(𝑦|𝑥)
-$$或$$𝑦=𝑓(𝑥)$</li>
-<li>一般用参数化的模型$𝑃(𝑌|𝑋;𝜃)$和$𝑌=𝑓(𝑋;𝜃)$
-<mark>策略</mark>：
-按照什么样的准则学习或选择最优的模型
-<strong>损失函数</strong>:度量模型<strong>一次</strong>预测的好坏
-![[Pasted image 20260302150437.png]]
-<strong>期望损失</strong>：损失函数的期望（理论上模型关于联合分布$𝑃(𝑋,𝑌)$的平均意义下的损失），但由于联合分布未知，因此无法计算……
+    <p>历时一学期终于用latex写完这份讲义了，整体上内容都是按照课程PPT所写的，适合搭配脑院的《人工智能与机器学习》（课程代码MED2308M）使用。第一次接触这方面的课程（学生物的为啥要学这个啊啊啊😫），学起来还是比较痛苦的，尤其是每周的实践课，但是收获还是不少的。</p>
+<p>这里放上编写的讲义、实践课代码和作业供参考。</p>
+<h1 id="讲义">讲义
+</h1><div style="margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;">
+  <p style="font-weight: 600; margin-bottom: 10px; margin-top: 0;">PDF预览：</p>
+  <!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 -->
+  <div id="pdf-container" style="width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;">
+    <object
+      data="/pdfs/人工智能与机器学习.pdf#view=FitH&zoom=100"
+      type="application/pdf"
+      style="width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;"
+      scrolling="no"
+    >
+      <div style="width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;">
+        无法预览，请<a href="/pdfs/人工智能与机器学习.pdf" target="_blank" style="color: #0078d4; text-decoration: underline;">点击查看/下载</a>
+      </div>
+    </object>
+  </div>
+  <div style="margin-top: 15px; text-align: center; box-sizing: border-box;">
+    <a 
+      href="/pdfs/人工智能与机器学习.pdf"
+      target="_blank"
+      download="人工智能与机器学习.pdf"
+      style="background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;"
+    >
+      📥 下载 PDF 文件
+    </a>
+  </div>
+</div>
+<!-- 强制覆盖浏览器给object标签的默认样式 -->
+<style>
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+<h1 id="作业">作业
+</h1><div style="margin: 1rem 0;">     <a href="https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/homework.zip"         download="homework.zip"        style="display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;">         📦 下载zip     </a>     </div>
+<h1 id="实践课作业">实践课作业
+</h1><div style="margin: 1rem 0;">     <a href="https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/default.zip"         download="default.zip"        style="display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;">         📦 下载zip     </a>     </div>
+<h1 id="实践课代码">实践课代码
+</h1><div style="margin: 1rem 0;">     <a href="https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/PythonProject.zip"         download="PythonProject.zip"        style="display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;">         📦 下载zip     </a>     </div>
 
-$$R_{exp}(f)=E_P[L(Y,f(X))]=\int_{x*y}L(y,f(x))P(x,y)dx dy$$
-<strong>经验损失</strong>：损失函数在训练集上的平均（模型$𝑓(𝑥)$关于训练数据集的平均损失）
-
-$$R_{emp}(f)=\frac{1}{N}\sum\limits_{i=1}^NL(y_i,f(x_i))$$
-<strong>当样本容量𝑁趋于无穷时，$𝑅_{emp}(𝑓)$趋于$𝑅_{exp}(𝑓)$,用经验损失估计期望损失</strong>
-因此：
-<strong>经验风险最小化</strong>：认为经验损失最小的模型是最优的模型
-求解最优化的问题：
-$$\min\limits_{f\in F}\frac{1}{N}\sum\limits_{i=1}^NL(y_i,f(x_i))$$</li>
-<li>当样本容量足够大时，经验损失最小化能保证有很好的学习效果，在现实中被广泛采用</li>
-<li><em>当样本容量很小时，经验损失最小化未必好，会产生“过拟合”（over-fitting）现象</em>
-<strong>结构风险最小化</strong>：是为了防止过拟合而提出来的策略，加入用正则项（regularization）近似期望损失函数；$J(f)$为模型的复杂度，权衡经验风险和模型复杂度，希望同时小。
-<mark>求解最优化问题</mark>：
-$$\min\limits_{f\in F}\frac{1}{N}\sum\limits_{i=1}^NL(y_i,f(x_i))+\lambda J(f)$$
-<mark>评估</mark>：
-目的：学到的模型不仅对已知数据而且对未知数据都能有很好的预测能力。
-<strong>训练误差</strong>：训练好的模型$𝑌=𝑓(𝑋;\hat{𝜃})$关于训练数据集的平均损失
-
-$$R_{emp}(\hat{f})=\frac{1}{N}\sum\limits_{i=1}^NL(y_i,\hat f(x_i))$$
-<strong>测试误差</strong>：是模型$𝑌=𝑓(𝑋;\hat{𝜃})$关于测试数据集的平均损失
-
-$$e_{test}=\frac{1}{N'}\sum\limits_{i=1}^{N'}L(y_i,\hat f(x_i))$$</li>
-<li>训练误差的大小对判断给定的问题是不是一个容易学习的问题是有意义的，但本质上不重要</li>
-<li>测试误差反映了学习方法对未知的测试数据集的预测能力，是学习中的重要概念。希望测试误差小</li>
-<li>通常将学习方法对未知数据的预测能力称为<strong>泛化能力</strong></li>
-</ul>
-<p><mark>选择</mark>：
-过拟合：一味追求提高对训练数据的预测能力，所选模型复杂度则往往会比真模型更高
-欠拟合：一味追求降低模型复杂度，会损失对训练数据以及测试数据的预测能力
-模型选择旨在<strong>避免过拟合和欠拟合</strong>
-![[Pasted image 20260302153906.png]]</p>
-<h2 id="无监督学习unsupervised-learning">无监督学习（Unsupervised Learning）
-</h2><p><mark>定义</mark>:
-是指从无标注数据中学习预测模型的机器学习问题</p>
-<ul>
-<li>无标注数据是自然得到的数据</li>
-<li>预测模型表示数据的类别、转换或概率</li>
-<li>本质是学习学习数据中的统计规律或潜在结构</li>
-<li>模型可以实现对数据的聚类、降维或概率估计</li>
-</ul>
-<p><mark>数据</mark>:
-相对于监督学习而言，输出变成了隐藏随机变量𝑍，组成希望找到的隐含结构空间，取值为隐含向量𝑧</p>
-<p><mark>模型</mark>：输入到隐含变量的映射；$𝑃(𝑍|𝑋)$、$𝑃(𝑋|𝑍)$或$𝑍=𝑓(𝑋)$</p>
-<h1 id="线性回归">线性回归
-</h1><h2 id="最小二乘线性回归">最小二乘线性回归
-</h2><p>线性回归：假定输入输出变量间的函数关系$𝑦=𝑓(𝑥;𝜃)$是线性的。<strong>本质上是参数$𝜽$的线性函数</strong>
-<mark>数据</mark>：</p>
-<ul>
-<li>
-<p>输入向量$x=(x^{(1)},x^{(2)},x^{(3)},…,x^{(p)})^T$</p>
-</li>
-<li>
-<p>输出标量（可也拓展为向量）$y$</p>
-</li>
-<li>
-<p>数据集｛$(x_1,y_1),(x_2,y_2),…,(x_N,y_N)$｝
-<mark>模型</mark>:
-</p>
-$$y = \theta_0 + \theta_1 x^{(1)} + \theta_2 x^{(2)} + \dots + \theta_p x^{(p)}$$<p>
-</p>
-$$y = \theta_0 + \sum_{j=1}^p \theta_j x^{(j)}$$<p>
-</p>
-$$y = x^T \theta$$</li>
-<li>
-<p>增广的输入向量$\boldsymbol{x} = (1, x^{(1)}, x^{(2)}, \dots, x^{(p)})^T$</p>
-</li>
-<li>
-<p>$\boldsymbol{\theta} = (\theta_0, \theta_1, \dots, \theta_p)^T$是待学习的参数向量，𝑝+1行1列</p>
-</li>
-<li>
-<p><strong>模型是参数$𝜽$的线性函数</strong>，确定了线性函数组成的假设空间</p>
-<p><mark>策略</mark>:</p>
-</li>
-<li>
-<p>最常用的损失函数是平方损失$L(y, f(x)) = (y - f(x))^2 = (y - x^T \theta)^2$</p>
-</li>
-<li>
-<p>对应的经验风险(训练集上的平均损失)：$T = {(x_1, y_1), (x_2, y_2), \dots, (x_N, y_N)},\quad R_{\text{emp}}(f) = \frac{1}{N} \sum_{i=1}^N L(y_i, f(x_i))$</p>
-</li>
-<li>
-<p>RSS（残差平方和）</p>
-$$RSS(\theta) = \sum_{i=1}^N (y_i - f(x_i))^2 = \sum_{i=1}^N (y_i - x_i^T \theta)^2$$</li>
-<li>
-<p>经验风险的设置并没有假设线性模型的有效性，仅仅是目标寻找数据的最佳线性拟合。</p>
-</li>
-<li>
-<p>将所有数据表示成矩阵：$y = (y_1, y_2, \dots, y_i)^T$</p>
-$$X =\begin{pmatrix} 1 & x_{11} & x_{12} & \dots & x_{1p} \\ 1 & x_{21} & x_{22} & \dots & x_{2p} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_{n1} & x_{n2} & \dots & x_{np} \end{pmatrix}=(x_1, x_2, \dots, x_N)^T$$<p>$\theta=(\theta_0,\theta_1,\theta_2,\dots,\theta_p)^T$</p>
-</li>
-</ul>
-<p>​      则 $RSS(\theta) = (\boldsymbol{y} - X\theta)^T (\boldsymbol{y} - X\theta)$</p>
-<p><mark>算法</mark>：</p>
-<p>直接对$RSS(\theta) = (\boldsymbol{y} - X\theta)^T (\boldsymbol{y} - X\theta)$式对$\theta$求一阶导为0有，解得最小值成立$\frac{\partial RSS}{\partial \theta} = -2X^T(\boldsymbol{y} - X\theta)=0$为：</p>
-$$X^T(\boldsymbol{y} - X\theta) = 0 \Rightarrow X^T X\theta = X^T \boldsymbol{y} \Rightarrow \hat{\theta} = (X^T X)^{-1} X^T y$$<p>解出$\hat{\theta}$后即可对新的向量$x_{new}$进行预测：$\hat{y}=x_{new}^T\hat{\theta}$</p>
-<ul>
-<li>
-<p>对于式子：$X^T X\theta = X^T \boldsymbol{y}$是一个关于$\theta$的线性方程组，若方程组的个数少于参数的数目，则$\theta$有无穷个解 ； 方程组的个数为样本点数目$N$， 参数的数目为$p+1$</p>
-</li>
-<li>
-<p><strong>$N&lt;p+1$时$X^TX$不可逆，发生过拟合</strong>，可通过减少输入的数目（特征选择）或者正则化来处理</p>
-<p><mark>模型</mark>：</p>
-<p>输入输出写为随机变量：$Y=X\theta+\epsilon$，其中噪声$\epsilon$的均值为0，方差为$\sigma^2$，当噪声服从<strong>正态分布</strong>时，有$\epsilon \sim N(0, \sigma^2)$</p>
-</li>
-</ul>
-<h2 id="岭回归">岭回归
-</h2>
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/%E8%AE%B2%E4%B9%89/">讲义</a>
+        
+            <a href="/tags/%E6%95%B4%E7%90%86/">整理</a>
+        
+    </section>
+
 
     <section class="article-lastmod">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -927,7 +842,7 @@ $$X^T(\boldsymbol{y} - X\theta) = 0 \Rightarrow X^T X\theta = X^T \boldsymbol{y}
 
 
         <span>
-            最后更新于 Mar 15, 2026 16:40 &#43;0800
+            最后更新于 Jun 30, 2026 16:01 &#43;0800
         </span>
     </section></footer>
 
@@ -938,6 +853,135 @@ $$X^T(\boldsymbol{y} - X\theta) = 0 \Rightarrow X^T X\theta = X^T \boldsymbol{y}
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%8A%A8%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%8A%A8%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/111.0caf5dd6fc5dd39726a3eec8bb777b83_hu_ec64cb48cfdd8864.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 动物学及实验（甲）"
+                        
+                        data-hash="md5-DK9d1vxd05cmo&#43;7Iu3d7gw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">动物学及实验（甲）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6h/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A6h/7cf1280d936dc65240993a6a36768742.ab8ffaffabd922beb12a433b181e0159_hu_8f890bae02781f.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 普通物理学Ⅱ（H）"
+                        
+                        data-hash="md5-q4/6/6vZIr6xKkM7GB4BWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">普通物理学Ⅱ（H）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/normal_curve.bbbcafa0af582c4ece0902b99a134c76_hu_9e701ce094d50746.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 概率论和数理统计"
+                        
+                        data-hash="md5-u7yvoK9YLE7OCQK5mhNMdg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">概率论和数理统计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%A4%8D%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E6%A4%8D%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/2.efdf9727f1245c8ae7b1092155187e0e_hu_fcbf24bbd159637c.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 植物学及实验（甲）"
+                        
+                        data-hash="md5-79&#43;XJ/EkXIrnsQkhVRh&#43;Dg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">植物学及实验（甲）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6%E7%94%B2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6%E7%94%B2/Image_1762771996220.7920e4f231eb889b750f764c2900a692_hu_af4aa45a82169141.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 生物化学（甲）"
+                        
+                        data-hash="md5-eSDk8jHriJt1D3ZMKQCmkg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">生物化学（甲）</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     

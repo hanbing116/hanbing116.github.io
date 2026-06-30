@@ -7,159 +7,72 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Sun, 15 Mar 2026 16:40:19 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 30 Jun 2026 16:01:13 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>动物学及实验（甲）</title>
+        <link>https://hanbing116.github.io/p/%E5%8A%A8%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/</link>
+        <pubDate>Tue, 30 Jun 2026 15:47:33 +0800</pubDate>
+        
+        <guid>https://hanbing116.github.io/p/%E5%8A%A8%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/</guid>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E5%8A%A8%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/111.jpg" alt="Featured image of post 动物学及实验（甲）" /&gt;&lt;p&gt;终于在考前几天整理写完成一份涵盖无脊椎动物和脊椎动物部分的讲义了，虽然但是脊椎动物部分内容真多啊😫（算上边写边复习依旧感觉好多都没记住🤯）。整体上都是按照课程讲义来写的，涵盖PPT几乎所有内容（好多……好难背……）&lt;/p&gt;
+&lt;p&gt;由于讲义中图片比较多，文件比较大，难以在线预览，就放在Github 面了。&lt;/p&gt;
+&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/zoology/zoology.pdf&#34;         download=&#34;zoology.pdf&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📄 下载讲义pdf     &lt;/a&gt;     &lt;/div&gt;
+</description>
+        </item>
+        <item>
         <title>人工智能与机器学习</title>
         <link>https://hanbing116.github.io/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
-        <pubDate>Mon, 09 Mar 2026 20:29:04 +0800</pubDate>
+        <pubDate>Tue, 30 Jun 2026 15:29:04 +0800</pubDate>
         
         <guid>https://hanbing116.github.io/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
-        <description>&lt;h1 id=&#34;机器学习的定义分类和方法要素&#34;&gt;机器学习的定义、分类和方法要素
-&lt;/h1&gt;&lt;p&gt;机器学习：是关于计算机基于数据&lt;mark&gt;构建概率统计模型&lt;/mark&gt;并运用模型对数据进行预测与分析的一门学科。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;研究对象是数据，从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。&lt;/li&gt;
-&lt;li&gt;基本假设：同类数据具有一定的统计规律性。&lt;/li&gt;
-&lt;li&gt;方法：1、给定的、有限的、用于学习的训练数据出发；2、模型——属于某个函数的集合，称为假设空间（hypothesis space）；3、从假设空间中选取一个最优模型，使它对已知的训练数据及未知的测试数据（test data）在给定的评价准则下有最优的预测&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;监督学习supervised-learning&#34;&gt;监督学习（Supervised Learning）
-&lt;/h2&gt;&lt;p&gt;&lt;mark&gt;定义&lt;/mark&gt;：
-从&lt;strong&gt;标注数据&lt;/strong&gt;中学习预测模型的机器学习问题&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;标注数据表示输入输出的对应关系&lt;/li&gt;
-&lt;li&gt;预测模型对给定的输入产生相应的输出&lt;/li&gt;
-&lt;li&gt;输入到输出的映射的统计规律&lt;/li&gt;
-&lt;li&gt;标注的数据集往往是人工给出的，所以叫监督学习
-利用训练数据集学习一个模型，再用模型对测试样本集进行预测，因此分为学习系统和预测系统。
-&lt;mark&gt;数据&lt;/mark&gt;：&lt;/li&gt;
-&lt;li&gt;输入/特征：随机变量𝑋；每个具体的输入是一个实例（instance）,取值为特征向量𝑥&lt;/li&gt;
-&lt;li&gt;输出：随机变量𝑌；每个具体的输出是一个标签（label）,取值为特征向量𝑦&lt;/li&gt;
-&lt;li&gt;样本点：输入-输出对$(𝑥_𝑖，𝑦_𝑖)$&lt;/li&gt;
-&lt;li&gt;训练数据：学习模型使用的输入-输出集合&lt;/li&gt;
-&lt;li&gt;测试数据：模型需要预测的输入-输出集合&lt;/li&gt;
-&lt;li&gt;独立同分布假设
-输入变量与输出变量均为连续变量的预测问题称为回归问题
-输出变量为有限个离散变量的预测问题称为分类问题
-输入变量与输出变量均为变量序列的预测问题称为标注问题
-&lt;mark&gt;模型&lt;/mark&gt;：
-输入到输出的映射，这一映射由来表示&lt;/li&gt;
-&lt;li&gt;假设空间：模型属于由输入空间到输出空间的映射的集合；假设空间的确定意味着学习的范围的确定&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;模型类别&lt;/strong&gt;：概率模型或非概率模型&lt;/li&gt;
-&lt;li&gt;概率模型：条件概率分布$𝑃(𝑌|𝑋)$&lt;/li&gt;
-&lt;li&gt;非概率模型表示：决策函数$𝑌=𝑓(𝑋)$&lt;/li&gt;
-&lt;li&gt;对具体的输入进行相应的输出预测时，写作$𝑃(𝑦|𝑥)
-$$或$$𝑦=𝑓(𝑥)$&lt;/li&gt;
-&lt;li&gt;一般用参数化的模型$𝑃(𝑌|𝑋;𝜃)$和$𝑌=𝑓(𝑋;𝜃)$
-&lt;mark&gt;策略&lt;/mark&gt;：
-按照什么样的准则学习或选择最优的模型
-&lt;strong&gt;损失函数&lt;/strong&gt;:度量模型&lt;strong&gt;一次&lt;/strong&gt;预测的好坏
-![[Pasted image 20260302150437.png]]
-&lt;strong&gt;期望损失&lt;/strong&gt;：损失函数的期望（理论上模型关于联合分布$𝑃(𝑋,𝑌)$的平均意义下的损失），但由于联合分布未知，因此无法计算……
-
-$$R_{exp}(f)=E_P[L(Y,f(X))]=\int_{x*y}L(y,f(x))P(x,y)dx dy$$
-&lt;strong&gt;经验损失&lt;/strong&gt;：损失函数在训练集上的平均（模型$𝑓(𝑥)$关于训练数据集的平均损失）
-
-$$R_{emp}(f)=\frac{1}{N}\sum\limits_{i=1}^NL(y_i,f(x_i))$$
-&lt;strong&gt;当样本容量𝑁趋于无穷时，$𝑅_{emp}(𝑓)$趋于$𝑅_{exp}(𝑓)$,用经验损失估计期望损失&lt;/strong&gt;
-因此：
-&lt;strong&gt;经验风险最小化&lt;/strong&gt;：认为经验损失最小的模型是最优的模型
-求解最优化的问题：
-$$\min\limits_{f\in F}\frac{1}{N}\sum\limits_{i=1}^NL(y_i,f(x_i))$$&lt;/li&gt;
-&lt;li&gt;当样本容量足够大时，经验损失最小化能保证有很好的学习效果，在现实中被广泛采用&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;当样本容量很小时，经验损失最小化未必好，会产生“过拟合”（over-fitting）现象&lt;/em&gt;
-&lt;strong&gt;结构风险最小化&lt;/strong&gt;：是为了防止过拟合而提出来的策略，加入用正则项（regularization）近似期望损失函数；$J(f)$为模型的复杂度，权衡经验风险和模型复杂度，希望同时小。
-&lt;mark&gt;求解最优化问题&lt;/mark&gt;：
-$$\min\limits_{f\in F}\frac{1}{N}\sum\limits_{i=1}^NL(y_i,f(x_i))+\lambda J(f)$$
-&lt;mark&gt;评估&lt;/mark&gt;：
-目的：学到的模型不仅对已知数据而且对未知数据都能有很好的预测能力。
-&lt;strong&gt;训练误差&lt;/strong&gt;：训练好的模型$𝑌=𝑓(𝑋;\hat{𝜃})$关于训练数据集的平均损失
-
-$$R_{emp}(\hat{f})=\frac{1}{N}\sum\limits_{i=1}^NL(y_i,\hat f(x_i))$$
-&lt;strong&gt;测试误差&lt;/strong&gt;：是模型$𝑌=𝑓(𝑋;\hat{𝜃})$关于测试数据集的平均损失
-
-$$e_{test}=\frac{1}{N&#39;}\sum\limits_{i=1}^{N&#39;}L(y_i,\hat f(x_i))$$&lt;/li&gt;
-&lt;li&gt;训练误差的大小对判断给定的问题是不是一个容易学习的问题是有意义的，但本质上不重要&lt;/li&gt;
-&lt;li&gt;测试误差反映了学习方法对未知的测试数据集的预测能力，是学习中的重要概念。希望测试误差小&lt;/li&gt;
-&lt;li&gt;通常将学习方法对未知数据的预测能力称为&lt;strong&gt;泛化能力&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;mark&gt;选择&lt;/mark&gt;：
-过拟合：一味追求提高对训练数据的预测能力，所选模型复杂度则往往会比真模型更高
-欠拟合：一味追求降低模型复杂度，会损失对训练数据以及测试数据的预测能力
-模型选择旨在&lt;strong&gt;避免过拟合和欠拟合&lt;/strong&gt;
-![[Pasted image 20260302153906.png]]&lt;/p&gt;
-&lt;h2 id=&#34;无监督学习unsupervised-learning&#34;&gt;无监督学习（Unsupervised Learning）
-&lt;/h2&gt;&lt;p&gt;&lt;mark&gt;定义&lt;/mark&gt;:
-是指从无标注数据中学习预测模型的机器学习问题&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;无标注数据是自然得到的数据&lt;/li&gt;
-&lt;li&gt;预测模型表示数据的类别、转换或概率&lt;/li&gt;
-&lt;li&gt;本质是学习学习数据中的统计规律或潜在结构&lt;/li&gt;
-&lt;li&gt;模型可以实现对数据的聚类、降维或概率估计&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;mark&gt;数据&lt;/mark&gt;:
-相对于监督学习而言，输出变成了隐藏随机变量𝑍，组成希望找到的隐含结构空间，取值为隐含向量𝑧&lt;/p&gt;
-&lt;p&gt;&lt;mark&gt;模型&lt;/mark&gt;：输入到隐含变量的映射；$𝑃(𝑍|𝑋)$、$𝑃(𝑋|𝑍)$或$𝑍=𝑓(𝑋)$&lt;/p&gt;
-&lt;h1 id=&#34;线性回归&#34;&gt;线性回归
-&lt;/h1&gt;&lt;h2 id=&#34;最小二乘线性回归&#34;&gt;最小二乘线性回归
-&lt;/h2&gt;&lt;p&gt;线性回归：假定输入输出变量间的函数关系$𝑦=𝑓(𝑥;𝜃)$是线性的。&lt;strong&gt;本质上是参数$𝜽$的线性函数&lt;/strong&gt;
-&lt;mark&gt;数据&lt;/mark&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;输入向量$x=(x^{(1)},x^{(2)},x^{(3)},…,x^{(p)})^T$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;输出标量（可也拓展为向量）$y$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;数据集｛$(x_1,y_1),(x_2,y_2),…,(x_N,y_N)$｝
-&lt;mark&gt;模型&lt;/mark&gt;:
-&lt;/p&gt;
-$$y = \theta_0 + \theta_1 x^{(1)} + \theta_2 x^{(2)} + \dots + \theta_p x^{(p)}$$&lt;p&gt;
-&lt;/p&gt;
-$$y = \theta_0 + \sum_{j=1}^p \theta_j x^{(j)}$$&lt;p&gt;
-&lt;/p&gt;
-$$y = x^T \theta$$&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;增广的输入向量$\boldsymbol{x} = (1, x^{(1)}, x^{(2)}, \dots, x^{(p)})^T$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;$\boldsymbol{\theta} = (\theta_0, \theta_1, \dots, \theta_p)^T$是待学习的参数向量，𝑝+1行1列&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;模型是参数$𝜽$的线性函数&lt;/strong&gt;，确定了线性函数组成的假设空间&lt;/p&gt;
-&lt;p&gt;&lt;mark&gt;策略&lt;/mark&gt;:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;最常用的损失函数是平方损失$L(y, f(x)) = (y - f(x))^2 = (y - x^T \theta)^2$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;对应的经验风险(训练集上的平均损失)：$T = {(x_1, y_1), (x_2, y_2), \dots, (x_N, y_N)},\quad R_{\text{emp}}(f) = \frac{1}{N} \sum_{i=1}^N L(y_i, f(x_i))$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;RSS（残差平方和）&lt;/p&gt;
-$$RSS(\theta) = \sum_{i=1}^N (y_i - f(x_i))^2 = \sum_{i=1}^N (y_i - x_i^T \theta)^2$$&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;经验风险的设置并没有假设线性模型的有效性，仅仅是目标寻找数据的最佳线性拟合。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将所有数据表示成矩阵：$y = (y_1, y_2, \dots, y_i)^T$&lt;/p&gt;
-$$X =\begin{pmatrix} 1 &amp; x_{11} &amp; x_{12} &amp; \dots &amp; x_{1p} \\ 1 &amp; x_{21} &amp; x_{22} &amp; \dots &amp; x_{2p} \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{pmatrix}=(x_1, x_2, \dots, x_N)^T$$&lt;p&gt;$\theta=(\theta_0,\theta_1,\theta_2,\dots,\theta_p)^T$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;​      则 $RSS(\theta) = (\boldsymbol{y} - X\theta)^T (\boldsymbol{y} - X\theta)$&lt;/p&gt;
-&lt;p&gt;&lt;mark&gt;算法&lt;/mark&gt;：&lt;/p&gt;
-&lt;p&gt;直接对$RSS(\theta) = (\boldsymbol{y} - X\theta)^T (\boldsymbol{y} - X\theta)$式对$\theta$求一阶导为0有，解得最小值成立$\frac{\partial RSS}{\partial \theta} = -2X^T(\boldsymbol{y} - X\theta)=0$为：&lt;/p&gt;
-$$X^T(\boldsymbol{y} - X\theta) = 0 \Rightarrow X^T X\theta = X^T \boldsymbol{y} \Rightarrow \hat{\theta} = (X^T X)^{-1} X^T y$$&lt;p&gt;解出$\hat{\theta}$后即可对新的向量$x_{new}$进行预测：$\hat{y}=x_{new}^T\hat{\theta}$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;对于式子：$X^T X\theta = X^T \boldsymbol{y}$是一个关于$\theta$的线性方程组，若方程组的个数少于参数的数目，则$\theta$有无穷个解 ； 方程组的个数为样本点数目$N$， 参数的数目为$p+1$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;$N&amp;lt;p+1$时$X^TX$不可逆，发生过拟合&lt;/strong&gt;，可通过减少输入的数目（特征选择）或者正则化来处理&lt;/p&gt;
-&lt;p&gt;&lt;mark&gt;模型&lt;/mark&gt;：&lt;/p&gt;
-&lt;p&gt;输入输出写为随机变量：$Y=X\theta+\epsilon$，其中噪声$\epsilon$的均值为0，方差为$\sigma^2$，当噪声服从&lt;strong&gt;正态分布&lt;/strong&gt;时，有$\epsilon \sim N(0, \sigma^2)$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;岭回归&#34;&gt;岭回归
-&lt;/h2&gt;</description>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/21.jpg" alt="Featured image of post 人工智能与机器学习" /&gt;&lt;p&gt;历时一学期终于用latex写完这份讲义了，整体上内容都是按照课程PPT所写的，适合搭配脑院的《人工智能与机器学习》（课程代码MED2308M）使用。第一次接触这方面的课程（学生物的为啥要学这个啊啊啊😫），学起来还是比较痛苦的，尤其是每周的实践课，但是收获还是不少的。&lt;/p&gt;
+&lt;p&gt;这里放上编写的讲义、实践课代码和作业供参考。&lt;/p&gt;
+&lt;h1 id=&#34;讲义&#34;&gt;讲义
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/人工智能与机器学习.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/人工智能与机器学习.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/人工智能与机器学习.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;人工智能与机器学习.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;作业&#34;&gt;作业
+&lt;/h1&gt;&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/homework.zip&#34;         download=&#34;homework.zip&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📦 下载zip     &lt;/a&gt;     &lt;/div&gt;
+&lt;h1 id=&#34;实践课作业&#34;&gt;实践课作业
+&lt;/h1&gt;&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/default.zip&#34;         download=&#34;default.zip&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📦 下载zip     &lt;/a&gt;     &lt;/div&gt;
+&lt;h1 id=&#34;实践课代码&#34;&gt;实践课代码
+&lt;/h1&gt;&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/PythonProject.zip&#34;         download=&#34;PythonProject.zip&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📦 下载zip     &lt;/a&gt;     &lt;/div&gt;
+</description>
         </item>
         <item>
         <title>GEO转录本分析</title>
@@ -1072,6 +985,55 @@ Gene Symbol直接对应基因名的标识；Entrez ID是NCBI Entrez 数据库的
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exp1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;GSE309139.rda&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 注意，这里得到exp1之后记得看看需要标准化，归一化那一系列操作，之后再进行热图绘制。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;其他&#34;&gt;其他
+&lt;/h2&gt;&lt;p&gt;实际分析时，有的GEO数据格式并不像上述那样标准，这里整理遇到的一些数据怎么整理成exp。&lt;/p&gt;
+&lt;p&gt;下面是高通量数据，但是&lt;strong&gt;Supplementary file&lt;/strong&gt;是 _RAW.tar，参考GSE252513，这个tar文件里面是每个样本的txt.gz文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装并加载包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data.table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 1. 找到所有txt.gz文件（改成你解压后的文件夹名）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;files&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;list.files&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;GSE252513_RAW&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pattern&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;txt.gz&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;full.names&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 2. 批量读取所有文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;lapply&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;files&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;dt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sep&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;\t&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;]&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 只取1，5列：基因 + count&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nf&#34;&gt;setnames&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;gene&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;basename&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 命名列&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;dt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 3. 合并成表达矩阵 exp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Reduce&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;merge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;gene&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;all&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;[is.na&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 缺失值补0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看结果&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;dim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;差异分析&#34;&gt;差异分析
