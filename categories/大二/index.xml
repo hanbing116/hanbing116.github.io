@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>龙林</copyright>
-        <lastBuildDate>Tue, 30 Jun 2026 16:01:13 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E5%A4%A7%E4%BA%8C/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Jul 2026 11:41:47 +0800</lastBuildDate><atom:link href="https://hanbing116.github.io/categories/%E5%A4%A7%E4%BA%8C/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>动物学及实验（甲）</title>
         <link>https://hanbing116.github.io/p/%E5%8A%A8%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E7%94%B2/</link>
         <pubDate>Tue, 30 Jun 2026 15:47:33 +0800</pubDate>
@@ -72,6 +72,152 @@
 &lt;/h1&gt;&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/default.zip&#34;         download=&#34;default.zip&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📦 下载zip     &lt;/a&gt;     &lt;/div&gt;
 &lt;h1 id=&#34;实践课代码&#34;&gt;实践课代码
 &lt;/h1&gt;&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/zip/PythonProject.zip&#34;         download=&#34;PythonProject.zip&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📦 下载zip     &lt;/a&gt;     &lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>分子生物学及实验</title>
+        <link>https://hanbing116.github.io/p/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C/</link>
+        <pubDate>Mon, 29 Jun 2026 10:58:29 +0800</pubDate>
+        
+        <guid>https://hanbing116.github.io/p/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C/</guid>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C/111.jpg" alt="Featured image of post 分子生物学及实验" /&gt;&lt;p&gt;整体来说分子生物学及实验课程还是比较轻松的，理论课期末周花几天复习一下就OK，但是要注意熟悉专业词汇的中英对照。期末考试基本上都是在历年卷出现过的题目，拟合度极高😋，注意多复习复习历年卷😀。&lt;/p&gt;
+&lt;p&gt;实验课程也挺容易操作的，最耗时间的是等的过程，实验报告的书写建议每次做完就写一些，否则留到最后写任务量还是挺大的。&lt;/p&gt;
+&lt;h1 id=&#34;基础技术部分&#34;&gt;基础&amp;amp;技术部分
+&lt;/h1&gt;&lt;p&gt;这一部分是在DNA复制之前的前置的内容，属于比较基础的微观生物的一些知识。同样也涵盖分子生物学的一些技术手段。&lt;/p&gt;
+&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/Molecular_biology/part1.pdf&#34;         download=&#34;homework.pdf&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📄 下载     &lt;/a&gt;     &lt;/div&gt;
+&lt;h1 id=&#34;分子生物学理论部分&#34;&gt;分子生物学理论部分
+&lt;/h1&gt;&lt;p&gt;这一部分就是理论课DNA复制以后的章节，以思维导图形式整理完成。&lt;/p&gt;
+&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/mindmap.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/mindmap.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/mindmap.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;mindmap.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;实验报告&#34;&gt;实验报告
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/水稻磷调控SPX1与PHR2蛋白互作与分子生物学实验探究.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/水稻磷调控SPX1与PHR2蛋白互作与分子生物学实验探究.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/水稻磷调控SPX1与PHR2蛋白互作与分子生物学实验探究.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;水稻磷调控SPX1与PHR2蛋白互作与分子生物学实验探究.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+</description>
+        </item>
+        <item>
+        <title>免疫学（未竟）</title>
+        <link>https://hanbing116.github.io/p/%E5%85%8D%E7%96%AB%E5%AD%A6%E6%9C%AA%E7%AB%9F/</link>
+        <pubDate>Fri, 08 May 2026 11:24:39 +0800</pubDate>
+        
+        <guid>https://hanbing116.github.io/p/%E5%85%8D%E7%96%AB%E5%AD%A6%E6%9C%AA%E7%AB%9F/</guid>
+        <description>&lt;img src="https://hanbing116.github.io/p/%E5%85%8D%E7%96%AB%E5%AD%A6%E6%9C%AA%E7%AB%9F/111.png" alt="Featured image of post 免疫学（未竟）" /&gt;&lt;p&gt;生科院章晓波老师开设的半学期的免疫学课程，整体而言还是比较轻松，但是课程内容对免疫学的大多重点内容都还是有要求的，期末考试也还是需要花时间好好准备复习。&lt;/p&gt;
+&lt;p&gt;由于时间限制，这份Immunology讲义只写了一半就期末考试了😭，所以这里也放上latex的zip文件，说不定后面有时间我就把它写上了呢……（Maybe）&lt;/p&gt;
+&lt;h1 id=&#34;未竟的讲义&#34;&gt;未竟的讲义
+&lt;/h1&gt;&lt;div style=&#34;margin: 20px 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;&#34;&gt;
+  &lt;p style=&#34;font-weight: 600; margin-bottom: 10px; margin-top: 0;&#34;&gt;PDF预览：&lt;/p&gt;
+  &lt;!-- 外层容器：彻底清除所有可能产生边框/阴影的样式 --&gt;
+  &lt;div id=&#34;pdf-container&#34; style=&#34;width: 100%; margin: 0 auto; overflow: hidden; box-sizing: border-box; border: none; box-shadow: none; background: transparent;&#34;&gt;
+    &lt;object
+      data=&#34;/pdfs/Immunology.pdf#view=FitH&amp;zoom=100&#34;
+      type=&#34;application/pdf&#34;
+      style=&#34;width: 100%; height: 1000px; border: none !important; display: block; box-sizing: border-box; overflow: hidden; box-shadow: none !important; outline: none !important;&#34;
+      scrolling=&#34;no&#34;
+    &gt;
+      &lt;div style=&#34;width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; border: none; box-sizing: border-box; box-shadow: none; outline: none;&#34;&gt;
+        无法预览，请&lt;a href=&#34;https://hanbing116.github.io/pdfs/Immunology.pdf&#34; target=&#34;_blank&#34; style=&#34;color: #0078d4; text-decoration: underline;&#34;&gt;点击查看/下载&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/object&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin-top: 15px; text-align: center; box-sizing: border-box;&#34;&gt;
+    &lt;a 
+      href=&#34;https://hanbing116.github.io/pdfs/Immunology.pdf&#34;
+      target=&#34;_blank&#34;
+      download=&#34;Immunology.pdf&#34;
+      style=&#34;background: #0078d4; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;&#34;
+    &gt;
+      📥 下载 PDF 文件
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 强制覆盖浏览器给object标签的默认样式 --&gt;
+&lt;style&gt;
+  #pdf-container object {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  /* 针对部分浏览器的内嵌PDF viewer样式重置 */
+  #pdf-container object::-webkit-scrollbar {
+    display: none;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;zip&#34;&gt;Zip
+&lt;/h1&gt;&lt;div style=&#34;margin: 1rem 0;&#34;&gt;     &lt;a href=&#34;https://github.com/hanbing116/hanbing116.github.io/releases/download/Immunology/Immunology.zip&#34;         download=&#34;Immunology.zip&#34;        style=&#34;display: inline-block; padding: 10px 20px; background-color: #0969da; color: white; border-radius: 6px; text-decoration: none; margin: 6px 0;&#34;&gt;         📦 下载zip     &lt;/a&gt;     &lt;/div&gt;
 </description>
         </item>
         <item>
