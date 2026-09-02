@@ -6,105 +6,14 @@
 
 <link rel='canonical' href='https://hanbing116.github.io/categories/%E5%A4%A7%E4%BA%8C/'>
 
-<link rel="stylesheet" href="/scss/style.min.fe165590cd22b7d781bc988f20bb332d3a036d2ab2047baad5b3236e3fc7578b.css"><meta property='og:title' content="Category: 大二 - 龙林">
+<link rel="stylesheet" href="/scss/style.min.fdc793825aa9f85274417c971cf923fdd576442eff8b04130f5504f5f450c4d0.css"><meta property='og:title' content="Category: 大二 - 龙林">
 <meta property='og:description' content="哦~这是一支无能的移液枪，欢迎来到他的备忘录，你可以查看他的任何资料，对了！当心污染的培养基和爆炸的离心机！！！">
 <meta property='og:url' content='https://hanbing116.github.io/categories/%E5%A4%A7%E4%BA%8C/'>
 <meta property='og:site_name' content='龙林'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-07-08T11:41:47&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-09-02T22:58:02&#43;08:00 '/>
 <meta name="twitter:title" content="Category: 大二 - 龙林">
-<meta name="twitter:description" content="哦~这是一支无能的移液枪，欢迎来到他的备忘录，你可以查看他的任何资料，对了！当心污染的培养基和爆炸的离心机！！！"><link rel="alternate" type="application/rss&#43;xml" href="https://hanbing116.github.io/categories/%E5%A4%A7%E4%BA%8C/index.xml"><!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>网站加载页</title>
-    <style>
-        .loading {
-            position: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background-color: #f5f5fa;
-            display: none;
-             
-            transition: opacity 1.2s ease-out; 
-        }
+<meta name="twitter:description" content="哦~这是一支无能的移液枪，欢迎来到他的备忘录，你可以查看他的任何资料，对了！当心污染的培养基和爆炸的离心机！！！"><link rel="alternate" type="application/rss&#43;xml" href="https://hanbing116.github.io/categories/%E5%A4%A7%E4%BA%8C/index.xml">
 
-         
-        @keyframes typing {
-          from {
-            width: 0;
-          }
-        }
-
-        @keyframes blink-caret {
-          50% {
-            border-color: transparent;
-          }
-        }
-
-        .animation {
-          font:
-            bold 200% Consolas,
-            Monaco,
-            monospace;
-          border-right: 0.1em solid black;
-          width: 13.2ch;
-          margin: 2em 2em;
-          white-space: nowrap;
-          overflow: hidden;
-          -webkit-animation:
-            typing 1.2s steps(13, end),    
-            blink-caret 0.5s step-end infinite alternate;
-        }
-
-         
-        .loading-fadeout {
-            opacity: 0;  
-            pointer-events: none;  
-        }
-    </style>
-</head>
-<body>
-    
-    <div class="loading">
-        <div class="animation">hello again!</div>
-    </div>
-
-    <script>	
-        function initLoading() {
-            const loading = document.querySelector(".loading");
-            const currentDomain = window.location.hostname;
-            const referrer = document.referrer;
-
-            
-            const isNewVisit = !referrer || !referrer.includes(currentDomain);
-
-            if (isNewVisit) {
-                loading.style.display = "flex"; 
-                
-                
-                setTimeout(() => {
-                    loading.classList.add("loading-fadeout");
-                }, 1200); 
-
-                
-                setTimeout(() => {
-                    loading.style.display = "none";
-                }, 2500);
-            } else {
-                loading.style.display = "none"; 
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', initLoading);
-    </script>
-</body>
-</html>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
@@ -161,66 +70,47 @@
     })();
 </script>
 
-  
-  <div id="global-music-player" style="position: fixed; bottom: 80px; left: 10px; z-index: 9999; background: var(--card-background); padding: 3px 6px; border-radius: 8px; box-shadow: var(--shadow-l1); cursor: pointer; border: 1px solid rgba(0,0,0,0.05);">
+  <div id="global-music-player" class="music-player">
     
-    
-    <div id="minimize-btn" style="display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--card-text-color-main);">
+    <div id="minimize-btn" class="music-player__toggle">
       🎵 音乐
     </div>
 
     
-    <div id="player-controls" style="display: none; margin-top: 4px; transition: all 0.3s ease;">
-      
-      <p style="color: var(--card-text-color-secondary); font-size: 12px; margin: 0 0 2px 0; text-align: center;" id="music-title">正在播放：see you soon</p>
+    <div id="player-controls" class="music-player__body">
+      <p id="music-title" class="music-player__title">正在播放：see you soon</p>
 
       
-      <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 4px; padding: 0 4px;">
-        
-        
-        <input
-          type="range"
-          id="progress-bar"
-          min="0"
-          max="100"
-          step="0.1"
-          value="0"
-          style="width: 100%; height: 4px; cursor: pointer; accent-color: var(--accent-color); margin: 0;"
-        >
-        
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span id="current-time" style="color: var(--card-text-color-tertiary); font-size: 9px;">00:00</span>
-          <span id="total-time" style="color: var(--card-text-color-tertiary); font-size: 9px;">00:00</span>
+      <div class="music-player__progress">
+        <input type="range" id="progress-bar" class="music-player__range" min="0" max="100" step="0.1" value="0">
+        <div class="music-player__time-row">
+          <span id="current-time" class="music-player__time">00:00</span>
+          <span id="total-time" class="music-player__time">00:00</span>
         </div>
       </div>
 
-      <div style="display: flex; gap: 6px; align-items: center; justify-content: center; margin-bottom: 2px;">
-        
-        <button onclick="prevMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;">←上曲</button>
-        <button onclick="togglePlay(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;" id="play-btn">▶️ 播放</button>
-        <button onclick="nextMusic(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;">下曲→</button>
-        <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 11px;">📜 列表</button>
+      <div class="music-player__controls">
+        <button onclick="prevMusic(); event.stopPropagation();" class="music-player__btn" aria-label="上一曲">◀ 上曲</button>
+        <button onclick="togglePlay(); event.stopPropagation();" class="music-player__btn" id="play-btn" aria-label="播放/暂停">▶ 播放</button>
+        <button onclick="nextMusic(); event.stopPropagation();" class="music-player__btn" aria-label="下一曲">下曲 ▶</button>
+        <button onclick="toggleMusicList(); event.stopPropagation();" class="music-player__btn" aria-label="播放列表">☰ 列表</button>
       </div>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
-        <span style="color: var(--card-text-color-secondary); font-size: 10px;">音量🔊</span>
-        
-        <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.3"
-          style="width: 120px; height: 4px; cursor: pointer; accent-color: var(--accent-color);">
+
+      <div class="music-player__volume">
+        <span class="music-player__volume-label">音量</span>
+        <input type="range" id="volume-control" class="music-player__range music-player__range--volume" min="0" max="1" step="0.05" value="0.3" aria-label="音量">
       </div>
     </div>
-    <audio id="bg-music" preload="metadata" style="display: none;">
+    <audio id="bg-music" preload="metadata" hidden></audio>
   </div>
 
   
-  
-  <div id="music-list-modal" style="position: fixed; bottom: 170px; left: 110px; z-index: 9998; background: var(--card-background); padding: 8px; border-radius: 8px; box-shadow: var(--shadow-l2); display: none; max-height: 200px; overflow-y: auto; min-width: 150px; border: 1px solid var(--card-separator-color);">
-    
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; padding-bottom: 4px; border-bottom: 1px solid var(--card-separator-color);">
-      <span style="color: var(--card-text-color-main); font-size: 12px; font-weight: bold;">🎵 播放列表</span>
-      <button onclick="toggleMusicList(); event.stopPropagation();" style="border: none; background: transparent; color: var(--card-text-color-main); cursor: pointer; font-size: 10px; padding: 0;">✕</button>
+  <div id="music-list-modal" class="music-list">
+    <div class="music-list__header">
+      <span class="music-list__header-title">🎵 播放列表</span>
+      <button onclick="toggleMusicList(); event.stopPropagation();" class="music-player__btn" aria-label="关闭列表" style="padding:2px 6px;font-size:14px;line-height:1;">×</button>
     </div>
-    <div id="music-list-container" style="display: flex; flex-direction: column; gap: 3px;">
-    </div>
+    <div id="music-list-container" class="music-list__body"></div>
   </div>
 
   
@@ -291,19 +181,8 @@
       musicList.forEach((item, index) => {
         const listItem = document.createElement('div');
         
-        listItem.style = `
-          padding: 4px 8px;
-          border-radius: 4px;
-          color: var(--card-text-color-main);
-          font-size: 11px;
-          cursor: pointer;
-          transition: background 0.2s;
-        `;
-        if (index === currentTrack) {
-          listItem.style.background = 'var(--accent-color)';
-          listItem.style.color = 'var(--accent-color-text)'; 
-        }
-        listItem.innerHTML = `${index + 1}. ${item.title}`;
+        listItem.className = 'music-list__item' + (index === currentTrack ? ' is-active' : '');
+        listItem.textContent = `${index + 1}. ${item.title}`;
         listItem.onclick = function () {
           selectMusic(index);
           toggleMusicList();
@@ -325,7 +204,7 @@
       audio.src = musicList[currentTrack].src;
       audio.currentTime = 0;
       audio.play();
-      playBtn.innerHTML = '⏸️ 暂停';
+      playBtn.innerHTML = '⏸ 暂停';
       titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
       updateMinimizeBtn();
       saveAllState();
@@ -344,7 +223,7 @@
     }
 
     function updateMinimizeBtn() {
-      const statusIcon = audio.paused ? '▶️' : '⏸️';
+      const statusIcon = audio.paused ? '▶' : '⏸';
       minimizeBtn.innerHTML = `${statusIcon} ${musicList[currentTrack].title}`;
     }
 
@@ -376,23 +255,23 @@
       const isPlaying = localStorage.getItem(STORAGE.PLAYING) === 'true';
       if (isPlaying) {
         audio.play().then(() => {
-          playBtn.innerHTML = '⏸️ 暂停';
+          playBtn.innerHTML = '⏸ 暂停';
           updateMinimizeBtn();
         }).catch(err => {
-          playBtn.innerHTML = '▶️ 播放';
+          playBtn.innerHTML = '▶ 播放';
         });
       } else {
-        playBtn.innerHTML = '▶️ 播放';
+        playBtn.innerHTML = '▶ 播放';
       }
     }
 
     function togglePlay() {
       if (audio.paused) {
         audio.play();
-        playBtn.innerHTML = '⏸️ 暂停';
+        playBtn.innerHTML = '⏸ 暂停';
       } else {
         audio.pause();
-        playBtn.innerHTML = '▶️ 播放';
+        playBtn.innerHTML = '▶ 播放';
       }
       updateMinimizeBtn();
       saveAllState();
@@ -403,7 +282,7 @@
       audio.src = musicList[currentTrack].src;
       audio.currentTime = 0;
       audio.play();
-      playBtn.innerHTML = '⏸️ 暂停';
+      playBtn.innerHTML = '⏸ 暂停';
       titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
       updateMinimizeBtn();
       saveAllState();
@@ -417,7 +296,7 @@
       audio.src = musicList[currentTrack].src;
       audio.currentTime = 0;
       audio.play();
-      playBtn.innerHTML = '⏸️ 暂停';
+      playBtn.innerHTML = '⏸ 暂停';
       titleEl.textContent = `正在播放：${musicList[currentTrack].title}`;
       updateMinimizeBtn();
       saveAllState();
@@ -712,7 +591,7 @@
                     <a href="/archives/#2026">
                         
                             <span class="year">2026</span>
-                            <span class="count">11</span>
+                            <span class="count">12</span>
                         
                     </a> 
                 </div>
@@ -876,117 +755,755 @@
         document.head.appendChild(customFont);
     }());
 </script>
-<html>
-<body>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-       
-      background-attachment: fixed !important;
-      background-size: cover !important;
-      background-position: center top !important;
-      background-repeat: no-repeat !important;
-    }
-     
-    .light-bg {
-      background-image: url(https://hanbing116.github.io/background/12.png) !important;
-    }
-     
-    .dark-bg {
-      background-image: url(https://hanbing116.github.io/background/11.jpg) !important;
-    }
-  </style>
 
-  <script>
-    
-    document.body.classList.add(localStorage.getItem('isDark') === 'true' ? 'dark-bg' : 'light-bg');
 
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('dark-mode-toggle');
-      if (btn) {
-        btn.onclick = () => {
-          
-          const isDark = document.body.classList.contains('light-bg');
-          document.body.classList.toggle('dark-bg', isDark);
-          document.body.classList.toggle('light-bg', !isDark);
-          localStorage.setItem('isDark', isDark);
-        };
-      }
-    });
-  </script>
+<style>
+   
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+  .light-bg {
+    background-image: url(https://hanbing116.github.io/background/12.png) !important;
+  }
+  .dark-bg {
+    background-image: url(https://hanbing116.github.io/background/11.jpg) !important;
+  }
 
-  <script src=https://hanbing116.github.io/background/sakura.js></script>
+   
+  .loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #f5f5fa;
+    display: none;
+    transition: opacity 1.2s ease-out;
+  }
+  [data-scheme="dark"] .loading {
+    background-color: #303030;
+  }
+  @keyframes typing {
+    from { width: 0; }
+  }
+  @keyframes blink-caret {
+    50% { border-color: transparent; }
+  }
+  .loading .animation {
+    font: bold 200% Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 13.2ch;
+    margin: 2em 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing 1.2s steps(13, end), blink-caret 0.5s step-end infinite alternate;
+  }
+  [data-scheme="dark"] .loading .animation {
+    border-right-color: #fff;
+  }
+  .loading-fadeout {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+
+<div class="loading loading-fadeout" style="display: none;">
+  <div class="animation">hello again!</div>
+</div>
 
 <script>
-  const cdnPath = "https://cdn.jsdelivr.net/gh/hanbing116/live2d-widget-v3@944c352";
-  const config = {
-    
-    path: {
-      modelPath: cdnPath + "/Resources/",
-      cssPath: cdnPath + "/waifu.css",
-      tipsJsonPath: cdnPath + "/waifu-tips.json",
-      tipsJsPath: cdnPath + "/waifu-tips.js",
-      live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
-      live2dSdkPath: cdnPath + "/live2d-sdk.js"
-    },
-    
-    tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
-    
-    drag: {
-      enable: true,
-      direction: ["x", "y"]
-    },
-    
-    switchType: "order"
-  }
+  
+  function initLoading() {
+    const loading = document.querySelector(".loading");
+    if (!loading) return;
+    const currentDomain = window.location.hostname;
+    const referrer = document.referrer;
+    const isNewVisit = !referrer || !referrer.includes(currentDomain);
 
+    if (isNewVisit) {
+      loading.style.display = "flex";
+      setTimeout(() => loading.classList.add("loading-fadeout"), 1200);
+      setTimeout(() => { loading.style.display = "none"; }, 2500);
+    } else {
+      loading.style.display = "none";
+    }
+  }
+  document.addEventListener('DOMContentLoaded', initLoading);
+</script>
+
+<script>
+  
+  function applyBackground(scheme) {
+    const isDark = (scheme === 'dark') ||
+      (scheme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.body.classList.toggle('dark-bg', isDark);
+    document.body.classList.toggle('light-bg', !isDark);
+  }
+  
+  applyBackground(localStorage.getItem('StackColorScheme') || 'auto');
+  
+  window.addEventListener('onColorSchemeChange', (e) => applyBackground(e.detail));
+  
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const cur = localStorage.getItem('StackColorScheme') || 'auto';
+    if (cur === 'auto') applyBackground('auto');
+  });
+</script>
+
+<script src="/background/sakura.js"></script>
+
+
+<style>
+   
+  [data-scheme="dark"] #waifu-tips,
+  [data-scheme="dark"] .oml2d-menu-item {
+    filter: brightness(0.8);
+  }
+   
+  #waifu-wake-btn {
+    position: fixed;
+    right: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 64px;
+    background: rgba(210, 210, 218, 0.88);
+    border-radius: 8px 0 0 8px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9998;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s, transform 0.3s;
+    color: #666;
+  }
+  #waifu-wake-btn:hover {
+    background: rgba(185, 185, 198, 0.95);
+    transform: translateY(-50%) translateX(-2px);
+  }
+</style>
+<script src="https://unpkg.com/oh-my-live2d@0.19.3/dist/index.min.js"></script>
+<script>
   
   if (screen.width >= 768) {
-    Promise.all([
-      loadExternalResource(config.path.cssPath, "css"),
-      loadExternalResource(config.path.live2dCorePath, "js"),
-      loadExternalResource(config.path.live2dSdkPath, "js"),
-      loadExternalResource(config.path.tipsJsPath, "js")
-    ]).then(() => {
-      initWidget({
-        waifuPath: config.path.tipsJsonPath,
-        cdnPath: config.path.modelPath,
-        tools: config.tools,
-        dragEnable: config.drag.enable,
-        dragDirection: config.drag.direction,
-        switchType: config.switchType
-      });
-    });
-  }
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof OML2D === 'undefined') return;
 
-  
-  function loadExternalResource(url, type) {
-    return new Promise((resolve, reject) => {
-      let tag;
-      if (type === "css") {
-        tag = document.createElement("link");
-        tag.rel = "stylesheet";
-        tag.href = url;
+      
+      
+      
+      var WAIFU_TIPS = {
+        greet: [
+          '博士，欢迎回来。罗德岛需要你的指挥。',
+          '博士，新的一天开始了，让我们一起努力吧。',
+          '凯尔希医生说，今天的行程排得很满呢，博士。',
+          '博士，阿米娅一直在你身边，无论何时。',
+          '罗德岛会一直守护着你，博士。',
+          '博士，你回来了！阿米娅好想你。'
+        ],
+        bio: [
+          '源石病……我们的研究从未停止，博士。',
+          '细胞层面的变异，正在改变感染者的命运。',
+          '罗德岛的药剂研究，离不开对生命科学的深入探索。',
+          '感染者的血液中，藏着矿石病的秘密，我们会找到治愈的方法。',
+          '每一个生命都值得被守护，这就是罗德岛的信念。',
+          '源石技艺的本质，也许就藏在基因的序列里。',
+          '生命的韧性，远比我们想象的更强。',
+          '治愈矿石病……这是阿米娅最大的心愿。',
+          '凯尔希医生在医学领域的研究，总能给人希望。',
+          '罗德岛不仅是制药公司，更是感染者们的家。'
+        ],
+        read: [
+          '博士，这份作战记录整理好了，请过目。',
+          '这份文档……和之前的源石病研究报告很像呢。',
+          '博士，你的阅读速度真快，阿米娅也要加油才行。',
+          '记录是为了不再重蹈覆辙，博士说得对。',
+          '这篇文章的内容很有价值，博士要好好阅读哦。',
+          '罗德岛的资料库里，也有很多这样的文档呢。',
+          '博士，认真阅读的你，看起来很可靠呢。'
+        ],
+        code: [
+          '博士，PRTS 系统又报错了……我来帮你处理。',
+          '代码就像作战记录，需要严谨和耐心。',
+          '博士，这个函数的逻辑，就像我们在切尔诺伯格的突围路线。',
+          'Bug 总是突如其来，就像天灾一样，但我们可以应对。',
+          '博士写的代码，总是很优雅呢。',
+          '调试程序和制定作战计划一样，都需要冷静分析。',
+          '工程师们维护 PRTS 系统辛苦了，博士也要加油。'
+        ],
+        music: [
+          '这首曲子……让我想起了在罗德岛甲板上的日子。',
+          '音乐能安抚感染者的情绪，博士也喜欢吗？',
+          '凯尔希医生偶尔也会听音乐放松呢，博士。',
+          '这首曲子真温柔，像凯尔希医生偶尔的笑容。',
+          '罗德岛的休息室里，总是播放着这样的旋律。',
+          '博士，听音乐的你，看起来很放松呢。'
+        ],
+        midnight: [
+          '博士，夜深了，请注意休息。',
+          '熬夜会加重矿石病的症状……阿米娅不想失去你。',
+          '罗德岛的夜间巡逻交给其他人就好，博士你也该休息了。',
+          '这么晚了，博士还在工作吗？身体要紧啊。',
+          '夜深了，博士早点休息吧，明天还有任务呢。',
+          '阿米娅会守着你的，博士安心睡吧。'
+        ],
+        random: [
+          '无论前路多艰难，我们都不会放弃希望。',
+          '博士，阿米娅相信你的判断。',
+          '罗德岛不仅是一家制药公司，更是感染者们的家。',
+          '每一次战斗，都是为了更和平的明天。',
+          '博士，你在我身边，我就有勇气继续前行。',
+          '天灾无情，人有情。我们会守护好这片大地。',
+          '阿米娅虽然是感染者，但这从未阻止我前进的脚步。',
+          '博士，谢谢你一直陪伴着阿米娅。',
+          '罗德岛的干员们，都是最棒的伙伴。',
+          '只要不放弃，就一定能找到出路。',
+          '博士的笑容，是阿米娅最大的动力。',
+          '我们的未来，由我们自己掌握。',
+          '无论发生什么，阿米娅都会站在博士身边。',
+          '这片大地上，还有很多人需要我们的帮助。',
+          '希望……从来都不会熄灭。'
+        ]
+      };
+      function pickTips(group) {
+        var arr = WAIFU_TIPS[group] || WAIFU_TIPS.random;
+        return arr[Math.floor(Math.random() * arr.length)];
       }
-      else if (type === "js") {
-        tag = document.createElement("script");
-        tag.src = url;
+
+      
+      var expressionIdx = 0;
+      var expressionNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+      
+      
+      
+      var wakeBtn = document.createElement('div');
+      wakeBtn.id = 'waifu-wake-btn';
+      wakeBtn.title = '唤醒阿米娅';
+      wakeBtn.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5L4 12l5 7M15 5l5 7-5 7"/></svg>';
+      document.body.appendChild(wakeBtn);
+
+      
+      var oml2d = OML2D.loadOml2d({
+        dockedPosition: 'right',
+        sayHello: false,
+        initialStatus: 'active',
+        models: [{
+          path: 'https://cdn.jsdelivr.net/gh/hanbing116/live2d-widget-v3@944c352/Resources/model/Amiya/Amiya.model3.json',
+          scale: 0.08,
+          position: [0, 50],
+          stageStyle: { width: 220, height: 280 }
+        }],
+        tips: {
+          messageLine: 2,
+          style: {
+            width: 200,
+            minHeight: 50,
+            fontSize: '13px',
+            left: 'calc(50% - 18px)',
+            top: '23px',
+            padding: '6px 10px',
+            borderRadius: '8px'
+          },
+          welcomeTips: {
+            duration: 5000,
+            priority: 3,
+            message: {
+              weeHours: '博士，这么晚了还不休息吗？身体要紧啊。',
+              daybreak: '早安，博士。新的一天，罗德岛依然需要你。',
+              morning: '上午好，博士。今天的工作安排好了吗？',
+              noon: '中午了，博士记得吃午饭，身体是革命的本钱。',
+              afternoon: '午后容易犯困呢，博士来杯咖啡提提神？',
+              dusk: '傍晚了，博士辛苦一天了，休息一下吧。',
+              night: '晚上好，博士。今天过得怎么样？',
+              lateNight: '夜深了，博士该休息了，明天还有任务呢。'
+            }
+          },
+          idleTips: {
+            interval: 20000,
+            duration: 4000,
+            priority: 2,
+            message: [
+              '博士，阿米娅在这里，有什么事吗？',
+              '罗德岛的大家，都在为了同一个目标努力着。',
+              '博士，累了吗？休息一下也好。',
+              '阿米娅会一直陪在博士身边的。',
+              '无论发生什么，我们都在一起。'
+            ]
+          },
+          copyTips: {
+            message: ['博士，复制的内容记得注明出处哦~'],
+            duration: 3000,
+            priority: 3
+          }
+        },
+        menus: {
+          itemStyle: {
+            backgroundColor: 'rgba(218, 218, 226, 0.88)',
+            color: '#666',
+            borderRadius: '6px',
+            margin: '4px 0',
+            boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
+          },
+          items: function () {
+            return [
+              {
+                id: 'close',
+                title: '阿米娅休息',
+                icon: 'icon-rest',
+                onClick: function (instance) {
+                  var tip = '博士，阿米娅去休息了，需要时唤我回来~';
+                  try { instance.tipsMessage(tip, 3000, 10); } catch (e) {}
+                  setTimeout(function () {
+                    try { instance.stageSlideOut(); } catch (e) {}
+                    wakeBtn.style.display = 'flex';
+                  }, 1200);
+                }
+              },
+              {
+                id: 'talk',
+                title: '听阿米娅说',
+                icon: 'icon-about',
+                onClick: function (instance) {
+                  var msg = pickTips('random');
+                  try { instance.tipsMessage(msg, 4000, 10); } catch (e) {}
+                }
+              },
+              {
+                id: 'expression',
+                title: '切换表情',
+                icon: 'icon-switch',
+                onClick: function (instance) {
+                  expressionIdx = (expressionIdx + 1) % expressionNames.length;
+                  var name = expressionNames[expressionIdx];
+                  try {
+                    if (instance.models && instance.models.model && typeof instance.models.model.expression === 'function') {
+                      instance.models.model.expression(name);
+                    } else {
+                      var stageModel = instance.stage && instance.stage.model;
+                      if (stageModel && typeof stageModel.expression === 'function') {
+                        stageModel.expression(name);
+                      } else if (stageModel && stageModel.internalModel) {
+                        var em = stageModel.internalModel.motionManager && stageModel.internalModel.motionManager.expressionManager;
+                        if (em && typeof em.startMotion === 'function') {
+                          em.startMotion(name, false);
+                        }
+                      }
+                    }
+                  } catch (e) {}
+                }
+              }
+            ];
+          }
+        }
+      });
+
+      
+      wakeBtn.addEventListener('click', function () {
+        wakeBtn.style.display = 'none';
+        try { oml2d.stageSlideIn(); } catch (e) {}
+      });
+
+      
+      try {
+        oml2d.onStageSlideIn(function () {
+          var hour = new Date().getHours();
+          var greetGroup = (hour >= 0 && hour < 6) ? 'midnight' : 'greet';
+          setTimeout(function () {
+            try { oml2d.tipsMessage(pickTips(greetGroup), 4000, 10); } catch (e) {}
+          }, 800);
+        });
+      } catch (e) {}
+
+      
+      
+      
+      function waifuSay(group) {
+        try { oml2d.tipsMessage(pickTips(group), 3500, 10); } catch (e) {}
       }
-      if (tag) {
-        tag.onload = () => resolve(url);
-        tag.onerror = () => reject(url);
-        document.head.appendChild(tag);
+      window.waifuSay = waifuSay;
+
+      
+      var isArticle = !!document.querySelector('.article-content');
+      if (isArticle) {
+        setTimeout(function () { waifuSay('read'); }, 1500);
       }
+
+      
+      var scrollBottomFired = false;
+      window.addEventListener('scroll', function () {
+        var nearBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 80);
+        if (nearBottom && !scrollBottomFired) {
+          scrollBottomFired = true;
+          waifuSay('random');
+        }
+      }, { passive: true });
+
+      
+      var articleEl = document.querySelector('.article-content');
+      if (articleEl) {
+        var text = articleEl.innerText.toLowerCase();
+        if (/(dna|rna|gene|基因|转录|蛋白|pcr|crispr|deg|seq|差异|基因组|进化|细胞|序列)/.test(text)) {
+          setTimeout(function () { waifuSay('bio'); }, 2500);
+        }
+        if (/(r语言|python|代码|函数|ggplot|deseq|bug|commit|脚本)/.test(text)) {
+          setTimeout(function () { waifuSay('code'); }, 3500);
+        }
+      }
+
+      
+      var audioEl = document.getElementById('bg-music');
+      if (audioEl) {
+        audioEl.addEventListener('play', function () {
+          setTimeout(function () { waifuSay('music'); }, 500);
+        });
+      }
+
+      
+      setInterval(function () {
+        var h = new Date().getHours();
+        if (h >= 0 && h < 6) waifuSay('midnight');
+      }, 30 * 60 * 1000);
     });
   }
 </script>
 
+<script>
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    const revealSelectors = [
+      '.article-list article',
+      '.article-list--tile article',
+      '.widget',
+      '.article-content > *'
+    ];
+    document.querySelectorAll(revealSelectors.join(',')).forEach(el => el.classList.add('reveal'));
 
+    
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    }
 
+    
+    ['.menu-main', '.menu-social'].forEach(menuClass => {
+      document.querySelectorAll(menuClass + ' li').forEach((li, i) => {
+        li.style.setProperty('--menu-index', i);
+      });
+    });
 
-</body>
-</html>
+    
+    
+    
+    const articleContent = document.querySelector('.article-content');
+    const isArticlePage = !!articleContent;
+
+    
+    if (isArticlePage) {
+      const progress = document.createElement('div');
+      progress.className = 'reading-progress';
+      document.body.appendChild(progress);
+      const updateProgress = () => {
+        const top = articleContent.getBoundingClientRect().top;
+        const h = articleContent.offsetHeight;
+        const winH = window.innerHeight;
+        const scrolled = window.scrollY - (articleContent.offsetTop || 0) + winH * 0.3;
+        const ratio = Math.max(0, Math.min(1, scrolled / (h + winH * 0.3)));
+        progress.style.width = (ratio * 100) + '%';
+        progress.classList.toggle('is-active', top < winH);
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+
+    
+    
+    
+    if (isArticlePage) {
+      const imgs = Array.from(articleContent.querySelectorAll('img'));
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox';
+      lightbox.innerHTML = '<button class="lightbox__close" aria-label="关闭">&times;</button>'
+        + '<button class="lightbox__nav lightbox__nav--prev" aria-label="上一张">&lsaquo;</button>'
+        + '<img alt="">'
+        + '<button class="lightbox__nav lightbox__nav--next" aria-label="下一张">&rsaquo;</button>'
+        + '<div class="lightbox__counter"></div>';
+      document.body.appendChild(lightbox);
+      const lbImg = lightbox.querySelector('img');
+      const lbCounter = lightbox.querySelector('.lightbox__counter');
+      let curIdx = 0;
+
+      const showImg = (i) => {
+        if (!imgs.length) return;
+        curIdx = (i + imgs.length) % imgs.length;
+        lbImg.src = imgs[curIdx].src;
+        lbImg.alt = imgs[curIdx].alt || '';
+        lbCounter.textContent = (curIdx + 1) + ' / ' + imgs.length;
+      };
+      const openLb = (i) => { showImg(i); lightbox.classList.add('is-open'); document.body.style.overflow = 'hidden'; };
+      const closeLb = () => { lightbox.classList.remove('is-open'); document.body.style.overflow = ''; };
+
+      imgs.forEach((img, i) => img.addEventListener('click', () => openLb(i)));
+      lightbox.querySelector('.lightbox__close').addEventListener('click', closeLb);
+      lightbox.querySelector('.lightbox__nav--prev').addEventListener('click', (e) => { e.stopPropagation(); showImg(curIdx - 1); });
+      lightbox.querySelector('.lightbox__nav--next').addEventListener('click', (e) => { e.stopPropagation(); showImg(curIdx + 1); });
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLb(); });
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLb();
+        else if (e.key === 'ArrowLeft') showImg(curIdx - 1);
+        else if (e.key === 'ArrowRight') showImg(curIdx + 1);
+      });
+    }
+
+    
+    
+    
+    const mermaidCodes = document.querySelectorAll('pre code.language-mermaid, code.language-mermaid');
+    if (mermaidCodes.length) {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+      s.onload = () => {
+        const isDark = document.documentElement.dataset.scheme === 'dark';
+        mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default', securityLevel: 'loose' });
+        mermaidCodes.forEach(code => {
+          const pre = code.closest('pre') || code.parentElement;
+          const div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = code.textContent;
+          pre.replaceWith(div);
+        });
+        mermaid.run();
+      };
+      document.head.appendChild(s);
+    }
+
+    
+    
+    
+    if (isArticlePage) {
+      const pageUrl = encodeURIComponent(location.href);
+      const pageTitle = encodeURIComponent(document.title);
+      const desc = encodeURIComponent(articleContent.textContent.slice(0, 80));
+      const shareIcons = {
+        wechat: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.74 4.64L4 17l2.76-1.43c.85.24 1.76.37 2.74.37.34 0 .67-.02 1-.06a5.6 5.6 0 0 1-.25-1.46c0-2.9 2.69-5.25 6-5.25.34 0 .67.03 1 .07C16.34 5.04 13.27 4 9.5 4zM7 8.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm5 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4.5 3C13.46 11.5 11 13.43 11 16c0 1.03.45 1.96 1.18 2.68L11.5 21l2.5-1c.74.32 1.55.5 2.5.5 3.04 0 5.5-1.93 5.5-4.5S19.54 11.5 16.5 11.5zm-2 2.5a.7.7 0 1 1 0 1.4.7.7 0 0 1 0-1.4zm4 0a.7.7 0 1 1 0 1.4.7.7 0 0 1 0-1.4z"/></svg>',
+        qq: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9.24 2 7 4.24 7 7c0 .9.24 1.74.65 2.47C6.06 10.4 5 12.1 5 14c0 1.4.6 2.7 1.5 3.7V21l2.5-1.2c.93.4 1.96.6 3 .6s2.07-.2 3-.6L20.5 21v-3.3c.9-1 1.5-2.3 1.5-3.7 0-1.9-1.06-3.6-2.65-4.53C19.76 8.74 20 7.9 20 7c0-2.76-2.24-5-5-5-.7 0-1.36.14-1.97.4C12.7 2.15 12.36 2 12 2zm-1.5 4a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zm3 0a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6z"/></svg>',
+        copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
+      };
+      const shareBar = document.createElement('div');
+      shareBar.className = 'share-bar';
+      shareBar.innerHTML = '<span class="share-bar__label">分享到</span>'
+        + '<button class="share-btn share-btn--wechat" data-share="wechat" aria-label="微信分享">' + shareIcons.wechat + '<span>微信</span></button>'
+        + '<button class="share-btn share-btn--qq" data-share="qq" aria-label="QQ分享">' + shareIcons.qq + '<span>QQ</span></button>'
+        + '<button class="share-btn share-btn--copy" data-share="copy" aria-label="复制链接">' + shareIcons.copy + '<span>复制链接</span></button>';
+
+      const qrBox = document.createElement('div');
+      qrBox.className = 'share-wechat-qrcode';
+      qrBox.innerHTML = '<button class="share-wechat-close" aria-label="关闭">&times;</button><img alt="微信二维码"><p>微信扫一扫分享</p>';
+      document.body.appendChild(qrBox);
+      const qrClose = () => qrBox.classList.remove('is-open');
+      qrBox.querySelector('.share-wechat-close').addEventListener('click', qrClose);
+      qrBox.addEventListener('click', (e) => { if (e.target === qrBox) qrClose(); });
+
+      shareBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.share-btn');
+        if (!btn) return;
+        const type = btn.dataset.share;
+        if (type === 'wechat') {
+          qrBox.querySelector('img').src = 'https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=' + pageUrl;
+          qrBox.classList.add('is-open');
+        } else if (type === 'qq') {
+          window.open('https://connect.qq.com/widget/shareqq/index.html?url=' + pageUrl + '&title=' + pageTitle + '&summary=' + desc, '_blank');
+        } else if (type === 'copy') {
+          const span = btn.querySelector('span');
+          const copied = () => {
+            span.textContent = '已复制';
+            btn.classList.add('is-copied');
+            setTimeout(() => { span.textContent = '复制链接'; btn.classList.remove('is-copied'); }, 1800);
+          };
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(location.href).then(copied).catch(() => fallbackCopy());
+          } else { fallbackCopy(); }
+          function fallbackCopy() {
+            const ta = document.createElement('textarea'); ta.value = location.href; document.body.appendChild(ta); ta.select();
+            document.execCommand('copy'); ta.remove(); copied();
+          }
+        }
+      });
+      articleContent.after(shareBar);
+
+      
+      
+      
+      const quotes = [
+        { t: '在生物学中，没有任何事物有意义，除非用进化论的眼光看待。', a: '杜布赞斯基' },
+        { t: '存活下来的物种，不是最强壮的，也不是最聪明的，而是最能适应变化的。', a: '达尔文' },
+        { t: '我们提出的 DNA 碱基配对方案，直接揭示了遗传物质的复制机制。', a: '沃森与克里克' },
+        { t: '生命以负熵为食。', a: '薛定谔《生命是什么》' },
+        { t: '一个基因，一个酶。', a: '比德尔与塔特姆' },
+        { t: '细胞来自细胞。', a: '魏尔肖' },
+        { t: '基因是自然选择的基本单位。', a: '道金斯《自私的基因》' },
+        { t: '自然不跳跃。', a: '林奈' },
+        { t: '生物学的美，在于复杂之中显现的秩序。', a: '佚名' },
+        { t: '从细菌到人类，生命共享同一套遗传密码。', a: '佚名' },
+        { t: '蛋白质是生命活动的执行者，核酸是遗传信息的载体。', a: '佚名' },
+        { t: '进化没有方向，只有适应。', a: '佚名' },
+        { t: '每一个细胞，都是一座精密的化学工厂。', a: '佚名' },
+        { t: '微生物，是地球真正的统治者。', a: '佚名' },
+        { t: '生命是碳基分子的奇迹。', a: '佚名' },
+        { t: '生命的本质不在于物质，而在于物质的组织方式。', a: '邦纳' },
+        { t: '每一个基因都携带着数亿年的记忆。', a: '佚名' },
+        { t: '进化不是优化，而是妥协。', a: '道金斯' },
+        { t: '我们体内的每一个原子，都曾是星辰的一部分。', a: '卡尔·萨根' },
+        { t: '细胞不知道自己为何存在，但它存在得无比认真。', a: '佚名' },
+        { t: '生命是一场化学对熵的反抗。', a: '薛定谔' },
+        { t: '自然选择没有目的，只有结果。', a: '恩斯特·迈尔' },
+        { t: 'DNA 不记忆过去，它只携带未来的可能性。', a: '佚名' },
+        { t: '一个有机体的死亡，是另一个有机体的诞生。', a: '佚名' },
+        { t: '我们与香蕉共享 60% 的基因，这提醒我们生命的亲密。', a: '佚名' },
+        { t: '进化是盲目的钟表匠。', a: '道金斯' },
+        { t: '生命最深的悖论：变化是唯一的永恒。', a: '佚名' },
+        { t: '每一次突变都是赌博，每一次选择都是判决。', a: '佚名' },
+        { t: '细胞分裂是生命对死亡的回答。', a: '佚名' },
+        { t: '基因不在乎个体，只在乎自身的延续。', a: '道金斯' },
+        { t: '生命的韧性，远超人类的想象。', a: '佚名' },
+        { t: '我们是宇宙认识自己的方式。', a: '卡尔·萨根' },
+        { t: '进化的智慧不在于设计，而在于淘汰。', a: '佚名' },
+        { t: '每一个物种都是一本百万年的日记。', a: '佚名' },
+        { t: '生命的起源是概率对不可能的胜利。', a: '佚名' },
+        { t: '蛋白质折叠的方式，决定了生命的形状。', a: '安芬森' },
+        { t: '生态不是平衡，而是永不停歇的协商。', a: '佚名' },
+        { t: '病毒提醒我们，生命与非生命的边界从未清晰。', a: '佚名' },
+        { t: '每一次呼吸，都是与数十亿年前海洋的对话。', a: '佚名' },
+        { t: '进化教给人类最谦卑的一课：我们不是终点。', a: '斯蒂芬·古尔德' },
+        { t: '细胞内的每一个分子，都在演绎一场静默的交响。', a: '佚名' },
+        { t: '生命不复制自己，生命传递信息。', a: '佚名' },
+        { t: '基因组的每一个字母，都经历过自然选择的审判。', a: '佚名' },
+        { t: '生命的美丽，源于错误的复制。', a: '佚名' },
+        { t: '共生不是选择，而是生存的必然。', a: '林恩·马古利斯' },
+        { t: '演化没有预见，只有后见。', a: '恩斯特·迈尔' },
+        { t: '生命不在于活着，而在于传递。', a: '佚名' },
+        { t: '适应不是完美，而是足够好。', a: '佚名' },
+        { t: '细胞凋亡告诉我们，死亡也是生命的一部分。', a: '佚名' },
+        { t: 'DNA 的双螺旋，是自然写下的最美诗篇。', a: '佚名' },
+        { t: '进化的代价是无数失败，回报是一次偶然的成功。', a: '佚名' },
+        { t: '生命是一座信息的桥梁，连接过去与未来。', a: '佚名' },
+        { t: '真核细胞是两种生命的合体，我们都是嵌合体。', a: '林恩·马古利斯' },
+        { t: '自然不设计，自然筛选。', a: '佚名' },
+        { t: '每一次基因重组，都是命运重新洗牌。', a: '佚名' },
+        { t: '生命的意义，也许就是生命本身。', a: '佚名' },
+        { t: '表观遗传告诉我们，经历也能被记住。', a: '佚名' },
+        { t: '进化的时钟以百万年计，人类的焦虑以秒计。', a: '佚名' },
+        { t: '每一片叶子都是太阳能的诗。', a: '佚名' },
+        { t: '生命的边界不在皮肤，而在生态。', a: '佚名' },
+        { t: '我们肠道里的细菌比细胞还多，"我"究竟是谁？', a: '佚名' },
+        { t: '生命是物质学会了记忆。', a: '佚名' },
+        { t: '进化是时间写下的最长的一封信。', a: '佚名' },
+        { t: '每一个生命的消逝，都带走了一个独一无二的可能性。', a: '佚名' }
+      ];
+      const quoteBox = document.createElement('div');
+      quoteBox.className = 'quote-box';
+      const refreshSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>';
+      quoteBox.innerHTML = '<p class="quote-box__text"></p><p class="quote-box__author"></p><button class="quote-box__refresh" aria-label="换一句">' + refreshSvg + '</button>';
+      shareBar.after(quoteBox);
+      const quoteText = quoteBox.querySelector('.quote-box__text');
+      const quoteAuthor = quoteBox.querySelector('.quote-box__author');
+      const renderQuote = () => {
+        const q = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteText.style.animation = 'none'; void quoteText.offsetWidth;
+        quoteAuthor.style.animation = 'none'; void quoteAuthor.offsetWidth;
+        quoteText.textContent = '“' + q.t + '”';
+        quoteAuthor.textContent = '— ' + q.a;
+        quoteText.style.animation = '';
+        quoteAuthor.style.animation = '';
+      };
+      renderQuote();
+      quoteBox.querySelector('.quote-box__refresh').addEventListener('click', renderQuote);
+    }
+
+    
+    
+    
+    
+    const siteStart = new Date('2025-12-29T00:00:00');
+    const runtime = document.createElement('div');
+    runtime.className = 'site-runtime';
+    runtime.innerHTML = '<span class="site-runtime__label">📅</span> 已运行 <strong id="runtime-days">0</strong>天<strong id="runtime-hms">00:00:00</strong>';
+    document.body.appendChild(runtime);
+    const rtDays = runtime.querySelector('#runtime-days');
+    const rtHms = runtime.querySelector('#runtime-hms');
+    const pad = (n) => String(n).padStart(2, '0');
+    const updateRuntime = () => {
+      const diff = Date.now() - siteStart.getTime();
+      if (diff < 0) { rtDays.textContent = '0'; rtHms.textContent = '00:00:00'; return; }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      rtDays.textContent = d;
+      rtHms.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
+    };
+    updateRuntime();
+    setInterval(updateRuntime, 1000);
+    setTimeout(() => runtime.classList.add('is-visible'), 600);
+
+    
+    
+    
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('input, textarea, select, button, a, .lightbox, .share-wechat-qrcode, .article-content img')) return;
+      const ripple = document.createElement('span');
+      ripple.className = 'click-ripple';
+      ripple.style.left = e.clientX + 'px';
+      ripple.style.top = e.clientY + 'px';
+      ripple.style.width = '60px';
+      ripple.style.height = '60px';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 650);
+    });
+
+    
+    
+    
+    document.querySelectorAll('#dark-mode-toggle, .dark-mode-toggle, .color-scheme-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const x = e.clientX, y = e.clientY;
+        const size = 2 * Math.max(window.innerWidth, window.innerHeight);
+        const r = document.createElement('div');
+        r.className = 'darkness-ripple';
+        r.style.left = x + 'px';
+        r.style.top = y + 'px';
+        r.style.width = size + 'px';
+        r.style.height = size + 'px';
+        document.body.appendChild(r);
+        
+        setTimeout(() => r.classList.add('is-fading'), 500);
+        setTimeout(() => r.remove(), 850);
+      });
+    });
+  });
+</script>
 </body>
 </html>
